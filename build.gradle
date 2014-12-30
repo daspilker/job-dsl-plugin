@@ -7,6 +7,7 @@ buildscript {
     dependencies {
         classpath 'com.github.rholder:gradle-one-jar:1.0.4'
         classpath 'org.ajoberstar:gradle-git:0.12.0'
+        classpath 'be.insaneprogramming.gradle:animalsniffer-gradle-plugin:1.4.0'
     }
 }
 
@@ -18,6 +19,7 @@ configure(subprojects - project(':job-dsl-api-viewer')) {
     apply plugin: 'groovy'
     apply plugin: 'maven' // for publishing
     apply plugin: 'codenarc'
+    apply plugin: 'be.insaneprogramming.gradle.animalsniffer'
 
     sourceCompatibility = 1.6
     targetCompatibility = 1.6
@@ -43,6 +45,14 @@ configure(subprojects - project(':job-dsl-api-viewer')) {
         tasks.withType(Javadoc) {
             options.addStringOption('Xdoclint:none', '-quiet')
         }
+    }
+
+    animalsniffer {
+        signature = 'org.codehaus.mojo.signature:java16:1.1@signature'
+    }
+
+    afterEvaluate {
+        tasks.animalSniffer.dependsOn(compileGroovy)
     }
 }
 

@@ -232,14 +232,22 @@ public final class JenkinsJobManagement extends AbstractJobManagement {
 
     @Override
     public InputStream streamFileInWorkspace(String relLocation) throws IOException {
-        FilePath filePath = locateValidFileInWorkspace(build.getWorkspace(), relLocation);
-        return filePath.read();
+        try {
+            FilePath filePath = locateValidFileInWorkspace(build.getWorkspace(), relLocation);
+            return filePath.read();
+        } catch (InterruptedException e) {
+            throw new IOException(e);
+        }
     }
 
     @Override
     public String readFileInWorkspace(String relLocation) throws IOException {
-        FilePath filePath = locateValidFileInWorkspace(build.getWorkspace(), relLocation);
-        return filePath.readToString();
+        try {
+            FilePath filePath = locateValidFileInWorkspace(build.getWorkspace(), relLocation);
+            return filePath.readToString();
+        } catch (InterruptedException e) {
+            throw new IOException(e);
+        }
     }
 
     @Override
@@ -252,6 +260,8 @@ public final class JenkinsJobManagement extends AbstractJobManagement {
                     return locateValidFileInWorkspace(workspace, relLocation).readToString();
                 } catch (IllegalStateException e) {
                     logWarning(Messages.ReadFileFromWorkspace_JobFileNotFound(), relLocation, jobName);
+                } catch (InterruptedException e) {
+                    throw new IOException(e);
                 }
             } else {
                 logWarning(Messages.ReadFileFromWorkspace_WorkspaceNotFound(), relLocation, jobName);

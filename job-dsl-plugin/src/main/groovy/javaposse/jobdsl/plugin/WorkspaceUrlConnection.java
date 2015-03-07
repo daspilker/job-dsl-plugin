@@ -24,12 +24,11 @@ public class WorkspaceUrlConnection extends URLConnection {
             if (!targetPath.exists()) {
                 throw new FileNotFoundException("Unable to find file at " + targetPath);
             }
+            is = targetPath.read();
+            connected = true;
         } catch (InterruptedException e) {
             throw new IOException(e);
         }
-
-        is = targetPath.read();
-        connected = true;
     }
 
     @Override

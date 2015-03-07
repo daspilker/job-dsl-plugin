@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         jcenter()
+        mavenLocal()
     }
     dependencies {
         classpath 'org.jenkins-ci.tools:gradle-jpi-plugin:0.10.0'
@@ -15,7 +16,7 @@ description = 'Jenkins plugin to leverage job-dsl-core to programmatic create jo
 def generatedSourcesDir = 'generated'
 
 jenkinsPlugin {
-    coreVersion = '1.601'
+    coreVersion = '1.603-SNAPSHOT'
     displayName = 'Job DSL'
     url = 'https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin'
     gitHubUrl = 'https://github.com/jenkinsci/job-dsl-plugin'

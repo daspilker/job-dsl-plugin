@@ -1683,7 +1683,7 @@
                                 }
                             ],
                             "text": "git(String url, Closure configure = null)",
-                            "html": "Adds a Git SCM source.\r\n\r\n The closure parameters expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.",
+                            "html": "Adds a Git SCM source.\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.",
                             "firstSentenceCommentText": "Adds a Git SCM source."
                         },
                         {
@@ -1703,7 +1703,7 @@
                                 }
                             ],
                             "text": "git(String url, String branch, Closure configure = null)",
-                            "html": "Adds a Git SCM source.\r\n\r\n The closure parameters expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.",
+                            "html": "Adds a Git SCM source.\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.",
                             "firstSentenceCommentText": "Adds a Git SCM source."
                         }
                     ],
@@ -1768,7 +1768,7 @@
                             ],
                             "text": "github(String ownerAndProject, String branch = null, String protocol = 'https', String host = 'github.com', Closure closure = null)",
                             "availableSince": "1.15\r\n",
-                            "html": "Adds a Git SCM source for a GitHub repository.\r\n\r\n The Git URL will be derived from the <TT>ownerAndProject</TT>, <TT>protocol</TT> and <TT>host</TT> parameters.\r\n Supported protocols are <TT>'https'</TT>, <TT>'ssh'</TT> and <TT>'git'</TT>.\r\n\r\n This will also configure the source browser to point to GitHub and set the GitHub project URL.\r\n\r\n The closure parameters expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.\r\n     ",
+                            "html": "Adds a Git SCM source for a GitHub repository.\r\n\r\n The Git URL will be derived from the <TT>ownerAndProject</TT>, <TT>protocol</TT> and <TT>host</TT> parameters.\r\n Supported protocols are <TT>'https'</TT>, <TT>'ssh'</TT> and <TT>'git'</TT>.\r\n\r\n This will also configure the source browser to point to GitHub and set the GitHub project URL.\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.\r\n     ",
                             "firstSentenceCommentText": "Adds a Git SCM source for a GitHub repository."
                         }
                     ],
@@ -1879,7 +1879,7 @@
                                 }
                             ],
                             "text": "p4(String viewspec, String user, String password, Closure configure = null)",
-                            "html": "Add Perforce SCM source.\r\n\r\n The client name will be set to <TT>builds-${JOB_NAME</TT>}.\r\n\r\n For security reasons, do not use a hard-coded password. See\r\n <a href=\"https://github.com/jenkinsci/job-dsl-plugin/wiki/Handling-Credentials\">Handling Credentials</a> for\r\n details about handling credentials in DSL scripts.\r\n\r\n The closure parameters expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.\r\n\r\n The configure block must be used to set additional options.\r\n     ",
+                            "html": "Add Perforce SCM source.\r\n\r\n The client name will be set to <TT>builds-${JOB_NAME</TT>}.\r\n\r\n For security reasons, do not use a hard-coded password. See\r\n <a href=\"https://github.com/jenkinsci/job-dsl-plugin/wiki/Handling-Credentials\">Handling Credentials</a> for\r\n details about handling credentials in DSL scripts.\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.\r\n\r\n The configure block must be used to set additional options.\r\n     ",
                             "firstSentenceCommentText": "Add Perforce SCM source."
                         }
                     ],
@@ -1922,7 +1922,7 @@
                                 }
                             ],
                             "text": "svn(String svnUrl, Closure configure = null)",
-                            "html": "Adds a Subversion SCM source.\r\n\r\n The closure parameters expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.",
+                            "html": "Adds a Subversion SCM source.\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.",
                             "firstSentenceCommentText": "Adds a Subversion SCM source."
                         },
                         {
@@ -1942,7 +1942,7 @@
                                 }
                             ],
                             "text": "svn(String svnUrl, String localDir, Closure configure = null)",
-                            "html": "Adds a Subversion SCM source.\r\n\r\n The closure parameters expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.",
+                            "html": "Adds a Subversion SCM source.\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The <TT>scm</TT>\r\n node is passed into the configure block.",
                             "firstSentenceCommentText": "Adds a Subversion SCM source."
                         },
                         {
@@ -7186,7 +7186,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "antInstallation(String antInstallationName)"
+                            "text": "antInstallation(String antInstallationName)",
+                            "html": "Specifies the name of the Ant installation to be used for this build step.",
+                            "firstSentenceCommentText": "Specifies the name of the Ant installation to be used for this build step."
                         }
                     ]
                 },
@@ -7200,7 +7202,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "buildFile(String buildFile)"
+                            "text": "buildFile(String buildFile)",
+                            "html": "Specifies the build file to be invoked. Defaults to <TT>build.gradle</TT>.",
+                            "firstSentenceCommentText": "Specifies the build file to be invoked. "
                         }
                     ]
                 },
@@ -7214,7 +7218,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "javaOpt(String opt)"
+                            "text": "javaOpt(String opt)",
+                            "html": "Specifies custom <TT>ANT_OPTS</TT>. Can be called multiple times to add more options.",
+                            "firstSentenceCommentText": "Specifies custom ANT_OPTS. "
                         }
                     ]
                 },
@@ -7228,7 +7234,9 @@
                                     "type": "Iterable<String>"
                                 }
                             ],
-                            "text": "javaOpts(Iterable<String> opts)"
+                            "text": "javaOpts(Iterable<String> opts)",
+                            "html": "Specifies custom <TT>ANT_OPTS</TT>.  Can be called multiple times to add more options.",
+                            "firstSentenceCommentText": "Specifies custom ANT_OPTS.  "
                         }
                     ]
                 },
@@ -7246,7 +7254,9 @@
                                     "type": "Object"
                                 }
                             ],
-                            "text": "prop(Object key, Object value)"
+                            "text": "prop(Object key, Object value)",
+                            "html": "Specifies a property for the Ant build. Can be called multiple times to add more properties.",
+                            "firstSentenceCommentText": "Specifies a property for the Ant build. "
                         }
                     ]
                 },
@@ -7260,7 +7270,9 @@
                                     "type": "Map<String, String>"
                                 }
                             ],
-                            "text": "props(Map<String, String> map)"
+                            "text": "props(Map<String, String> map)",
+                            "html": "Specifies properties for the Ant build. Can be called multiple times to add more properites.",
+                            "firstSentenceCommentText": "Specifies properties for the Ant build. "
                         }
                     ]
                 },
@@ -7274,7 +7286,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "target(String target)"
+                            "text": "target(String target)",
+                            "html": "Specifies an Ant target to be invoked. Can be called multiple times to add more targets.",
+                            "firstSentenceCommentText": "Specifies an Ant target to be invoked. "
                         }
                     ]
                 },
@@ -7284,11 +7298,13 @@
                         {
                             "parameters": [
                                 {
-                                    "name": "addlTargets",
+                                    "name": "targets",
                                     "type": "Iterable<String>"
                                 }
                             ],
-                            "text": "targets(Iterable<String> addlTargets)"
+                            "text": "targets(Iterable<String> targets)",
+                            "html": "Specifies Ant targets to be invoked. Can be called multiple times to add more targets.",
+                            "firstSentenceCommentText": "Specifies Ant targets to be invoked. "
                         }
                     ]
                 }
@@ -8317,7 +8333,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "buildFile(String buildFile)"
+                            "text": "buildFile(String buildFile)",
+                            "html": "Specifies the name of the Gradle build script file. Defaults to <TT>build.gradle</TT>.",
+                            "firstSentenceCommentText": "Specifies the name of the Gradle build script file. "
                         }
                     ]
                 },
@@ -8331,7 +8349,9 @@
                                     "type": "Closure"
                                 }
                             ],
-                            "text": "configure(Closure closure)"
+                            "text": "configure(Closure closure)",
+                            "html": "Allows direct manipulation of the generated XML. The <TT>hudson.plugins.gradle.Gradle</TT> node is passed into the\r\n configure block.\r\n     ",
+                            "firstSentenceCommentText": "Allows direct manipulation of the generated XML. "
                         }
                     ]
                 },
@@ -8345,7 +8365,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "description(String description)"
+                            "text": "description(String description)",
+                            "html": "Sets a description for the build step.",
+                            "firstSentenceCommentText": "Sets a description for the build step."
                         }
                     ]
                 },
@@ -8360,7 +8382,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "fromRootBuildScriptDir(boolean fromRootBuildScriptDir = true)"
+                            "text": "fromRootBuildScriptDir(boolean fromRootBuildScriptDir = true)",
+                            "html": "Defaults to <TT>true</TT>.",
+                            "firstSentenceCommentText": "Defaults to true."
                         }
                     ]
                 },
@@ -8374,7 +8398,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "gradleName(String gradleName)"
+                            "text": "gradleName(String gradleName)",
+                            "html": "Specifies the name of the Gradle installation to use if not using the wrapper.",
+                            "firstSentenceCommentText": "Specifies the name of the Gradle installation to use if not using the wrapper."
                         }
                     ]
                 },
@@ -8389,7 +8415,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "makeExecutable(boolean makeExecutable = true)"
+                            "text": "makeExecutable(boolean makeExecutable = true)",
+                            "html": "Sets the executable flag on the wrapper script file before invoking the file. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Sets the executable flag on the wrapper script file before invoking the file. "
                         }
                     ]
                 },
@@ -8403,7 +8431,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "rootBuildScriptDir(String rootBuildScriptDir)"
+                            "text": "rootBuildScriptDir(String rootBuildScriptDir)",
+                            "html": "Specifies the directory containing the <TT>build.gradle</TT>. Defaults to the workspace directory.",
+                            "firstSentenceCommentText": "Specifies the directory containing the build.gradle. "
                         }
                     ]
                 },
@@ -8417,7 +8447,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "switches(String switches)"
+                            "text": "switches(String switches)",
+                            "html": "Specifies the Gradle switches to be invoked. Can be called multiple times to add more switches.",
+                            "firstSentenceCommentText": "Specifies the Gradle switches to be invoked. "
                         }
                     ]
                 },
@@ -8431,7 +8463,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "tasks(String tasks)"
+                            "text": "tasks(String tasks)",
+                            "html": "Specifies the Gradle tasks to be invoked. Can be called multiple times to add more tasks.",
+                            "firstSentenceCommentText": "Specifies the Gradle tasks to be invoked. "
                         }
                     ]
                 },
@@ -8446,7 +8480,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "useWrapper(boolean useWrapper = true)"
+                            "text": "useWrapper(boolean useWrapper = true)",
+                            "html": "Use the Gradle wrapper to invoke the build script. Defaults to <TT>true</TT>.",
+                            "firstSentenceCommentText": "Use the Gradle wrapper to invoke the build script. "
                         }
                     ]
                 }
@@ -8854,7 +8890,9 @@
                                     "type": "Closure"
                                 }
                             ],
-                            "text": "configure(Closure closure)"
+                            "text": "configure(Closure closure)",
+                            "html": "Allows direct manipulation of the generated XML. The <TT>hudson.tasks.Maven</TT> node is passed into the configure\r\n block.\r\n     ",
+                            "firstSentenceCommentText": "Allows direct manipulation of the generated XML. "
                         }
                     ]
                 },
@@ -8869,8 +8907,8 @@
                                 }
                             ],
                             "text": "goals(String goals)",
-                            "html": "Specifies the goals to execute.\r\n     ",
-                            "firstSentenceCommentText": "Specifies the goals to execute."
+                            "html": "Specifies the goals to execute including other command line options.\r\n When specified multiple times, the goals and options will be concatenated.\r\n     ",
+                            "firstSentenceCommentText": "Specifies the goals to execute including other command line options.\r\n "
                         }
                     ]
                 },
@@ -8885,7 +8923,9 @@
                                 }
                             ],
                             "text": "localRepository(javaposse.jobdsl.dsl.helpers.common.MavenContext.LocalRepositoryLocation location)",
-                            "deprecated": true
+                            "deprecated": true,
+                            "html": "Set to use isolated local Maven repositories.\r\n\r\n Possible values are <TT>LocalToWorkspace</TT> and <TT>LocalToExecutor</TT>.\r\n     ",
+                            "firstSentenceCommentText": "Set to use isolated local Maven repositories."
                         },
                         {
                             "parameters": [
@@ -8896,7 +8936,7 @@
                             ],
                             "text": "localRepository(javaposse.jobdsl.dsl.helpers.LocalRepositoryLocation location)",
                             "availableSince": "1.31",
-                            "html": "Set to use isolated local Maven repositories.\r\n     ",
+                            "html": "Set to use isolated local Maven repositories.\r\n\r\n Possible values for are <TT>LocalRepositoryLocation.LOCAL_TO_WORKSPACE</TT> and\r\n <TT>LocalRepositoryLocation.LOCAL_TO_EXECUTOR</TT>.\r\n     ",
                             "firstSentenceCommentText": "Set to use isolated local Maven repositories."
                         }
                     ]
@@ -8912,8 +8952,8 @@
                                 }
                             ],
                             "text": "mavenInstallation(String name)",
-                            "html": "Specifies the Maven installation for executing this step or job.\r\n     ",
-                            "firstSentenceCommentText": "Specifies the Maven installation for executing this step or job."
+                            "html": "Specifies the Maven installation for executing this step.\r\n     ",
+                            "firstSentenceCommentText": "Specifies the Maven installation for executing this step."
                         }
                     ]
                 },
@@ -8928,7 +8968,7 @@
                                 }
                             ],
                             "text": "mavenOpts(String mavenOpts)",
-                            "html": "Specifies the JVM options needed when launching Maven as an external process.\r\n     ",
+                            "html": "Specifies the JVM options needed when launching Maven as an external process.\r\n\r\n When specified multiple times, the options will be concatenated.\r\n     ",
                             "firstSentenceCommentText": "Specifies the JVM options needed when launching Maven as an external process."
                         }
                     ]
@@ -8944,7 +8984,9 @@
                                 }
                             ],
                             "text": "properties(Map props)",
-                            "availableSince": "1.21"
+                            "availableSince": "1.21",
+                            "html": "Adds properties for the Maven build.\r\n     ",
+                            "firstSentenceCommentText": "Adds properties for the Maven build."
                         }
                     ]
                 },
@@ -8963,7 +9005,9 @@
                                 }
                             ],
                             "text": "property(String key, String value)",
-                            "availableSince": "1.21"
+                            "availableSince": "1.21",
+                            "html": "Adds a property for the Maven build.\r\n     ",
+                            "firstSentenceCommentText": "Adds a property for the Maven build."
                         }
                     ]
                 },
@@ -8982,7 +9026,8 @@
                             "html": "Specifies the managed Maven settings to be used.\r\n     ",
                             "firstSentenceCommentText": "Specifies the managed Maven settings to be used."
                         }
-                    ]
+                    ],
+                    "plugin": "config-file-provider"
                 },
                 {
                     "name": "rootPOM",
@@ -10043,12 +10088,14 @@
                                 }
                             ],
                             "text": "ant(Closure antClosure = null)",
+                            "html": "Invokes an Ant build script.",
+                            "firstSentenceCommentText": "Invokes an Ant build script.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.AntContext"
                         },
                         {
                             "parameters": [
                                 {
-                                    "name": "targetsStr",
+                                    "name": "targets",
                                     "type": "String"
                                 },
                                 {
@@ -10057,17 +10104,19 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "ant(String targetsStr, Closure antClosure = null)",
+                            "text": "ant(String targets, Closure antClosure = null)",
+                            "html": "Invokes an Ant build script.",
+                            "firstSentenceCommentText": "Invokes an Ant build script.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.AntContext"
                         },
                         {
                             "parameters": [
                                 {
-                                    "name": "targetsStr",
+                                    "name": "targets",
                                     "type": "String"
                                 },
                                 {
-                                    "name": "buildFileStr",
+                                    "name": "buildFile",
                                     "type": "String"
                                 },
                                 {
@@ -10076,17 +10125,19 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "ant(String targetsStr, String buildFileStr, Closure antClosure = null)",
+                            "text": "ant(String targets, String buildFile, Closure antClosure = null)",
+                            "html": "Invokes an Ant build script.",
+                            "firstSentenceCommentText": "Invokes an Ant build script.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.AntContext"
                         },
                         {
                             "parameters": [
                                 {
-                                    "name": "targetsArg",
+                                    "name": "targets",
                                     "type": "String"
                                 },
                                 {
-                                    "name": "buildFileArg",
+                                    "name": "buildFile",
                                     "type": "String"
                                 },
                                 {
@@ -10099,11 +10150,14 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "ant(String targetsArg, String buildFileArg, String antInstallation, Closure antClosure = null)",
+                            "text": "ant(String targets, String buildFile, String antInstallation, Closure antClosure = null)",
+                            "html": "Invokes an Ant build script.",
+                            "firstSentenceCommentText": "Invokes an Ant build script.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.AntContext"
                         }
                     ],
-                    "plugin": "ant"
+                    "plugin": "ant",
+                    "examples": "job('example') {\r\n    steps {\r\n        ant {\r\n            target('test')\r\n            targets(['publish', 'deploy'])\r\n            prop('logging', 'info')\r\n            props('test.threads': 10, 'input.status':'release')\r\n            buildFile('dir1/build.xml')\r\n            javaOpt('-Xmx1g')\r\n            javaOpts(['-Dprop2=value2', '-Dprop3=value3'])\r\n            antInstallation('Ant 1.8')\r\n        }\r\n    }\r\n}"
                 },
                 {
                     "name": "batchFile",
@@ -10111,13 +10165,16 @@
                         {
                             "parameters": [
                                 {
-                                    "name": "commandStr",
+                                    "name": "command",
                                     "type": "String"
                                 }
                             ],
-                            "text": "batchFile(String commandStr)"
+                            "text": "batchFile(String command)",
+                            "html": "Runs a Windows batch script.\r\n\r\n Use javaposse.jobdsl.dsl.DslFactory#readFileFromWorkspace(java.lang.String) to read\r\n the script from a file.",
+                            "firstSentenceCommentText": "Runs a Windows batch script."
                         }
-                    ]
+                    ],
+                    "examples": "job('example') {\r\n    steps {\r\n        batchFile('echo Hello World!')\r\n        batchFile(readFileFromWorkspace('build.bat'))\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "buildDescription",
@@ -10135,10 +10192,13 @@
                                 }
                             ],
                             "text": "buildDescription(String regexp, String description = null)",
-                            "availableSince": "1.31"
+                            "availableSince": "1.31",
+                            "html": "Set a build description based upon a regular expression test of the log file.\r\n     ",
+                            "firstSentenceCommentText": "Set a build description based upon a regular expression test of the log file."
                         }
                     ],
-                    "plugin": "description-setter"
+                    "plugin": "description-setter",
+                    "examples": "job('example') {\r\n    steps {\r\n        buildDescription(/.*\\[INFO\\] Uploading project information for [^\\s]* ([^\\s]*)/)\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "clangScanBuild",
@@ -10428,7 +10488,8 @@
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.StepEnvironmentVariableContext"
                         }
                     ],
-                    "plugin": "envinject"
+                    "plugin": "envinject",
+                    "examples": "job('example') {\r\n    steps {\r\n        environmentVariables {\r\n            env('ONE', '1')\r\n            envs(FOO: 'bar', TEST: '123')\r\n            propertiesFile('env.properties')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "gradle",
@@ -10442,6 +10503,8 @@
                             ],
                             "text": "gradle(Closure gradleClosure)",
                             "availableSince": "1.27",
+                            "html": "Invokes a Gradle build script.\r\n     ",
+                            "firstSentenceCommentText": "Invokes a Gradle build script.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.GradleContext"
                         },
                         {
@@ -10467,10 +10530,13 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "gradle(String tasks = null, String switches = null, Boolean useWrapper = true, Closure configure = null)"
+                            "text": "gradle(String tasks = null, String switches = null, Boolean useWrapper = true, Closure configure = null)",
+                            "html": "Invokes a Gradle build script.\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The\r\n <TT>hudson.plugins.gradle.Gradle</TT> node is passed into the configure block.",
+                            "firstSentenceCommentText": "Invokes a Gradle build script."
                         }
                     ],
-                    "plugin": "gradle"
+                    "plugin": "gradle",
+                    "examples": "job('example') {\r\n    steps {\r\n        gradle('check')\r\n        gradle {\r\n            tasks('clean')\r\n            tasks('check')\r\n            switches('--info')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "grails",
@@ -10635,17 +10701,19 @@
                             ],
                             "text": "maven(Closure closure)",
                             "availableSince": "1.20",
+                            "html": "Invokes a Maven build.\r\n     ",
+                            "firstSentenceCommentText": "Invokes a Maven build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.MavenContext"
                         },
                         {
                             "parameters": [
                                 {
-                                    "name": "targetsArg",
+                                    "name": "targets",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
                                 {
-                                    "name": "pomArg",
+                                    "name": "pom",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
@@ -10655,10 +10723,13 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "maven(String targetsArg = null, String pomArg = null, Closure configure = null)"
+                            "text": "maven(String targets = null, String pom = null, Closure configure = null)",
+                            "html": "Invokes a Maven build.\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The\r\n <TT>hudson.tasks.Maven</TT> node is passed into the configure block.",
+                            "firstSentenceCommentText": "Invokes a Maven build."
                         }
                     ],
-                    "plugin": "maven-plugin"
+                    "plugin": "maven-plugin",
+                    "examples": "job('example') {\r\n    steps {\r\n        maven('verify')\r\n        maven('clean verify', 'module-a/pom.xml')\r\n        maven {\r\n            goals('clean')\r\n            goals('verify')\r\n            mavenOpts('-Xms256m')\r\n            mavenOpts('-Xmx512m')\r\n            localRepository(LocalRepositoryLocation.LOCAL_TO_WORKSPACE)\r\n            properties(skipTests: true)\r\n            mavenInstallation('Maven 3.1.1')\r\n            providedSettings('central-mirror')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "nodejsCommand",
@@ -10694,10 +10765,13 @@
                                 }
                             ],
                             "text": "powerShell(String command)",
-                            "availableSince": "1.32"
+                            "availableSince": "1.32",
+                            "html": "Runs a Windows PowerShell script.\r\n\r\n Use javaposse.jobdsl.dsl.DslFactory#readFileFromWorkspace(java.lang.String) to read\r\n the script from a file.\r\n     ",
+                            "firstSentenceCommentText": "Runs a Windows PowerShell script."
                         }
                     ],
-                    "plugin": "powershell"
+                    "plugin": "powershell",
+                    "examples": "job('example') {\r\n    steps {\r\n        powerShell('Write-Output \"Hello World!\"')\r\n        powerShell(readFileFromWorkspace('build.ps1'))\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "prerequisite",
@@ -10838,26 +10912,26 @@
                         {
                             "parameters": [
                                 {
-                                    "name": "sbtNameArg",
+                                    "name": "sbtName",
                                     "type": "String"
                                 },
                                 {
-                                    "name": "actionsArg",
+                                    "name": "actions",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
                                 {
-                                    "name": "sbtFlagsArg",
+                                    "name": "sbtFlags",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
                                 {
-                                    "name": "jvmFlagsArg",
+                                    "name": "jvmFlags",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
                                 {
-                                    "name": "subdirPathArg",
+                                    "name": "subdirPath",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
@@ -10867,11 +10941,33 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "sbt(String sbtNameArg, String actionsArg = null, String sbtFlagsArg = null, String jvmFlagsArg = null, String subdirPathArg = null, Closure configure = null)",
-                            "availableSince": "1.16"
+                            "text": "sbt(String sbtName, String actions = null, String sbtFlags = null, String jvmFlags = null, String subdirPath = null, Closure configure = null)",
+                            "availableSince": "1.16",
+                            "html": "Invokes the Scala Build Tool (SBT).\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The\r\n <TT>org.jvnet.hudson.plugins.SbtPluginBuilder</TT> node is passed into the configure block.\r\n     ",
+                            "firstSentenceCommentText": "Invokes the Scala Build Tool (SBT)."
                         }
                     ],
-                    "plugin": "sbt"
+                    "plugin": "sbt",
+                    "examples": "job('example') {\r\n    steps {\r\n        sbt('SBT 0.12.3', 'test', '-Dsbt.log.noformat=true', '-Xmx2G -Xms512M', 'subproject')\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "setBuildResult",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "result",
+                                    "type": "String"
+                                }
+                            ],
+                            "text": "setBuildResult(String result)",
+                            "availableSince": "1.35",
+                            "html": "Set the build status.\r\n\r\n Must be one of <TT>'SUCCESS'</TT>, <TT>'UNSTABLE'</TT>, <TT>'FAILURE'</TT>, <TT>'ABORTED'</TT> or <TT>'CYCLE'</TT>.\r\n     ",
+                            "firstSentenceCommentText": "Set the build status."
+                        }
+                    ],
+                    "plugin": "fail-the-build-plugin",
+                    "examples": "job('example') {\r\n    steps {\r\n        setBuildResult('UNSTABLE')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "shell",
@@ -10879,13 +10975,16 @@
                         {
                             "parameters": [
                                 {
-                                    "name": "commandStr",
+                                    "name": "command",
                                     "type": "String"
                                 }
                             ],
-                            "text": "shell(String commandStr)"
+                            "text": "shell(String command)",
+                            "html": "Runs a shell script.\r\n\r\n Use javaposse.jobdsl.dsl.DslFactory#readFileFromWorkspace(java.lang.String) to read\r\n the script from a file.",
+                            "firstSentenceCommentText": "Runs a shell script."
                         }
-                    ]
+                    ],
+                    "examples": "job('example') {\r\n  steps {\r\n      shell('echo Hello World!')\r\n      shell(readFileFromWorkspace('build.sh'))\r\n  }\r\n}\r\n"
                 },
                 {
                     "name": "systemGroovyCommand",
@@ -28442,12 +28541,14 @@
                                 }
                             ],
                             "text": "ant(Closure antClosure = null)",
+                            "html": "Invokes an Ant build script.",
+                            "firstSentenceCommentText": "Invokes an Ant build script.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.AntContext"
                         },
                         {
                             "parameters": [
                                 {
-                                    "name": "targetsStr",
+                                    "name": "targets",
                                     "type": "String"
                                 },
                                 {
@@ -28456,17 +28557,19 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "ant(String targetsStr, Closure antClosure = null)",
+                            "text": "ant(String targets, Closure antClosure = null)",
+                            "html": "Invokes an Ant build script.",
+                            "firstSentenceCommentText": "Invokes an Ant build script.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.AntContext"
                         },
                         {
                             "parameters": [
                                 {
-                                    "name": "targetsStr",
+                                    "name": "targets",
                                     "type": "String"
                                 },
                                 {
-                                    "name": "buildFileStr",
+                                    "name": "buildFile",
                                     "type": "String"
                                 },
                                 {
@@ -28475,17 +28578,19 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "ant(String targetsStr, String buildFileStr, Closure antClosure = null)",
+                            "text": "ant(String targets, String buildFile, Closure antClosure = null)",
+                            "html": "Invokes an Ant build script.",
+                            "firstSentenceCommentText": "Invokes an Ant build script.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.AntContext"
                         },
                         {
                             "parameters": [
                                 {
-                                    "name": "targetsArg",
+                                    "name": "targets",
                                     "type": "String"
                                 },
                                 {
-                                    "name": "buildFileArg",
+                                    "name": "buildFile",
                                     "type": "String"
                                 },
                                 {
@@ -28498,11 +28603,14 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "ant(String targetsArg, String buildFileArg, String antInstallation, Closure antClosure = null)",
+                            "text": "ant(String targets, String buildFile, String antInstallation, Closure antClosure = null)",
+                            "html": "Invokes an Ant build script.",
+                            "firstSentenceCommentText": "Invokes an Ant build script.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.AntContext"
                         }
                     ],
-                    "plugin": "ant"
+                    "plugin": "ant",
+                    "examples": "job('example') {\r\n    steps {\r\n        ant {\r\n            target('test')\r\n            targets(['publish', 'deploy'])\r\n            prop('logging', 'info')\r\n            props('test.threads': 10, 'input.status':'release')\r\n            buildFile('dir1/build.xml')\r\n            javaOpt('-Xmx1g')\r\n            javaOpts(['-Dprop2=value2', '-Dprop3=value3'])\r\n            antInstallation('Ant 1.8')\r\n        }\r\n    }\r\n}"
                 },
                 {
                     "name": "batchFile",
@@ -28510,13 +28618,16 @@
                         {
                             "parameters": [
                                 {
-                                    "name": "commandStr",
+                                    "name": "command",
                                     "type": "String"
                                 }
                             ],
-                            "text": "batchFile(String commandStr)"
+                            "text": "batchFile(String command)",
+                            "html": "Runs a Windows batch script.\r\n\r\n Use javaposse.jobdsl.dsl.DslFactory#readFileFromWorkspace(java.lang.String) to read\r\n the script from a file.",
+                            "firstSentenceCommentText": "Runs a Windows batch script."
                         }
-                    ]
+                    ],
+                    "examples": "job('example') {\r\n    steps {\r\n        batchFile('echo Hello World!')\r\n        batchFile(readFileFromWorkspace('build.bat'))\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "buildDescription",
@@ -28534,10 +28645,13 @@
                                 }
                             ],
                             "text": "buildDescription(String regexp, String description = null)",
-                            "availableSince": "1.31"
+                            "availableSince": "1.31",
+                            "html": "Set a build description based upon a regular expression test of the log file.\r\n     ",
+                            "firstSentenceCommentText": "Set a build description based upon a regular expression test of the log file."
                         }
                     ],
-                    "plugin": "description-setter"
+                    "plugin": "description-setter",
+                    "examples": "job('example') {\r\n    steps {\r\n        buildDescription(/.*\\[INFO\\] Uploading project information for [^\\s]* ([^\\s]*)/)\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "clangScanBuild",
@@ -28827,7 +28941,8 @@
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.StepEnvironmentVariableContext"
                         }
                     ],
-                    "plugin": "envinject"
+                    "plugin": "envinject",
+                    "examples": "job('example') {\r\n    steps {\r\n        environmentVariables {\r\n            env('ONE', '1')\r\n            envs(FOO: 'bar', TEST: '123')\r\n            propertiesFile('env.properties')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "gradle",
@@ -28841,6 +28956,8 @@
                             ],
                             "text": "gradle(Closure gradleClosure)",
                             "availableSince": "1.27",
+                            "html": "Invokes a Gradle build script.\r\n     ",
+                            "firstSentenceCommentText": "Invokes a Gradle build script.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.GradleContext"
                         },
                         {
@@ -28866,10 +28983,13 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "gradle(String tasks = null, String switches = null, Boolean useWrapper = true, Closure configure = null)"
+                            "text": "gradle(String tasks = null, String switches = null, Boolean useWrapper = true, Closure configure = null)",
+                            "html": "Invokes a Gradle build script.\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The\r\n <TT>hudson.plugins.gradle.Gradle</TT> node is passed into the configure block.",
+                            "firstSentenceCommentText": "Invokes a Gradle build script."
                         }
                     ],
-                    "plugin": "gradle"
+                    "plugin": "gradle",
+                    "examples": "job('example') {\r\n    steps {\r\n        gradle('check')\r\n        gradle {\r\n            tasks('clean')\r\n            tasks('check')\r\n            switches('--info')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "grails",
@@ -29034,17 +29154,19 @@
                             ],
                             "text": "maven(Closure closure)",
                             "availableSince": "1.20",
+                            "html": "Invokes a Maven build.\r\n     ",
+                            "firstSentenceCommentText": "Invokes a Maven build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.MavenContext"
                         },
                         {
                             "parameters": [
                                 {
-                                    "name": "targetsArg",
+                                    "name": "targets",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
                                 {
-                                    "name": "pomArg",
+                                    "name": "pom",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
@@ -29054,10 +29176,13 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "maven(String targetsArg = null, String pomArg = null, Closure configure = null)"
+                            "text": "maven(String targets = null, String pom = null, Closure configure = null)",
+                            "html": "Invokes a Maven build.\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The\r\n <TT>hudson.tasks.Maven</TT> node is passed into the configure block.",
+                            "firstSentenceCommentText": "Invokes a Maven build."
                         }
                     ],
-                    "plugin": "maven-plugin"
+                    "plugin": "maven-plugin",
+                    "examples": "job('example') {\r\n    steps {\r\n        maven('verify')\r\n        maven('clean verify', 'module-a/pom.xml')\r\n        maven {\r\n            goals('clean')\r\n            goals('verify')\r\n            mavenOpts('-Xms256m')\r\n            mavenOpts('-Xmx512m')\r\n            localRepository(LocalRepositoryLocation.LOCAL_TO_WORKSPACE)\r\n            properties(skipTests: true)\r\n            mavenInstallation('Maven 3.1.1')\r\n            providedSettings('central-mirror')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "nodejsCommand",
@@ -29143,10 +29268,13 @@
                                 }
                             ],
                             "text": "powerShell(String command)",
-                            "availableSince": "1.32"
+                            "availableSince": "1.32",
+                            "html": "Runs a Windows PowerShell script.\r\n\r\n Use javaposse.jobdsl.dsl.DslFactory#readFileFromWorkspace(java.lang.String) to read\r\n the script from a file.\r\n     ",
+                            "firstSentenceCommentText": "Runs a Windows PowerShell script."
                         }
                     ],
-                    "plugin": "powershell"
+                    "plugin": "powershell",
+                    "examples": "job('example') {\r\n    steps {\r\n        powerShell('Write-Output \"Hello World!\"')\r\n        powerShell(readFileFromWorkspace('build.ps1'))\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "prerequisite",
@@ -29287,26 +29415,26 @@
                         {
                             "parameters": [
                                 {
-                                    "name": "sbtNameArg",
+                                    "name": "sbtName",
                                     "type": "String"
                                 },
                                 {
-                                    "name": "actionsArg",
+                                    "name": "actions",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
                                 {
-                                    "name": "sbtFlagsArg",
+                                    "name": "sbtFlags",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
                                 {
-                                    "name": "jvmFlagsArg",
+                                    "name": "jvmFlags",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
                                 {
-                                    "name": "subdirPathArg",
+                                    "name": "subdirPath",
                                     "type": "String",
                                     "defaultValue": "null"
                                 },
@@ -29316,11 +29444,33 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "sbt(String sbtNameArg, String actionsArg = null, String sbtFlagsArg = null, String jvmFlagsArg = null, String subdirPathArg = null, Closure configure = null)",
-                            "availableSince": "1.16"
+                            "text": "sbt(String sbtName, String actions = null, String sbtFlags = null, String jvmFlags = null, String subdirPath = null, Closure configure = null)",
+                            "availableSince": "1.16",
+                            "html": "Invokes the Scala Build Tool (SBT).\r\n\r\n The closure parameter expects a configure block for direct manipulation of the generated XML. The\r\n <TT>org.jvnet.hudson.plugins.SbtPluginBuilder</TT> node is passed into the configure block.\r\n     ",
+                            "firstSentenceCommentText": "Invokes the Scala Build Tool (SBT)."
                         }
                     ],
-                    "plugin": "sbt"
+                    "plugin": "sbt",
+                    "examples": "job('example') {\r\n    steps {\r\n        sbt('SBT 0.12.3', 'test', '-Dsbt.log.noformat=true', '-Xmx2G -Xms512M', 'subproject')\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "setBuildResult",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "result",
+                                    "type": "String"
+                                }
+                            ],
+                            "text": "setBuildResult(String result)",
+                            "availableSince": "1.35",
+                            "html": "Set the build status.\r\n\r\n Must be one of <TT>'SUCCESS'</TT>, <TT>'UNSTABLE'</TT>, <TT>'FAILURE'</TT>, <TT>'ABORTED'</TT> or <TT>'CYCLE'</TT>.\r\n     ",
+                            "firstSentenceCommentText": "Set the build status."
+                        }
+                    ],
+                    "plugin": "fail-the-build-plugin",
+                    "examples": "job('example') {\r\n    steps {\r\n        setBuildResult('UNSTABLE')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "shell",
@@ -29328,13 +29478,16 @@
                         {
                             "parameters": [
                                 {
-                                    "name": "commandStr",
+                                    "name": "command",
                                     "type": "String"
                                 }
                             ],
-                            "text": "shell(String commandStr)"
+                            "text": "shell(String command)",
+                            "html": "Runs a shell script.\r\n\r\n Use javaposse.jobdsl.dsl.DslFactory#readFileFromWorkspace(java.lang.String) to read\r\n the script from a file.",
+                            "firstSentenceCommentText": "Runs a shell script."
                         }
-                    ]
+                    ],
+                    "examples": "job('example') {\r\n  steps {\r\n      shell('echo Hello World!')\r\n      shell(readFileFromWorkspace('build.sh'))\r\n  }\r\n}\r\n"
                 },
                 {
                     "name": "systemGroovyCommand",

@@ -2073,7 +2073,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "fallbackScript(String fallbackScript)"
+                            "text": "fallbackScript(String fallbackScript)",
+                            "html": "Provides alternate parameter value options in case the main script fails.",
+                            "firstSentenceCommentText": "Provides alternate parameter value options in case the main script fails."
                         }
                     ]
                 },
@@ -2087,7 +2089,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "script(String script)"
+                            "text": "script(String script)",
+                            "html": "Sets the script that will dynamically generate the parameter value options.",
+                            "firstSentenceCommentText": "Sets the script that will dynamically generate the parameter value options."
                         }
                     ]
                 }
@@ -2110,7 +2114,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "parameter(String name, String value)"
+                            "text": "parameter(String name, String value)",
+                            "html": "Adds parameter values for the Scriptler script.",
+                            "firstSentenceCommentText": "Adds parameter values for the Scriptler script."
                         }
                     ]
                 }
@@ -2129,7 +2135,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "choiceType(String choiceType)"
+                            "text": "choiceType(String choiceType)",
+                            "html": "Selects one of four different rendering options for the option values.\r\n\r\n Must be one of <TT>'SINGLE_SELECT'</TT> (default), <TT>'MULTI_SELECT'</TT>, <TT>'CHECKBOX'</TT> or <TT>'RADIO'</TT>.",
+                            "firstSentenceCommentText": "Selects one of four different rendering options for the option values."
                         }
                     ]
                 },
@@ -2143,7 +2151,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "description(String description)"
+                            "text": "description(String description)",
+                            "html": "Sets a description for the parameter.",
+                            "firstSentenceCommentText": "Sets a description for the parameter."
                         }
                     ]
                 },
@@ -2158,7 +2168,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "filterable(boolean filterable = true)"
+                            "text": "filterable(boolean filterable = true)",
+                            "html": "If set, provides a text box filter in the UI control where a text filter can be typed.",
+                            "firstSentenceCommentText": "If set, provides a text box filter in the UI control where a text filter can be typed."
                         }
                     ]
                 },
@@ -2173,6 +2185,8 @@
                                 }
                             ],
                             "text": "groovyScript(Closure closure)",
+                            "html": "Use a Groovy script to generate value options.",
+                            "firstSentenceCommentText": "Use a Groovy script to generate value options.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.parameter.ActiveChoiceGroovyScriptContext"
                         }
                     ]
@@ -2193,6 +2207,8 @@
                                 }
                             ],
                             "text": "scriptlerScript(String scriptId, Closure closure = null)",
+                            "html": "Use a Scriptler script to generate value options.",
+                            "firstSentenceCommentText": "Use a Scriptler script to generate value options.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.parameter.ActiveChoiceScriptlerScriptContext"
                         }
                     ]
@@ -2212,7 +2228,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "choiceType(String choiceType)"
+                            "text": "choiceType(String choiceType)",
+                            "html": "Selects one of four different rendering options for the option values.\r\n\r\n Must be one of <TT>'SINGLE_SELECT'</TT> (default), <TT>'MULTI_SELECT'</TT>, <TT>'CHECKBOX'</TT> or <TT>'RADIO'</TT>.",
+                            "firstSentenceCommentText": "Selects one of four different rendering options for the option values."
                         }
                     ]
                 },
@@ -2226,7 +2244,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "description(String description)"
+                            "text": "description(String description)",
+                            "html": "Sets a description for the parameter.",
+                            "firstSentenceCommentText": "Sets a description for the parameter."
                         }
                     ]
                 },
@@ -2241,7 +2261,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "filterable(boolean filterable = true)"
+                            "text": "filterable(boolean filterable = true)",
+                            "html": "If set, provides a text box filter in the UI control where a text filter can be typed.",
+                            "firstSentenceCommentText": "If set, provides a text box filter in the UI control where a text filter can be typed."
                         }
                     ]
                 },
@@ -2256,6 +2278,8 @@
                                 }
                             ],
                             "text": "groovyScript(Closure closure)",
+                            "html": "Use a Groovy script to generate value options.",
+                            "firstSentenceCommentText": "Use a Groovy script to generate value options.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.parameter.ActiveChoiceGroovyScriptContext"
                         }
                     ]
@@ -2270,7 +2294,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "referencedParameter(String referencedParameters)"
+                            "text": "referencedParameter(String referencedParameters)",
+                            "html": "Specifies a list of job parameters that trigger an auto-refresh.",
+                            "firstSentenceCommentText": "Specifies a list of job parameters that trigger an auto-refresh."
                         }
                     ]
                 },
@@ -2290,6 +2316,8 @@
                                 }
                             ],
                             "text": "scriptlerScript(String scriptId, Closure closure = null)",
+                            "html": "Use a Scriptler script to generate value options.",
+                            "firstSentenceCommentText": "Use a Scriptler script to generate value options.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.parameter.ActiveChoiceScriptlerScriptContext"
                         }
                     ]
@@ -2309,7 +2337,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "choiceType(String choiceType)"
+                            "text": "choiceType(String choiceType)",
+                            "html": "Selects one of four different rendering options for the option values.\r\n\r\n Must be one of <TT>'TEXT_BOX'</TT> (default), <TT>'FORMATTED_HTML'</TT>, <TT>'FORMATTED_HIDDEN_HTML'</TT>,\r\n <TT>'ORDERED_LIST'</TT> or <TT>'UNORDERED_LIST'</TT>.",
+                            "firstSentenceCommentText": "Selects one of four different rendering options for the option values."
                         }
                     ]
                 },
@@ -2323,7 +2353,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "description(String description)"
+                            "text": "description(String description)",
+                            "html": "Sets a description for the parameter.",
+                            "firstSentenceCommentText": "Sets a description for the parameter."
                         }
                     ]
                 },
@@ -2338,6 +2370,8 @@
                                 }
                             ],
                             "text": "groovyScript(Closure closure)",
+                            "html": "Use a Groovy script to generate value options.",
+                            "firstSentenceCommentText": "Use a Groovy script to generate value options.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.parameter.ActiveChoiceGroovyScriptContext"
                         }
                     ]
@@ -2353,7 +2387,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "omitValueField(boolean omitValueField = true)"
+                            "text": "omitValueField(boolean omitValueField = true)",
+                            "html": "Omits the hidden value field.",
+                            "firstSentenceCommentText": "Omits the hidden value field."
                         }
                     ]
                 },
@@ -2367,7 +2403,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "referencedParameter(String referencedParameters)"
+                            "text": "referencedParameter(String referencedParameters)",
+                            "html": "Specifies a list of job parameters that trigger an auto-refresh.",
+                            "firstSentenceCommentText": "Specifies a list of job parameters that trigger an auto-refresh."
                         }
                     ]
                 },
@@ -2387,6 +2425,8 @@
                                 }
                             ],
                             "text": "scriptlerScript(String scriptId, Closure closure = null)",
+                            "html": "Use a Scriptler script to generate value options.",
+                            "firstSentenceCommentText": "Use a Scriptler script to generate value options.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.parameter.ActiveChoiceScriptlerScriptContext"
                         }
                     ]
@@ -2406,7 +2446,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "defaultValue(String defaultValue)"
+                            "text": "defaultValue(String defaultValue)",
+                            "html": "Sets the default value for the parameter.",
+                            "firstSentenceCommentText": "Sets the default value for the parameter."
                         }
                     ]
                 },
@@ -2420,7 +2462,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "description(String description)"
+                            "text": "description(String description)",
+                            "html": "Sets a description for the parameter.",
+                            "firstSentenceCommentText": "Sets a description for the parameter."
                         }
                     ]
                 },
@@ -2435,7 +2479,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "required(boolean required = true)"
+                            "text": "required(boolean required = true)",
+                            "html": "If set, a value must be selected.",
+                            "firstSentenceCommentText": "If set, a value must be selected."
                         }
                     ]
                 },
@@ -2449,7 +2495,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "type(String type)"
+                            "text": "type(String type)",
+                            "html": "Specifies the type of credentials which should be selectable by the parameter.\r\n\r\n Must be a fully-qualified Java class name of a credentials type. Possible values include\r\n <TT>'com.cloudbees.plugins.credentials.common.StandardCredentials'</TT> (default, allows any type to be chosen),\r\n <TT>'com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl'</TT>, or\r\n <TT>'com.cloudbees.plugins.credentials.impl.CertificateCredentialsImpl'</TT>. Additional credentials types are\r\n provided by other plugins, e.g.\r\n <TT>'com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey'</TT> is provided by the\r\n <a href=\"https://wiki.jenkins-ci.org/display/JENKINS/SSH+Credentials+Plugin\">SSH Credentials Plugin</a> and\r\n <TT>'org.jenkinsci.plugins.plaincredentials.impl.FileCredentialsImpl'</TT> and\r\n <TT>'org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl'</TT> are provided by the\r\n <a href=\"https://wiki.jenkins-ci.org/display/JENKINS/Plain+Credentials+Plugin\">Plain Credentials Plugin</a>.",
+                            "firstSentenceCommentText": "Specifies the type of credentials which should be selectable by the parameter."
                         }
                     ]
                 }
@@ -2468,7 +2516,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "branch(String branch)"
+                            "text": "branch(String branch)",
+                            "html": "Set the name of branch to look in.",
+                            "firstSentenceCommentText": "Set the name of branch to look in."
                         }
                     ]
                 },
@@ -2482,7 +2532,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "defaultValue(String defaultValue)"
+                            "text": "defaultValue(String defaultValue)",
+                            "html": "Sets a default value for the parameter.",
+                            "firstSentenceCommentText": "Sets a default value for the parameter."
                         }
                     ]
                 },
@@ -2496,7 +2548,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "description(String description)"
+                            "text": "description(String description)",
+                            "html": "Sets a description for the parameter.",
+                            "firstSentenceCommentText": "Sets a description for the parameter."
                         }
                     ]
                 },
@@ -2510,7 +2564,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "sortMode(String sortMode)"
+                            "text": "sortMode(String sortMode)",
+                            "html": "Specifies the sort order for tags.\r\n\r\n Must be one of <TT>'NONE'</TT> (default), <TT>'ASCENDING_SMART'</TT>, <TT>'DESCENDING_SMART'</TT>,\r\n <TT>'ASCENDING'</TT> or <TT>'DESCENDING'</TT>.",
+                            "firstSentenceCommentText": "Specifies the sort order for tags."
                         }
                     ]
                 },
@@ -2524,7 +2580,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "tagFilter(String tagFilter)"
+                            "text": "tagFilter(String tagFilter)",
+                            "html": "Specifies a filter for tags.",
+                            "firstSentenceCommentText": "Specifies a filter for tags."
                         }
                     ]
                 },
@@ -2538,7 +2596,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "type(String type)"
+                            "text": "type(String type)",
+                            "html": "Specifies the type of selectable values.\r\n\r\n Must be one of <TT>'TAG'</TT> (default), <TT>'BRANCH'</TT>, <TT>'BRANCH_TAG'</TT> or <TT>'REVISION'</TT>.",
+                            "firstSentenceCommentText": "Specifies the type of selectable values."
                         }
                     ]
                 }
@@ -2563,7 +2623,9 @@
                                     "defaultValue": "'AllNodeEligibility'"
                                 }
                             ],
-                            "text": "allNodes(String trigger = 'allCases', String eligibility = 'AllNodeEligibility')"
+                            "text": "allNodes(String trigger = 'allCases', String eligibility = 'AllNodeEligibility')",
+                            "html": "Defines in which case a build on the next node should be triggered.\r\n\r\n The <TT>trigger</TT> argument defines in which case a build on the next node should be triggered, must be one of\r\n <TT>'allCases'</TT>, <TT>'success'</TT> or <TT>'unstable'</TT>.\r\n\r\n The <TT>eligibility</TT> argument defines how selected offline nodes should be handled, must be one of\r\n <TT>'AllNodeEligibility'</TT>, <TT>'IgnoreOfflineNodeEligibility'</TT> or\r\n <TT>'IgnoreTempOfflineNodeEligibility'</TT>.",
+                            "firstSentenceCommentText": "Defines in which case a build on the next node should be triggered."
                         }
                     ]
                 },
@@ -2577,7 +2639,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "defaultValue(String defaultValue)"
+                            "text": "defaultValue(String defaultValue)",
+                            "html": "Sets the default value for the parameter.",
+                            "firstSentenceCommentText": "Sets the default value for the parameter."
                         }
                     ]
                 },
@@ -2591,7 +2655,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "description(String description)"
+                            "text": "description(String description)",
+                            "html": "Sets a description for the parameter.",
+                            "firstSentenceCommentText": "Sets a description for the parameter."
                         }
                     ]
                 }
@@ -2610,7 +2676,9 @@
                                     "type": "List<String>"
                                 }
                             ],
-                            "text": "allowedNodes(List<String> nodes)"
+                            "text": "allowedNodes(List<String> nodes)",
+                            "html": "Specifies the nodes available for selection when job gets triggered manually. Defaults to all nodes if omitted.",
+                            "firstSentenceCommentText": "Specifies the nodes available for selection when job gets triggered manually. "
                         }
                     ]
                 },
@@ -2624,7 +2692,9 @@
                                     "type": "List<String>"
                                 }
                             ],
-                            "text": "defaultNodes(List<String> nodes)"
+                            "text": "defaultNodes(List<String> nodes)",
+                            "html": "Specifies the nodes used when job gets triggered by anything else then manually. Empty by default.",
+                            "firstSentenceCommentText": "Specifies the nodes used when job gets triggered by anything else then manually. "
                         }
                     ]
                 },
@@ -2638,7 +2708,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "description(String description)"
+                            "text": "description(String description)",
+                            "html": "Sets a description for the parameter.",
+                            "firstSentenceCommentText": "Sets a description for the parameter."
                         }
                     ]
                 },
@@ -2652,7 +2724,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "eligibility(String eligibility)"
+                            "text": "eligibility(String eligibility)",
+                            "html": "Defines how selected offline nodes should be handled.\r\n\r\n Must be one of <TT>'AllNodeEligibility'</TT> (default), <TT>'IgnoreOfflineNodeEligibility'</TT> or\r\n <TT>'IgnoreTempOfflineNodeEligibility'</TT>.",
+                            "firstSentenceCommentText": "Defines how selected offline nodes should be handled."
                         }
                     ]
                 },
@@ -2666,7 +2740,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "trigger(String trigger)"
+                            "text": "trigger(String trigger)",
+                            "html": "Defines in which case a build on the next node should be triggered.\r\n\r\n Must be one of <TT>'allCases'</TT>, <TT>'success'</TT>, <TT>'unstable'</TT>,\r\n <TT>'allowMultiSelectionForConcurrentBuilds'</TT> or <TT>'multiSelectionDisallowed'</TT> (default).",
+                            "firstSentenceCommentText": "Defines in which case a build on the next node should be triggered."
                         }
                     ]
                 }
@@ -2691,10 +2767,13 @@
                             ],
                             "text": "activeChoiceParam(String parameterName, Closure closure)",
                             "availableSince": "1.36",
+                            "html": "Defines a parameter that dynamically generates a list of value options for a build parameter using a Groovy\r\n script or a script from the Scriptler catalog.\r\n     ",
+                            "firstSentenceCommentText": "Defines a parameter that dynamically generates a list of value options for a build parameter using a Groovy\r\n script or a script from the Scriptler catalog.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.parameter.ActiveChoiceContext"
                         }
                     ],
-                    "plugin": "uno-choice"
+                    "plugin": "uno-choice",
+                    "examples": "job('example-1') {\r\n    parameters {\r\n        activeChoiceParam('CHOICE-1') {\r\n            description('Allows user choose from multiple choices')\r\n            filterable()\r\n            choiceType('SINGLE_SELECT')\r\n            groovyScript {\r\n                script('[\"choice1\", \"choice2\"]')\r\n                fallbackScript('\"fallback choice\"')\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\njob('example-2') {\r\n    parameters {\r\n        activeChoiceParam('CHOICE-1') {\r\n            description('Allows user choose from multiple choices')\r\n            filterable()\r\n            choiceType('SINGLE_SELECT')\r\n            scriptlerScript('scriptler-script1.groovy') {\r\n                parameter('param1', 'value1')\r\n                parameter('param2', 'value2')\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "activeChoiceReactiveParam",
@@ -2713,10 +2792,13 @@
                             ],
                             "text": "activeChoiceReactiveParam(String parameterName, Closure closure = null)",
                             "availableSince": "1.38",
+                            "html": "Defines a parameter that dynamically generates a list of value options for a build parameter using a Groovy\r\n script or a script from the Scriptler catalog and that dynamically updates when the value of other job UI\r\n controls change.\r\n     ",
+                            "firstSentenceCommentText": "Defines a parameter that dynamically generates a list of value options for a build parameter using a Groovy\r\n script or a script from the Scriptler catalog and that dynamically updates when the value of other job UI\r\n controls change.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.parameter.ActiveChoiceReactiveContext"
                         }
                     ],
-                    "plugin": "uno-choice"
+                    "plugin": "uno-choice",
+                    "examples": "job('example-1') {\r\n    parameters {\r\n        activeChoiceReactiveParam('CHOICE-1') {\r\n            description('Allows user choose from multiple choices')\r\n            filterable()\r\n            choiceType('SINGLE_SELECT')\r\n            groovyScript {\r\n                script('[\"choice1\", \"choice2\"]')\r\n                fallbackScript('\"fallback choice\"')\r\n            }\r\n            referencedParameter('BOOLEAN-PARAM-1')\r\n            referencedParameter('BOOLEAN-PARAM-2')\r\n        }\r\n    }\r\n}\r\n\r\njob('example-2') {\r\n    parameters {\r\n        activeChoiceReactiveParam('CHOICE-1') {\r\n            scriptlerScript('scriptler-script1.groovy') {\r\n                parameter('param1', 'value1')\r\n                parameter('param2', 'value2')\r\n            }\r\n            referencedParameter('BOOLEAN-PARAM-1')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "activeChoiceReactiveReferenceParam",
@@ -2735,10 +2817,13 @@
                             ],
                             "text": "activeChoiceReactiveReferenceParam(String parameterName, Closure closure = null)",
                             "availableSince": "1.38",
+                            "html": "Defines a parameter that dynamically generates a list of value options for a build parameter using a Groovy\r\n script or a script from the Scriptler catalog and that dynamically updates when the value of other job UI\r\n controls change.\r\n     ",
+                            "firstSentenceCommentText": "Defines a parameter that dynamically generates a list of value options for a build parameter using a Groovy\r\n script or a script from the Scriptler catalog and that dynamically updates when the value of other job UI\r\n controls change.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.parameter.ActiveChoiceReactiveReferenceContext"
                         }
                     ],
-                    "plugin": "uno-choice"
+                    "plugin": "uno-choice",
+                    "examples": "job('example-1') {\r\n    parameters {\r\n        activeChoiceReactiveReferenceParam('CHOICE-1') {\r\n            description('Allows user choose from multiple choices')\r\n            omitValueField()\r\n            choiceType('FORMATTED_HIDDEN_HTML')\r\n            groovyScript {\r\n                script('[\"choice1\", \"choice2\"]')\r\n                fallbackScript('\"fallback choice\"')\r\n            }\r\n            referencedParameter('BOOLEAN-PARAM-1')\r\n            referencedParameter('BOOLEAN-PARAM-2')\r\n        }\r\n    }\r\n}\r\n\r\njob('example-2') {\r\n    parameters {\r\n        activeChoiceReactiveReferenceParam('CHOICE-1') {\r\n            scriptlerScript('scriptler-script1.groovy') {\r\n                parameter('param1', 'value1')\r\n                parameter('param2', 'value2')\r\n            }\r\n            referencedParameter('BOOLEAN-PARAM-1')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "booleanParam",
@@ -2760,9 +2845,12 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "booleanParam(String parameterName, boolean defaultValue = false, String description = null)"
+                            "text": "booleanParam(String parameterName, boolean defaultValue = false, String description = null)",
+                            "html": "Defines a simple boolean parameter.",
+                            "firstSentenceCommentText": "Defines a simple boolean parameter."
                         }
-                    ]
+                    ],
+                    "examples": "job('example') {\r\n    parameters {\r\n        booleanParam('RUN_TESTS', true, 'uncheck to disable tests')\r\n    }\r\n}"
                 },
                 {
                     "name": "choiceParam",
@@ -2783,9 +2871,12 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "choiceParam(String parameterName, List<String> options, String description = null)"
+                            "text": "choiceParam(String parameterName, List<String> options, String description = null)",
+                            "html": "Defines a simple string parameter, which can be selected from a list.",
+                            "firstSentenceCommentText": "Defines a simple string parameter, which can be selected from a list."
                         }
-                    ]
+                    ],
+                    "examples": "job('example') {\r\n    parameters {\r\n        choiceParam('myParameterName', ['option 1 (default)', 'option 2', 'option 3'], 'my description')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "credentialsParam",
@@ -2804,10 +2895,13 @@
                             ],
                             "text": "credentialsParam(String paramName, Closure closure = null)",
                             "availableSince": "1.38",
+                            "html": "Defines a credentials parameter. The string value will be the UUID of the credential.\r\n     ",
+                            "firstSentenceCommentText": "Defines a credentials parameter. ",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.parameter.CredentialsParameterContext"
                         }
                     ],
-                    "plugin": "credentials"
+                    "plugin": "credentials",
+                    "examples": "job('example') {\r\n    parameters {\r\n        credentialsParam('DEPLOY_KEY') {\r\n            type('com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey')\r\n            required()\r\n            defaultValue('ssh-key-staging')\r\n            description('SSH Key for deploying build artifacts')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "fileParam",
@@ -2824,9 +2918,12 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "fileParam(String fileLocation, String description = null)"
+                            "text": "fileParam(String fileLocation, String description = null)",
+                            "html": "Defines a parameters that accepts a file submission.",
+                            "firstSentenceCommentText": "Defines a parameters that accepts a file submission."
                         }
-                    ]
+                    ],
+                    "examples": "job('example') {\r\n    parameters {\r\n        fileParam('test/upload.zip', 'my description')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "gitParam",
@@ -2845,10 +2942,13 @@
                             ],
                             "text": "gitParam(String parameterName, Closure closure = null)",
                             "availableSince": "1.31",
+                            "html": "Defines a parameter that allows select a Git tag (or revision number).\r\n     ",
+                            "firstSentenceCommentText": "Defines a parameter that allows select a Git tag (or revision number).",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.GitParamContext"
                         }
                     ],
-                    "plugin": "git-parameter"
+                    "plugin": "git-parameter",
+                    "examples": "job('example') {\r\n    parameters {\r\n        gitParam('sha') {\r\n            description('Revision commit SHA')\r\n            type('REVISION')\r\n            branch('master')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "labelParam",
@@ -2867,10 +2967,13 @@
                             ],
                             "text": "labelParam(String parameterName, Closure labelParamClosure = null)",
                             "availableSince": "1.30",
+                            "html": "Defines a parameter to select a label used to identify/restrict the node where this job should run on.\r\n     ",
+                            "firstSentenceCommentText": "Defines a parameter to select a label used to identify/restrict the node where this job should run on.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.LabelParamContext"
                         }
                     ],
-                    "plugin": "nodelabelparameter"
+                    "plugin": "nodelabelparameter",
+                    "examples": "job('example-1') {\r\n    parameters {\r\n        labelParam('MY_LABEL')\r\n    }\r\n}\r\n\r\n// runs on all nodes which are labeled with \"linux\" and are online\r\njob('example-2') {\r\n    parameters {\r\n        labelParam('MY_LABEL') {\r\n            defaultValue('linux')\r\n            description('Select nodes')\r\n            allNodes('allCases', 'IgnoreOfflineNodeEligibility')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "listTagsParam",
@@ -2915,10 +3018,13 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "listTagsParam(String parameterName, String scmUrl, String tagFilterRegex, boolean sortNewestFirst = false, boolean sortZtoA = false, String maxTagsToDisplay = 'all', String defaultValue = null, String description = null)"
+                            "text": "listTagsParam(String parameterName, String scmUrl, String tagFilterRegex, boolean sortNewestFirst = false, boolean sortZtoA = false, String maxTagsToDisplay = 'all', String defaultValue = null, String description = null)",
+                            "html": "Defines a parameter that allows to select a Subversion tag from which to create the working copy for the project.",
+                            "firstSentenceCommentText": "Defines a parameter that allows to select a Subversion tag from which to create the working copy for the project."
                         }
                     ],
-                    "plugin": "subversion"
+                    "plugin": "subversion",
+                    "examples": "job('example') {\r\n    parameters {\r\n        listTagsParam('myParameterName', \"http://kenai.com/svn/myProject/tags\", /^mytagsfilterregex/, true, true)\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "nodeParam",
@@ -2937,10 +3043,13 @@
                             ],
                             "text": "nodeParam(String parameterName, Closure nodeParamClosure = null)",
                             "availableSince": "1.26",
+                            "html": "Defines a parameter to select a list of nodes where the job could potentially be executed on.\r\n     ",
+                            "firstSentenceCommentText": "Defines a parameter to select a list of nodes where the job could potentially be executed on.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.NodeParamContext"
                         }
                     ],
-                    "plugin": "nodelabelparameter"
+                    "plugin": "nodelabelparameter",
+                    "examples": "// allows to select a single node from all nodes available\r\njob('example-1') {\r\n    parameters {\r\n        nodeParam('TEST_HOST')\r\n    }\r\n}\r\n\r\n// runs on node1 by default and can be run on node1, node2 or node3 when triggered manually\r\njob('example-2') {\r\n    parameters {\r\n        nodeParam('TEST_HOST') {\r\n            description('select test host')\r\n            defaultNodes(['node1'])\r\n            allowedNodes(['node1', 'node2', 'node3'])\r\n            trigger('multiSelectionDisallowed')\r\n            eligibility('IgnoreOfflineNodeEligibility')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "runParam",
@@ -2966,9 +3075,12 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "runParam(String parameterName, String jobToRun, String description = null, String filter = null)"
+                            "text": "runParam(String parameterName, String jobToRun, String description = null, String filter = null)",
+                            "html": "Defines a run parameter, where users can pick a single run of a certain project.",
+                            "firstSentenceCommentText": "Defines a run parameter, where users can pick a single run of a certain project."
                         }
-                    ]
+                    ],
+                    "examples": "job('example') {\r\n    parameters {\r\n        runParam('myParameterName', 'myJobName', 'my description', 'SUCCESSFUL')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "stringParam",
@@ -2990,9 +3102,12 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "stringParam(String parameterName, String defaultValue = null, String description = null)"
+                            "text": "stringParam(String parameterName, String defaultValue = null, String description = null)",
+                            "html": "Defines a simple text parameter, where users can enter a string value.",
+                            "firstSentenceCommentText": "Defines a simple text parameter, where users can enter a string value."
                         }
-                    ]
+                    ],
+                    "examples": "job('example') {\r\n    parameters {\r\n        stringParam('myParameterName', 'my default stringParam value', 'my description')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "textParam",
@@ -3014,9 +3129,12 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "textParam(String parameterName, String defaultValue = null, String description = null)"
+                            "text": "textParam(String parameterName, String defaultValue = null, String description = null)",
+                            "html": "Defines a simple text parameter, where users can enter a multi-line string value.",
+                            "firstSentenceCommentText": "Defines a simple text parameter, where users can enter a multi-line string value."
                         }
-                    ]
+                    ],
+                    "examples": "job('example') {\r\n    parameters {\r\n        textParam('myParameterName', 'my default textParam value', 'my description')\r\n    }\r\n}\r\n"
                 }
             ]
         },
@@ -10192,10 +10310,13 @@
                             ],
                             "text": "criticalBlock(Closure closure)",
                             "availableSince": "1.24",
+                            "html": "Contains the build steps of the critical zone defined by the\r\n javaposse.jobdsl.dsl.helpers.wrapper.WrapperContext#exclusionResources(java.lang.Iterable) wrapper.\r\n     ",
+                            "firstSentenceCommentText": "Contains the build steps of the critical zone defined by the\r\n javaposse.jobdsl.dsl.helpers.wrapper.WrapperContext#exclusionResources(java.lang.Iterable) wrapper.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.StepContext"
                         }
                     ],
-                    "plugin": "Exclusion"
+                    "plugin": "Exclusion",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        exclusionResources('first', 'second')\r\n    }\r\n    steps {\r\n        criticalBlock {\r\n            shell('echo Hello World!')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "debianPackage",
@@ -10554,10 +10675,13 @@
                                 }
                             ],
                             "text": "nodejsCommand(String commandScript, String installation)",
-                            "availableSince": "1.31"
+                            "availableSince": "1.31",
+                            "html": "Executes a NodeJS script. Use javaposse.jobdsl.dsl.DslFactory#readFileFromWorkspace(java.lang.String) to read scripts from a file.\r\n     ",
+                            "firstSentenceCommentText": "Executes a NodeJS script. "
                         }
                     ],
-                    "plugin": "nodejs"
+                    "plugin": "nodejs",
+                    "examples": "job('example') {\r\n    steps {\r\n        nodejsCommand('console.log(\"Hello World!\")', 'Node 0.12.0')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "powerShell",
@@ -12437,7 +12561,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "deleteCommand(String deleteCommand)"
+                            "text": "deleteCommand(String deleteCommand)",
+                            "html": "If set, an external program will be used for deletion.",
+                            "firstSentenceCommentText": "If set, an external program will be used for deletion."
                         }
                     ]
                 },
@@ -12452,7 +12578,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "deleteDirectories(boolean deleteDirectories = true)"
+                            "text": "deleteDirectories(boolean deleteDirectories = true)",
+                            "html": "If set, the pattern will also be applied to directories. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "If set, the pattern will also be applied to directories. "
                         }
                     ]
                 },
@@ -12466,7 +12594,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "excludePattern(String pattern)"
+                            "text": "excludePattern(String pattern)",
+                            "html": "Makes cleanup more selective by specifying file to be excluded from deletion using Ant syntax.",
+                            "firstSentenceCommentText": "Makes cleanup more selective by specifying file to be excluded from deletion using Ant syntax."
                         }
                     ]
                 },
@@ -12495,7 +12625,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "includePattern(String pattern)"
+                            "text": "includePattern(String pattern)",
+                            "html": "Makes cleanup more selective by specifying file to be deleted using Ant syntax.",
+                            "firstSentenceCommentText": "Makes cleanup more selective by specifying file to be deleted using Ant syntax."
                         }
                     ]
                 }
@@ -16706,18 +16838,6 @@
             "type": "javaposse.jobdsl.dsl.helpers.wrapper.PortsContext",
             "methods": [
                 {
-                    "name": "canEqual",
-                    "signatures": [
-                        
-                    ]
-                },
-                {
-                    "name": "equals",
-                    "signatures": [
-                        
-                    ]
-                },
-                {
                     "name": "glassfish",
                     "signatures": [
                         {
@@ -16735,14 +16855,10 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "glassfish(String port, String user, String password)"
+                            "text": "glassfish(String port, String user, String password)",
+                            "html": "Allocates a GlassFish JMX port that lets Jenkins shut down a run-away GlassFish through JMX.\r\n\r\n For security reasons, do not use a hard-coded password. See\r\n <a href=\"https://github.com/jenkinsci/job-dsl-plugin/wiki/Handling-Credentials\">Handling Credentials</a> for\r\n details about handling credentials in DSL scripts.",
+                            "firstSentenceCommentText": "Allocates a GlassFish JMX port that lets Jenkins shut down a run-away GlassFish through JMX."
                         }
-                    ]
-                },
-                {
-                    "name": "hashCode",
-                    "signatures": [
-                        
                     ]
                 },
                 {
@@ -16759,14 +16875,10 @@
                                     "type": "String..."
                                 }
                             ],
-                            "text": "port(String port, String... ports)"
+                            "text": "port(String port, String... ports)",
+                            "html": "Allocates plain TCP ports.",
+                            "firstSentenceCommentText": "Allocates plain TCP ports."
                         }
-                    ]
-                },
-                {
-                    "name": "toString",
-                    "signatures": [
-                        
                     ]
                 },
                 {
@@ -16783,7 +16895,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "tomcat(String port, String password)"
+                            "text": "tomcat(String port, String password)",
+                            "html": "Allocates a Tomcat shutdown port that lets Jenkins shut down a run-away Tomcat through the shut down port.\r\n\r\n For security reasons, do not use a hard-coded password. See\r\n <a href=\"https://github.com/jenkinsci/job-dsl-plugin/wiki/Handling-Credentials\">Handling Credentials</a> for\r\n details about handling credentials in DSL scripts.",
+                            "firstSentenceCommentText": "Allocates a Tomcat shutdown port that lets Jenkins shut down a run-away Tomcat through the shut down port."
                         }
                     ]
                 }
@@ -16802,7 +16916,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "targetLocation(String targetLocation)"
+                            "text": "targetLocation(String targetLocation)",
+                            "html": "Defines where the file should be created on the slave.  If it is blank, a temporary file will be created.",
+                            "firstSentenceCommentText": "Defines where the file should be created on the slave.  "
                         }
                     ]
                 },
@@ -16816,7 +16932,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "variable(String variable)"
+                            "text": "variable(String variable)",
+                            "html": "Allows to define an environment variable with which refers to the file location.",
+                            "firstSentenceCommentText": "Allows to define an environment variable with which refers to the file location."
                         }
                     ]
                 }
@@ -16842,6 +16960,8 @@
                             ],
                             "text": "custom(String fileName, Closure configFileClosure = null)",
                             "availableSince": "1.35",
+                            "html": "Makes a custom file available to the build.\r\n     ",
+                            "firstSentenceCommentText": "Makes a custom file available to the build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.ConfigFileContext"
                         }
                     ]
@@ -16862,6 +16982,8 @@
                                 }
                             ],
                             "text": "file(String fileName, Closure configFileClosure = null)",
+                            "html": "An alias for <a href='#custom(java.lang.String, groovy.lang.Closure)'>custom</a>.\r\n     ",
+                            "firstSentenceCommentText": "An alias for custom.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.ConfigFileContext"
                         }
                     ]
@@ -16883,6 +17005,8 @@
                             ],
                             "text": "mavenSettings(String fileName, Closure configFileClosure = null)",
                             "availableSince": "1.35",
+                            "html": "Makes a Maven settings file available to the build.\r\n     ",
+                            "firstSentenceCommentText": "Makes a Maven settings file available to the build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.ConfigFileContext"
                         }
                     ]
@@ -16906,7 +17030,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "file(String variable, String credentials)"
+                            "text": "file(String variable, String credentials)",
+                            "html": "Copies the file given in the credentials to a temporary location, then sets the variable to that location.",
+                            "firstSentenceCommentText": "Copies the file given in the credentials to a temporary location, then sets the variable to that location."
                         }
                     ]
                 },
@@ -16924,7 +17050,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "string(String variable, String credentials)"
+                            "text": "string(String variable, String credentials)",
+                            "html": "Sets a variable to the text given in the credentials.",
+                            "firstSentenceCommentText": "Sets a variable to the text given in the credentials."
                         }
                     ]
                 },
@@ -16942,7 +17070,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "usernamePassword(String variable, String credentials)"
+                            "text": "usernamePassword(String variable, String credentials)",
+                            "html": "Sets a variable to the username and password given in the credentials, separated by a colon (:).",
+                            "firstSentenceCommentText": "Sets a variable to the username and password given in the credentials, separated by a colon (:)."
                         },
                         {
                             "parameters": [
@@ -16960,7 +17090,9 @@
                                 }
                             ],
                             "text": "usernamePassword(String userVariableName, String passwordVariableName, String credentials)",
-                            "availableSince": "1.31"
+                            "availableSince": "1.31",
+                            "html": "Sets one variable to the username and one variable to the password given in the credentials.\r\n     ",
+                            "firstSentenceCommentText": "Sets one variable to the username and one variable to the password given in the credentials."
                         }
                     ],
                     "plugin": "credentials-binding"
@@ -16979,7 +17111,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "zipFile(String variable, String credentials)"
+                            "text": "zipFile(String variable, String credentials)",
+                            "html": "Unpacks the ZIP file given in the credentials to a temporary directory, then sets the variable to that location.",
+                            "firstSentenceCommentText": "Unpacks the ZIP file given in the credentials to a temporary directory, then sets the variable to that location."
                         }
                     ]
                 }
@@ -16999,7 +17133,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "convertHomesToUppercase(boolean convertHomesToUppercase = true)"
+                            "text": "convertHomesToUppercase(boolean convertHomesToUppercase = true)",
+                            "html": "Converts <TT>#ToolName_HOME</TT> variables to the upper-case. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Converts #ToolName_HOME variables to the upper-case. "
                         }
                     ]
                 },
@@ -17014,7 +17150,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "skipMasterInstallation(boolean skipMasterInstallation = true)"
+                            "text": "skipMasterInstallation(boolean skipMasterInstallation = true)",
+                            "html": "Skips installation of tools at the matrix master job. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Skips installation of tools at the matrix master job. "
                         }
                     ]
                 }
@@ -17140,7 +17278,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "delete(boolean delete = true)"
+                            "text": "delete(boolean delete = true)",
+                            "html": "Deletes copied keychains after build. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Deletes copied keychains after build. "
                         }
                     ]
                 },
@@ -17163,7 +17303,9 @@
                                     "defaultValue": "''"
                                 }
                             ],
-                            "text": "keychain(String keychain, String identity, String prefix = '')"
+                            "text": "keychain(String keychain, String identity, String prefix = '')",
+                            "html": "Adds a keychain. Can be used multiple times to add more keychains.\r\n With a single keychain, the prefix is optional.",
+                            "firstSentenceCommentText": "Adds a keychain. "
                         }
                     ]
                 },
@@ -17178,7 +17320,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "overwrite(boolean overwrite = true)"
+                            "text": "overwrite(boolean overwrite = true)",
+                            "html": "Overwrites existing keychains. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Overwrites existing keychains. "
                         }
                     ]
                 }
@@ -17198,7 +17342,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "failBuild(boolean failBuild = true)"
+                            "text": "failBuild(boolean failBuild = true)",
+                            "html": "Fails the build when the log size exceeds the maximum size. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Fails the build when the log size exceeds the maximum size. "
                         }
                     ]
                 },
@@ -17212,7 +17358,9 @@
                                     "type": "int"
                                 }
                             ],
-                            "text": "maxSize(int maxSize)"
+                            "text": "maxSize(int maxSize)",
+                            "html": "Sets the maximum allowed size for the output log.",
+                            "firstSentenceCommentText": "Sets the maximum allowed size for the output log."
                         }
                     ]
                 }
@@ -17231,7 +17379,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "cleanupParameter(String cleanupParameter)"
+                            "text": "cleanupParameter(String cleanupParameter)",
+                            "html": "Set this field to a boolean environment variable and if the variables value is set to true than the workspace\r\n will be cleaned up.",
+                            "firstSentenceCommentText": "Set this field to a boolean environment variable and if the variables value is set to true than the workspace\r\n will be cleaned up."
                         }
                     ]
                 },
@@ -17245,7 +17395,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "deleteCommand(String deleteCommand)"
+                            "text": "deleteCommand(String deleteCommand)",
+                            "html": "If set, an external program will be used for deletion.",
+                            "firstSentenceCommentText": "If set, an external program will be used for deletion."
                         }
                     ]
                 },
@@ -17260,7 +17412,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "deleteDirectories(boolean deleteDirectories = true)"
+                            "text": "deleteDirectories(boolean deleteDirectories = true)",
+                            "html": "If set, the pattern will also be applied to directories. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "If set, the pattern will also be applied to directories. "
                         }
                     ]
                 },
@@ -17274,7 +17428,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "excludePattern(String pattern)"
+                            "text": "excludePattern(String pattern)",
+                            "html": "Makes cleanup more selective by specifying file to be excluded from deletion using Ant syntax.",
+                            "firstSentenceCommentText": "Makes cleanup more selective by specifying file to be excluded from deletion using Ant syntax."
                         }
                     ]
                 },
@@ -17288,7 +17444,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "includePattern(String pattern)"
+                            "text": "includePattern(String pattern)",
+                            "html": "Makes cleanup more selective by specifying file to be deleted using Ant syntax.",
+                            "firstSentenceCommentText": "Makes cleanup more selective by specifying file to be deleted using Ant syntax."
                         }
                     ]
                 }
@@ -17308,7 +17466,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "failOnError(boolean failOnError = true)"
+                            "text": "failOnError(boolean failOnError = true)",
+                            "html": "Fails the build when one of the steps fails. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Fails the build when one of the steps fails. "
                         }
                     ]
                 },
@@ -17323,6 +17483,8 @@
                                 }
                             ],
                             "text": "steps(Closure closure)",
+                            "html": "Adds build steps to be run before SCM checkout.",
+                            "firstSentenceCommentText": "Adds build steps to be run before SCM checkout.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.StepContext"
                         }
                     ]
@@ -17342,7 +17504,9 @@
                                     "type": "String..."
                                 }
                             ],
-                            "text": "gems(String... gems)"
+                            "text": "gems(String... gems)",
+                            "html": "Specifies which gems should be pre-installed.",
+                            "firstSentenceCommentText": "Specifies which gems should be pre-installed."
                         }
                     ]
                 },
@@ -17357,7 +17521,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "ignoreLocalVersion(boolean ignore = true)"
+                            "text": "ignoreLocalVersion(boolean ignore = true)",
+                            "html": "Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Defaults to false."
                         }
                     ]
                 },
@@ -17371,7 +17537,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "rbenvRepository(String repository)"
+                            "text": "rbenvRepository(String repository)",
+                            "html": "Specifies a rbenv git repository. Defaults to <TT>'https://github.com/sstephenson/rbenv.git'</TT>.",
+                            "firstSentenceCommentText": "Specifies a rbenv git repository. "
                         }
                     ]
                 },
@@ -17385,7 +17553,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "rbenvRevision(String revision)"
+                            "text": "rbenvRevision(String revision)",
+                            "html": "Specifies a branch in the rbenv git repository. Defaults to <TT>'master'</TT>.",
+                            "firstSentenceCommentText": "Specifies a branch in the rbenv git repository. "
                         }
                     ]
                 },
@@ -17399,7 +17569,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "root(String root)"
+                            "text": "root(String root)",
+                            "html": "Sets the <TT>RBENV_ROOT</TT>. Defaults to <TT>'$HOME/.rbenv'</TT>.",
+                            "firstSentenceCommentText": "Sets the RBENV_ROOT. "
                         }
                     ]
                 },
@@ -17413,7 +17585,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "rubyBuildRepository(String repository)"
+                            "text": "rubyBuildRepository(String repository)",
+                            "html": "Specifies a ruby-build git repository. Defaults to <TT>'https://github.com/sstephenson/ruby-build.git'</TT>.",
+                            "firstSentenceCommentText": "Specifies a ruby-build git repository. "
                         }
                     ]
                 },
@@ -17427,7 +17601,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "rubyBuildRevision(String revision)"
+                            "text": "rubyBuildRevision(String revision)",
+                            "html": "Specifies a branch in the ruby-build git repository. Defaults to <TT>'master'</TT>.",
+                            "firstSentenceCommentText": "Specifies a branch in the ruby-build git repository. "
                         }
                     ]
                 }
@@ -17446,7 +17622,9 @@
                                     "type": "Closure"
                                 }
                             ],
-                            "text": "configure(Closure closure)"
+                            "text": "configure(Closure closure)",
+                            "html": "Allows direct manipulation of the generated XML. The <TT>ReleaseWrapper</TT> node is passed into the configure\r\n block.\r\n     ",
+                            "firstSentenceCommentText": "Allows direct manipulation of the generated XML. "
                         }
                     ]
                 },
@@ -17461,7 +17639,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "doNotKeepLog(boolean doNotKeepLog = true)"
+                            "text": "doNotKeepLog(boolean doNotKeepLog = true)",
+                            "html": "If set, release builds will not be automatically kept forever. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "If set, release builds will not be automatically kept forever. "
                         }
                     ]
                 },
@@ -17476,7 +17656,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "overrideBuildParameters(boolean overrideBuildParameters = true)"
+                            "text": "overrideBuildParameters(boolean overrideBuildParameters = true)",
+                            "html": "If set, a release can override the build parameters.",
+                            "firstSentenceCommentText": "If set, a release can override the build parameters."
                         }
                     ]
                 },
@@ -17491,6 +17673,8 @@
                                 }
                             ],
                             "text": "parameters(Closure parametersClosure)",
+                            "html": "Add parameters for the release.",
+                            "firstSentenceCommentText": "Add parameters for the release.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.BuildParametersContext"
                         }
                     ]
@@ -17506,6 +17690,8 @@
                                 }
                             ],
                             "text": "postBuildSteps(Closure closure)",
+                            "html": "Adds build steps to run after a successful or failed release.",
+                            "firstSentenceCommentText": "Adds build steps to run after a successful or failed release.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.StepContext"
                         }
                     ]
@@ -17521,6 +17707,8 @@
                                 }
                             ],
                             "text": "postFailedBuildSteps(Closure closure)",
+                            "html": "Adds build steps to run after a failed release.",
+                            "firstSentenceCommentText": "Adds build steps to run after a failed release.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.StepContext"
                         }
                     ]
@@ -17536,6 +17724,8 @@
                                 }
                             ],
                             "text": "postSuccessfulBuildSteps(Closure closure)",
+                            "html": "Adds build steps to run after a successful release.",
+                            "firstSentenceCommentText": "Adds build steps to run after a successful release.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.StepContext"
                         }
                     ]
@@ -17551,6 +17741,8 @@
                                 }
                             ],
                             "text": "preBuildSteps(Closure closure)",
+                            "html": "Adds build steps to run before the release.",
+                            "firstSentenceCommentText": "Adds build steps to run before the release.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.StepContext"
                         }
                     ]
@@ -17565,7 +17757,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "releaseVersionTemplate(String releaseVersionTemplate)"
+                            "text": "releaseVersionTemplate(String releaseVersionTemplate)",
+                            "html": "Sets a template used to tell the release process how to formulate a release version string.",
+                            "firstSentenceCommentText": "Sets a template used to tell the release process how to formulate a release version string."
                         }
                     ]
                 }
@@ -17582,7 +17776,9 @@
                                 
                             ],
                             "text": "abortBuild()",
-                            "availableSince": "1.30"
+                            "availableSince": "1.30",
+                            "html": "Aborts the build. This is a default operation performed if no operations are specified.\r\n     ",
+                            "firstSentenceCommentText": "Aborts the build. "
                         }
                     ],
                     "plugin": "build-timeout"
@@ -17599,7 +17795,9 @@
                                 }
                             ],
                             "text": "absolute(int minutes = 3)",
-                            "availableSince": "1.24"
+                            "availableSince": "1.24",
+                            "html": "Aborts the build based on a fixed time-out.\r\n     ",
+                            "firstSentenceCommentText": "Aborts the build based on a fixed time-out."
                         }
                     ]
                 },
@@ -17625,7 +17823,9 @@
                                 }
                             ],
                             "text": "elastic(int percentage = 150, int numberOfBuilds = 3, int minutesDefault = 60)",
-                            "availableSince": "1.24"
+                            "availableSince": "1.24",
+                            "html": "Defines time to wait before killing the build as a percentage of the mean of the duration of the last\r\n successful builds.\r\n     ",
+                            "firstSentenceCommentText": "Defines time to wait before killing the build as a percentage of the mean of the duration of the last\r\n successful builds."
                         }
                     ]
                 },
@@ -17637,7 +17837,9 @@
                                 
                             ],
                             "text": "failBuild()",
-                            "availableSince": "1.24"
+                            "availableSince": "1.24",
+                            "html": "Marked the build as failed.\r\n     ",
+                            "firstSentenceCommentText": "Marked the build as failed."
                         },
                         {
                             "parameters": [
@@ -17659,7 +17861,9 @@
                                 
                             ],
                             "text": "likelyStuck()",
-                            "availableSince": "1.24"
+                            "availableSince": "1.24",
+                            "html": "Uses a heuristics based approach to detect builds that are suspiciously running for a long time.\r\n     ",
+                            "firstSentenceCommentText": "Uses a heuristics based approach to detect builds that are suspiciously running for a long time."
                         }
                     ]
                 },
@@ -17675,7 +17879,9 @@
                                 }
                             ],
                             "text": "noActivity(int seconds = 180)",
-                            "availableSince": "1.24"
+                            "availableSince": "1.24",
+                            "html": "Aborts the build when the specified seconds have passed since the last log output.\r\n     ",
+                            "firstSentenceCommentText": "Aborts the build when the specified seconds have passed since the last log output."
                         }
                     ],
                     "plugin": "build-timeout"
@@ -17691,7 +17897,9 @@
                                 }
                             ],
                             "text": "writeDescription(String description)",
-                            "availableSince": "1.24"
+                            "availableSince": "1.24",
+                            "html": "Sets the build description.\r\n     ",
+                            "firstSentenceCommentText": "Sets the build description."
                         }
                     ]
                 }
@@ -17710,7 +17918,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "assignedLabels(String assignedLabels)"
+                            "text": "assignedLabels(String assignedLabels)",
+                            "html": "Starts Xvfb only on nodes with the specified labels.",
+                            "firstSentenceCommentText": "Starts Xvfb only on nodes with the specified labels."
                         }
                     ]
                 },
@@ -17725,7 +17935,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "autoDisplayName(boolean autoDisplayName = true)"
+                            "text": "autoDisplayName(boolean autoDisplayName = true)",
+                            "html": "Lets Xvfb choose the display number automatically. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Lets Xvfb choose the display number automatically. "
                         }
                     ]
                 },
@@ -17740,7 +17952,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "debug(boolean debug = true)"
+                            "text": "debug(boolean debug = true)",
+                            "html": "Redirects the output of Xvfb into the job log. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Redirects the output of Xvfb into the job log. "
                         }
                     ]
                 },
@@ -17754,7 +17968,9 @@
                                     "type": "int"
                                 }
                             ],
-                            "text": "displayNameOffset(int displayNameOffset)"
+                            "text": "displayNameOffset(int displayNameOffset)",
+                            "html": "Specifies an offset to be added to the job's executor number which will form the display name. Defaults to 1.",
+                            "firstSentenceCommentText": "Specifies an offset to be added to the job's executor number which will form the display name. "
                         }
                     ]
                 },
@@ -17769,7 +17985,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "parallelBuild(boolean parallelBuild = true)"
+                            "text": "parallelBuild(boolean parallelBuild = true)",
+                            "html": "If set, prevents collision when running multiple Jenkins nodes on the same machine. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "If set, prevents collision when running multiple Jenkins nodes on the same machine. "
                         }
                     ]
                 },
@@ -17783,7 +18001,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "screen(String screen)"
+                            "text": "screen(String screen)",
+                            "html": "Changes the screen resolution and pixel depth. Default to <TT>'1024x768x24'</TT>.",
+                            "firstSentenceCommentText": "Changes the screen resolution and pixel depth. "
                         }
                     ]
                 },
@@ -17798,7 +18018,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "shutdownWithBuild(boolean shutdownWithBuild = true)"
+                            "text": "shutdownWithBuild(boolean shutdownWithBuild = true)",
+                            "html": "Keeps Xvfb running for post build steps. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Keeps Xvfb running for post build steps. "
                         }
                     ]
                 },
@@ -17812,7 +18034,9 @@
                                     "type": "int"
                                 }
                             ],
-                            "text": "timeout(int timeout)"
+                            "text": "timeout(int timeout)",
+                            "html": "Specifies the number of seconds to wait for Xvfb to start. Defaults to 0.",
+                            "firstSentenceCommentText": "Specifies the number of seconds to wait for Xvfb to start. "
                         }
                     ]
                 }
@@ -17832,7 +18056,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "takeScreenshot(boolean takeScreenshot = true)"
+                            "text": "takeScreenshot(boolean takeScreenshot = true)",
+                            "html": "Takes a screenshot upon completion of the build. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Takes a screenshot upon completion of the build. "
                         }
                     ]
                 },
@@ -17847,7 +18073,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "useXauthority(boolean useXauthority = true)"
+                            "text": "useXauthority(boolean useXauthority = true)",
+                            "html": "Creates a dedicated Xauthority file per build. Defaults to <TT>true</TT>.",
+                            "firstSentenceCommentText": "Creates a dedicated Xauthority file per build. "
                         }
                     ],
                     "plugin": "xvnc"
@@ -17873,6 +18101,8 @@
                                 }
                             ],
                             "text": "allocatePorts(String[] portsArg, Closure closure = null)",
+                            "html": "Allocate ports for build executions to prevent conflicts between build jobs competing for a single port number.",
+                            "firstSentenceCommentText": "Allocate ports for build executions to prevent conflicts between build jobs competing for a single port number.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.PortsContext"
                         },
                         {
@@ -17884,10 +18114,13 @@
                                 }
                             ],
                             "text": "allocatePorts(Closure cl = null)",
+                            "html": "Allocate ports for build executions to prevent conflicts between build jobs competing for a single port number.",
+                            "firstSentenceCommentText": "Allocate ports for build executions to prevent conflicts between build jobs competing for a single port number.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.PortsContext"
                         }
                     ],
-                    "plugin": "port-allocator"
+                    "plugin": "port-allocator",
+                    "examples": "// allocates two ports: one randomly assigned and accessible by env var $HTTP\r\n// the second is fixed and the port allocator controls concurrent usage\r\njob('example-1') {\r\n    wrappers {\r\n        allocatePorts('HTTP', '8080')\r\n    }\r\n}\r\n\r\n// allocates a GlassFish and a Tomcat port\r\njob('example-2') {\r\n    wrappers {\r\n        allocatePorts {\r\n            glassfish('1234', 'user', 'password')\r\n            tomcat('1234', 'password')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "buildName",
@@ -17901,11 +18134,12 @@
                             ],
                             "text": "buildName(String nameTemplate)",
                             "availableSince": "1.24",
-                            "html": "Enables the \"Build Name Setter Plugin\" build wrapper.\r\n     ",
-                            "firstSentenceCommentText": "Enables the \"Build Name Setter Plugin\" build wrapper."
+                            "html": "Sets the display name of a build.\r\n     ",
+                            "firstSentenceCommentText": "Sets the display name of a build."
                         }
                     ],
-                    "plugin": "build-name-setter"
+                    "plugin": "build-name-setter",
+                    "examples": "// define the build name based on the build number and an environment variable\r\njob('example') {\r\n    wrappers {\r\n        buildName('#${BUILD_NUMBER} on ${ENV,var=\"BRANCH\"}')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "buildUserVars",
@@ -17915,10 +18149,13 @@
                                 
                             ],
                             "text": "buildUserVars()",
-                            "availableSince": "1.26"
+                            "availableSince": "1.26",
+                            "html": "Adds a number of environment variables with information about the current user.\r\n     ",
+                            "firstSentenceCommentText": "Adds a number of environment variables with information about the current user."
                         }
                     ],
-                    "plugin": "build-user-vars-plugin"
+                    "plugin": "build-user-vars-plugin",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        buildUserVars()\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "colorizeOutput",
@@ -17932,11 +18169,12 @@
                                 }
                             ],
                             "text": "colorizeOutput(String colorMap = 'xterm')",
-                            "html": "Converts ANSI escape codes to colors.\r\n     ",
-                            "firstSentenceCommentText": "Converts ANSI escape codes to colors."
+                            "html": "Renders ANSI escape sequences, including color, to console output.\r\n     ",
+                            "firstSentenceCommentText": "Renders ANSI escape sequences, including color, to console output."
                         }
                     ],
-                    "plugin": "ansicolor"
+                    "plugin": "ansicolor",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        colorizeOutput()\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "configFiles",
@@ -17950,10 +18188,13 @@
                             ],
                             "text": "configFiles(Closure configFilesClosure)",
                             "availableSince": "1.28",
+                            "html": "Make globally configured files available to the build.\r\n     ",
+                            "firstSentenceCommentText": "Make globally configured files available to the build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.ConfigFilesContext"
                         }
                     ],
-                    "plugin": "config-file-provider"
+                    "plugin": "config-file-provider",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        configFiles {\r\n            file('myCustomConfigFile') {\r\n                variable('CONFIG_FILE')\r\n            }\r\n            mavenSettings('myJenkinsSettingsFile') {\r\n                targetLocation('settings.xml')\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "credentialsBinding",
@@ -17967,10 +18208,13 @@
                             ],
                             "text": "credentialsBinding(Closure closure)",
                             "availableSince": "1.28",
+                            "html": "Binds environment variables to credentials.\r\n     ",
+                            "firstSentenceCommentText": "Binds environment variables to credentials.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.CredentialsBindingContext"
                         }
                     ],
-                    "plugin": "credentials-binding"
+                    "plugin": "credentials-binding",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        credentialsBinding {\r\n            file('KEYSTORE', 'keystore.jks')\r\n            usernamePassword('PASSWORD', 'keystore password')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "customTools",
@@ -17989,10 +18233,13 @@
                             ],
                             "text": "customTools(Iterable<String> tools, Closure closure = null)",
                             "availableSince": "1.30",
+                            "html": "Installs custom tools.\r\n     ",
+                            "firstSentenceCommentText": "Installs custom tools.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.CustomToolsContext"
                         }
                     ],
-                    "plugin": "custom-tools-plugin"
+                    "plugin": "custom-tools-plugin",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        customTools(['NodeJS', 'figlet']) {\r\n            skipMasterInstallation()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "deliveryPipelineVersion",
@@ -18010,10 +18257,13 @@
                                 }
                             ],
                             "text": "deliveryPipelineVersion(String template, boolean setDisplayName = false)",
-                            "availableSince": "1.26"
+                            "availableSince": "1.26",
+                            "html": "Creates a pipeline version based on the template and optionally sets that version as display name for the build.\r\n     ",
+                            "firstSentenceCommentText": "Creates a pipeline version based on the template and optionally sets that version as display name for the build."
                         }
                     ],
-                    "plugin": "delivery-pipeline-plugin"
+                    "plugin": "delivery-pipeline-plugin",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        deliveryPipelineVersion('1.0.${BUILD_NUMBER}', true)\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "environmentVariables",
@@ -18027,10 +18277,13 @@
                             ],
                             "text": "environmentVariables(Closure envClosure)",
                             "availableSince": "1.21",
+                            "html": "Injects environment variables into the build.\r\n     ",
+                            "firstSentenceCommentText": "Injects environment variables into the build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.WrapperEnvironmentVariableContext"
                         }
                     ],
-                    "plugin": "envinject"
+                    "plugin": "envinject",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        environmentVariables {\r\n            env('ONE', '1')\r\n            envs(FOO: 'bar', TEST: '123')\r\n            propertiesFile('env.properties')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "exclusionResources",
@@ -18043,7 +18296,9 @@
                                 }
                             ],
                             "text": "exclusionResources(String... resourceNames)",
-                            "availableSince": "1.24"
+                            "availableSince": "1.24",
+                            "html": "Configures exclusion plugin resources that are required for the\r\n javaposse.jobdsl.dsl.helpers.step.StepContext#criticalBlock(groovy.lang.Closure) step.\r\n     ",
+                            "firstSentenceCommentText": "Configures exclusion plugin resources that are required for the\r\n javaposse.jobdsl.dsl.helpers.step.StepContext#criticalBlock(groovy.lang.Closure) step."
                         },
                         {
                             "parameters": [
@@ -18053,10 +18308,13 @@
                                 }
                             ],
                             "text": "exclusionResources(Iterable<String> resourceNames)",
-                            "availableSince": "1.24"
+                            "availableSince": "1.24",
+                            "html": "Configures exclusion plugin resources that are required for the\r\n javaposse.jobdsl.dsl.helpers.step.StepContext#criticalBlock(groovy.lang.Closure) step.\r\n     ",
+                            "firstSentenceCommentText": "Configures exclusion plugin resources that are required for the\r\n javaposse.jobdsl.dsl.helpers.step.StepContext#criticalBlock(groovy.lang.Closure) step."
                         }
                     ],
-                    "plugin": "Exclusion"
+                    "plugin": "Exclusion",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        exclusionResources('first', 'second')\r\n    }\r\n    steps {\r\n        criticalBlock {\r\n            shell('echo Hello World!')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "golang",
@@ -18069,10 +18327,13 @@
                                 }
                             ],
                             "text": "golang(String version)",
-                            "availableSince": "1.27"
+                            "availableSince": "1.27",
+                            "html": "Sets up a Go environment.\r\n     ",
+                            "firstSentenceCommentText": "Sets up a Go environment."
                         }
                     ],
-                    "plugin": "golang"
+                    "plugin": "golang",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        golang('Go 1.3.3')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "injectPasswords",
@@ -18102,10 +18363,13 @@
                             ],
                             "text": "keychains(Closure keychainsClosure)",
                             "availableSince": "1.24",
+                            "html": "Configures keychains for the build.\r\n     ",
+                            "firstSentenceCommentText": "Configures keychains for the build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.KeychainsContext"
                         }
                     ],
-                    "plugin": "kpp-management-plugin"
+                    "plugin": "kpp-management-plugin",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        keychains {\r\n            keychain('test1', 'test2')\r\n            delete()\r\n            overwrite()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "logSizeChecker",
@@ -18120,12 +18384,13 @@
                             ],
                             "text": "logSizeChecker(Closure closure = null)",
                             "availableSince": "1.23",
-                            "html": "Configures the configuration for the Log File Size Checker build wrapper.\r\n     ",
-                            "firstSentenceCommentText": "Configures the configuration for the Log File Size Checker build wrapper.",
+                            "html": "Monitors the size of the output file of a build and aborts the build if the log file gets too big.\r\n     ",
+                            "firstSentenceCommentText": "Monitors the size of the output file of a build and aborts the build if the log file gets too big.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.LogFileSizeCheckerContext"
                         }
                     ],
-                    "plugin": "logfilesizechecker"
+                    "plugin": "logfilesizechecker",
+                    "examples": "// default configuration using the system wide definition\r\njob('example-1') {\r\n    wrappers {\r\n        logSizeChecker()\r\n    }\r\n}\r\n\r\n// using job specific configuration, setting the max log size to 10 MB and fail the build of the log file is larger.\r\njob('example-2') {\r\n    wrappers {\r\n        logSizeChecker {\r\n            maxSize(10)\r\n            failBuild()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "maskPasswords",
@@ -18135,10 +18400,13 @@
                                 
                             ],
                             "text": "maskPasswords()",
-                            "availableSince": "1.26"
+                            "availableSince": "1.26",
+                            "html": "Masks the passwords that occur in the console output.\r\n     ",
+                            "firstSentenceCommentText": "Masks the passwords that occur in the console output."
                         }
                     ],
-                    "plugin": "mask-passwords"
+                    "plugin": "mask-passwords",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        maskPasswords()\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "nodejs",
@@ -18151,10 +18419,13 @@
                                 }
                             ],
                             "text": "nodejs(String installation)",
-                            "availableSince": "1.27"
+                            "availableSince": "1.27",
+                            "html": "Sets up a NodeJS environment.\r\n     ",
+                            "firstSentenceCommentText": "Sets up a NodeJS environment."
                         }
                     ],
-                    "plugin": "nodejs"
+                    "plugin": "nodejs",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        nodejs('NodeJS 0.10.26')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "preBuildCleanup",
@@ -18169,10 +18440,13 @@
                             ],
                             "text": "preBuildCleanup(Closure closure = null)",
                             "availableSince": "1.22",
+                            "html": "Deletes files from the workspace before the build starts.\r\n     ",
+                            "firstSentenceCommentText": "Deletes files from the workspace before the build starts.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.PreBuildCleanupContext"
                         }
                     ],
-                    "plugin": "ws-cleanup"
+                    "plugin": "ws-cleanup",
+                    "examples": "// cleanup all files\r\njob('example-1') {\r\n    wrappers {\r\n        preBuildCleanup()\r\n    }\r\n}\r\n\r\n// cleanup all files and directories in target directories, but only if the CLEANUP build parameter is set to 'true'\r\njob('example-2') {\r\n    wrappers {\r\n        preBuildCleanup {\r\n            includePattern('**/target/**')\r\n            deleteDirectories()\r\n            cleanupParameter('CLEANUP')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "preScmSteps",
@@ -18186,10 +18460,13 @@
                             ],
                             "text": "preScmSteps(Closure closure)",
                             "availableSince": "1.31",
+                            "html": "Allows to run build steps before SCM checkout.\r\n     ",
+                            "firstSentenceCommentText": "Allows to run build steps before SCM checkout.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.PreScmStepsContext"
                         }
                     ],
-                    "plugin": "preSCMbuildstep"
+                    "plugin": "preSCMbuildstep",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        preScmSteps {\r\n            steps {\r\n                shell('echo Hello World')\r\n            }\r\n            failOnError()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "rbenv",
@@ -18208,10 +18485,13 @@
                             ],
                             "text": "rbenv(String rubyVersion, Closure rbenvClosure = null)",
                             "availableSince": "1.27",
+                            "html": "Specifies the rbenv wrapper to be used during job execution.\r\n     ",
+                            "firstSentenceCommentText": "Specifies the rbenv wrapper to be used during job execution.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.RbenvContext"
                         }
                     ],
-                    "plugin": "rbenv"
+                    "plugin": "rbenv",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        rbenv('2.1.2') {\r\n            ignoreLocalVersion()\r\n            gems('bundler', 'rake')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "release",
@@ -18225,12 +18505,13 @@
                             ],
                             "text": "release(Closure releaseClosure)",
                             "availableSince": "1.22",
-                            "html": "Lets you use \"Jenkins Release Plugin\" to perform steps inside a release action.\r\n     ",
-                            "firstSentenceCommentText": "Lets you use \"Jenkins Release Plugin\" to perform steps inside a release action.",
+                            "html": "Wrap the job with pre- and post-build steps which are only executed when a manual release build is triggered.\r\n     ",
+                            "firstSentenceCommentText": "Wrap the job with pre- and post-build steps which are only executed when a manual release build is triggered.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.ReleaseContext"
                         }
                     ],
-                    "plugin": "release"
+                    "plugin": "release",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        release {\r\n            doNotKeepLog()\r\n            overrideBuildParameters()\r\n            parameters {\r\n                booleanParam('param', false, 'some boolean build parameter')\r\n            }\r\n            preBuildSteps {\r\n                shell(\"echo 'hello'\")\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "runOnSameNodeAs",
@@ -18252,7 +18533,8 @@
                             "firstSentenceCommentText": "Build the job on the same node as another job and optionally use the same workspace as the other job."
                         }
                     ],
-                    "plugin": "job-node-stalker"
+                    "plugin": "job-node-stalker",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        runOnSameNodeAs('project-a', true)\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "rvm",
@@ -18265,11 +18547,12 @@
                                 }
                             ],
                             "text": "rvm(String rubySpecification)",
-                            "html": "Support for builds using a rvm environment.\r\n     ",
-                            "firstSentenceCommentText": "Support for builds using a rvm environment."
+                            "html": "Configures the job to prepare a Ruby environment controlled by RVM for the build.\r\n     ",
+                            "firstSentenceCommentText": "Configures the job to prepare a Ruby environment controlled by RVM for the build."
                         }
                     ],
-                    "plugin": "rvm"
+                    "plugin": "rvm",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        rvm('ruby-1.9.3')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "sshAgent",
@@ -18286,7 +18569,8 @@
                             "firstSentenceCommentText": "Provide SSH credentials to builds via a ssh-agent in Jenkins."
                         }
                     ],
-                    "plugin": "ssh-agent"
+                    "plugin": "ssh-agent",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        sshAgent('deployment-key')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "timeout",
@@ -18301,12 +18585,13 @@
                             ],
                             "text": "timeout(Closure timeoutClosure = null)",
                             "availableSince": "1.24",
-                            "html": "Add a timeout to the build job.\r\n     ",
+                            "html": "Add a timeout to the build job.\r\n\r\n Defaults to a absolute timeout with a maximum build time of 3 minutes.\r\n     ",
                             "firstSentenceCommentText": "Add a timeout to the build job.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.TimeoutContext"
                         }
                     ],
-                    "plugin": "build-timeout"
+                    "plugin": "build-timeout",
+                    "examples": "// defines an absolute timeout with a maximum build time of 3 minutes\r\njob('example-1') {\r\n    wrappers {\r\n        timeout()\r\n    }\r\n}\r\n\r\n// defines an absolute timeout with a maximum build time of one hour\r\njob('example-2') {\r\n    wrappers {\r\n        timeout {\r\n            absolute(60)\r\n        }\r\n    }\r\n}\r\n\r\n// the build will timeout when it take 3 times longer than the reference build duration of the last 3 builds\r\n// use a 30 minutes timeout when no successful builds available as reference\r\njob('example-3') {\r\n    wrappers {\r\n        timeout {\r\n            elastic(300, 3, 30)\r\n        }\r\n    }\r\n}\r\n\r\n// abort when the build is likely to be stuck\r\njob('example-4') {\r\n    wrappers {\r\n        timeout {\r\n            likelyStuck()\r\n        }\r\n    }\r\n}\r\n\r\n// timeout if there has been no activity for 180 seconds\r\n// then fail the build and set a build description\r\njob('example-5') {\r\n    wrappers {\r\n        timeout {\r\n            noActivity(180)\r\n            failBuild()\r\n            writeDescription('Build failed due to timeout after {0} minutes')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "timestamps",
@@ -18315,10 +18600,13 @@
                             "parameters": [
                                 
                             ],
-                            "text": "timestamps()"
+                            "text": "timestamps()",
+                            "html": "Adds timestamps to the console log.",
+                            "firstSentenceCommentText": "Adds timestamps to the console log."
                         }
                     ],
-                    "plugin": "timestamper"
+                    "plugin": "timestamper",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        timestamps()\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "toolenv",
@@ -18332,11 +18620,12 @@
                             ],
                             "text": "toolenv(String... tools)",
                             "availableSince": "1.21",
-                            "html": "Lets you use \"tools\" in unusual ways, such as from shell scripts.\r\n\r\n Note that we do not check for validity of tool names.\r\n     ",
-                            "firstSentenceCommentText": "Lets you use \"tools\" in unusual ways, such as from shell scripts."
+                            "html": "Downloads the specified tools, if needed, and puts the path to each of them in the build's environment.\r\n     ",
+                            "firstSentenceCommentText": "Downloads the specified tools, if needed, and puts the path to each of them in the build's environment."
                         }
                     ],
-                    "plugin": "toolenv"
+                    "plugin": "toolenv",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        toolenv('Ant 1.8.2', 'Maven 3.1')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "xvfb",
@@ -18355,10 +18644,13 @@
                             ],
                             "text": "xvfb(String installation, Closure closure = null)",
                             "availableSince": "1.31",
+                            "html": "Controls the Xvfb virtual frame buffer X11 server.\r\n     ",
+                            "firstSentenceCommentText": "Controls the Xvfb virtual frame buffer X11 server.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.XvfbContext"
                         }
                     ],
-                    "plugin": "xvfb"
+                    "plugin": "xvfb",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        xvfb('default') {\r\n            screen('1920x1080x24')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "xvnc",
@@ -18373,12 +18665,13 @@
                             ],
                             "text": "xvnc(Closure xvncClosure = null)",
                             "availableSince": "1.26",
-                            "html": "Runs build under XVNC.\r\n     ",
-                            "firstSentenceCommentText": "Runs build under XVNC.",
+                            "html": "Run a Xvnc session during a build.\r\n     ",
+                            "firstSentenceCommentText": "Run a Xvnc session during a build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.XvncContext"
                         }
                     ],
-                    "plugin": "xvnc"
+                    "plugin": "xvnc",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        xvnc {\r\n            takeScreenshot()\r\n            useXauthority(false)\r\n        }\r\n    }\r\n}\r\n"
                 }
             ]
         },
@@ -26038,7 +26331,8 @@
                                 }
                             ],
                             "text": "dryRunGoals(String dryRunGoals)",
-                            "html": "<p>Enter the goals you wish to use as part of the 'dryRun' - to simulate the release build.\r\n e.g. \"release:prepare -DdryRun=true\"</p>\r\n     "
+                            "html": "Enter the goals you wish to use as part of the dry run to simulate the release build. Defaults to\r\n <TT>-Dresume=false -DdryRun=true release:prepare</TT>.",
+                            "firstSentenceCommentText": "Enter the goals you wish to use as part of the dry run to simulate the release build. "
                         }
                     ]
                 },
@@ -26053,7 +26347,8 @@
                                 }
                             ],
                             "text": "numberOfReleaseBuildsToKeep(int numberOfReleaseBuildsToKeep)",
-                            "html": "<p>Specify the number of successful release builds to keep forever. A value of -1 will lock all successful\r\n release builds, 0 will not lock any builds.</p>\r\n     "
+                            "html": "Specify the number of successful release builds to keep forever. A value of -1 will lock all successful\r\n release builds, 0 will not lock any builds. Defaults to 1.",
+                            "firstSentenceCommentText": "Specify the number of successful release builds to keep forever. "
                         }
                     ]
                 },
@@ -26068,7 +26363,8 @@
                                 }
                             ],
                             "text": "releaseEnvVar(String releaseEnvVar)",
-                            "html": "<p>An environment variable with this name indicates whether the current build is a release build or not.\r\n This can be used e.g. within a shell or the conditional buildstep to do pre and post release processing.\r\n The value will be boolean (true if it is a release build, false if its not a release build).</p>\r\n     "
+                            "html": "An environment variable with this name indicates whether the current build is a release build or not.\r\n This can be used e.g. within a shell or the conditional buildstep to do pre and post release processing.\r\n The value will be boolean (true if it is a release build, false if its not a release build). Defaults to\r\n <TT>'IS_M2RELEASEBUILD'</TT>.",
+                            "firstSentenceCommentText": "An environment variable with this name indicates whether the current build is a release build or not.\r\n "
                         }
                     ]
                 },
@@ -26083,7 +26379,8 @@
                                 }
                             ],
                             "text": "releaseGoals(String releaseGoals)",
-                            "html": "<p>Enter the goals you wish to use as part of the release process. e.g. \"release:prepare release:perform\"</p>\r\n     "
+                            "html": "Enter the goals you wish to use as part of the release process. Defaults to\r\n <TT>'-Dresume=false release:prepare release:perform'</TT>.",
+                            "firstSentenceCommentText": "Enter the goals you wish to use as part of the release process. "
                         }
                     ]
                 },
@@ -26098,7 +26395,8 @@
                                 }
                             ],
                             "text": "scmPasswordEnvVar(String scmPasswordEnvVar)",
-                            "html": "<p>If defined, an environment variable with this name will hold the scm password when triggering a\r\n release build (this is the password the user enters when triggering a release build, not the password\r\n given to Jenkins' SCM configuration of the job).</p>\r\n <p>As the passed passwords would potentially get written to the logs and therefore visible to users,\r\n we recommend you to install the\r\n <a href=\"https://wiki.jenkins-ci.org/display/JENKINS/Mask+Passwords+Plugin\">Mask Password Plugin</a>.</p>\r\n     "
+                            "html": "If defined, an environment variable with this name will hold the scm password when triggering a\r\n release build (this is the password the user enters when triggering a release build, not the password\r\n given to Jenkins' SCM configuration of the job). Empty by default.\r\n\r\n As the passed passwords would potentially get written to the logs and therefore visible to users,\r\n it is recommended to install the\r\n <a href=\"https://wiki.jenkins-ci.org/display/JENKINS/Mask+Passwords+Plugin\">Mask Password Plugin</a>.",
+                            "firstSentenceCommentText": "If defined, an environment variable with this name will hold the scm password when triggering a\r\n release build (this is the password the user enters when triggering a release build, not the password\r\n given to Jenkins' SCM configuration of the job). "
                         }
                     ]
                 },
@@ -26113,7 +26411,8 @@
                                 }
                             ],
                             "text": "scmUserEnvVar(String scmUserEnvVar)",
-                            "html": "<p>If defined, an environment variable with this name will hold the scm username when triggering a\r\n release build (this is the username the user enters when triggering a release build, not the username\r\n given to Jenkins' SCM configuration of the job).</p>\r\n     "
+                            "html": "If defined, an environment variable with this name will hold the scm username when triggering a\r\n release build (this is the username the user enters when triggering a release build, not the username\r\n given to Jenkins' SCM configuration of the job). Empty by default.",
+                            "firstSentenceCommentText": "If defined, an environment variable with this name will hold the scm username when triggering a\r\n release build (this is the username the user enters when triggering a release build, not the username\r\n given to Jenkins' SCM configuration of the job). "
                         }
                     ]
                 },
@@ -26129,7 +26428,8 @@
                                 }
                             ],
                             "text": "selectAppendJenkinsUsername(boolean selectAppendJenkinsUsername = true)",
-                            "html": "<p>Enable this to have the \"Append Jenkins Username\" option (part of the \"Specify custom SCM comment prefix\"\r\n configuration) selected by default in the \"Perform Maven Release\" view.</p>\r\n     "
+                            "html": "Enable this to have the \"Append Jenkins Username\" option (part of the \"Specify custom SCM comment prefix\"\r\n configuration) selected by default in the \"Perform Maven Release\" view. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Enable this to have the \"Append Jenkins Username\" option (part of the \"Specify custom SCM comment prefix\"\r\n configuration) selected by default in the \"Perform Maven Release\" view. "
                         }
                     ]
                 },
@@ -26145,7 +26445,8 @@
                                 }
                             ],
                             "text": "selectCustomScmCommentPrefix(boolean selectCustomScmCommentPrefix = true)",
-                            "html": "<p>Enable this to have the \"Select custom SCM comment prefix\" option selected by default\r\n in the \"Perform Maven Release\" view.</p>\r\n     "
+                            "html": "Enable this to have the \"Select custom SCM comment prefix\" option selected by default\r\n in the \"Perform Maven Release\" view. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Enable this to have the \"Select custom SCM comment prefix\" option selected by default\r\n in the \"Perform Maven Release\" view. "
                         }
                     ]
                 },
@@ -26161,7 +26462,8 @@
                                 }
                             ],
                             "text": "selectScmCredentials(boolean selectScmCredentials = true)",
-                            "html": "<p>Enable this to have the \"specify SCM login/password\" option selected by default in the\r\n \"Perform Maven Release\" view.</p>\r\n     "
+                            "html": "Enable this to have the \"specify SCM login/password\" option selected by default in the\r\n \"Perform Maven Release\" view. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Enable this to have the \"specify SCM login/password\" option selected by default in the\r\n \"Perform Maven Release\" view. "
                         }
                     ]
                 }
@@ -26186,6 +26488,8 @@
                                 }
                             ],
                             "text": "allocatePorts(String[] portsArg, Closure closure = null)",
+                            "html": "Allocate ports for build executions to prevent conflicts between build jobs competing for a single port number.",
+                            "firstSentenceCommentText": "Allocate ports for build executions to prevent conflicts between build jobs competing for a single port number.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.PortsContext"
                         },
                         {
@@ -26197,10 +26501,13 @@
                                 }
                             ],
                             "text": "allocatePorts(Closure cl = null)",
+                            "html": "Allocate ports for build executions to prevent conflicts between build jobs competing for a single port number.",
+                            "firstSentenceCommentText": "Allocate ports for build executions to prevent conflicts between build jobs competing for a single port number.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.PortsContext"
                         }
                     ],
-                    "plugin": "port-allocator"
+                    "plugin": "port-allocator",
+                    "examples": "// allocates two ports: one randomly assigned and accessible by env var $HTTP\r\n// the second is fixed and the port allocator controls concurrent usage\r\njob('example-1') {\r\n    wrappers {\r\n        allocatePorts('HTTP', '8080')\r\n    }\r\n}\r\n\r\n// allocates a GlassFish and a Tomcat port\r\njob('example-2') {\r\n    wrappers {\r\n        allocatePorts {\r\n            glassfish('1234', 'user', 'password')\r\n            tomcat('1234', 'password')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "buildName",
@@ -26214,11 +26521,12 @@
                             ],
                             "text": "buildName(String nameTemplate)",
                             "availableSince": "1.24",
-                            "html": "Enables the \"Build Name Setter Plugin\" build wrapper.\r\n     ",
-                            "firstSentenceCommentText": "Enables the \"Build Name Setter Plugin\" build wrapper."
+                            "html": "Sets the display name of a build.\r\n     ",
+                            "firstSentenceCommentText": "Sets the display name of a build."
                         }
                     ],
-                    "plugin": "build-name-setter"
+                    "plugin": "build-name-setter",
+                    "examples": "// define the build name based on the build number and an environment variable\r\njob('example') {\r\n    wrappers {\r\n        buildName('#${BUILD_NUMBER} on ${ENV,var=\"BRANCH\"}')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "buildUserVars",
@@ -26228,10 +26536,13 @@
                                 
                             ],
                             "text": "buildUserVars()",
-                            "availableSince": "1.26"
+                            "availableSince": "1.26",
+                            "html": "Adds a number of environment variables with information about the current user.\r\n     ",
+                            "firstSentenceCommentText": "Adds a number of environment variables with information about the current user."
                         }
                     ],
-                    "plugin": "build-user-vars-plugin"
+                    "plugin": "build-user-vars-plugin",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        buildUserVars()\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "colorizeOutput",
@@ -26245,11 +26556,12 @@
                                 }
                             ],
                             "text": "colorizeOutput(String colorMap = 'xterm')",
-                            "html": "Converts ANSI escape codes to colors.\r\n     ",
-                            "firstSentenceCommentText": "Converts ANSI escape codes to colors."
+                            "html": "Renders ANSI escape sequences, including color, to console output.\r\n     ",
+                            "firstSentenceCommentText": "Renders ANSI escape sequences, including color, to console output."
                         }
                     ],
-                    "plugin": "ansicolor"
+                    "plugin": "ansicolor",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        colorizeOutput()\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "configFiles",
@@ -26263,10 +26575,13 @@
                             ],
                             "text": "configFiles(Closure configFilesClosure)",
                             "availableSince": "1.28",
+                            "html": "Make globally configured files available to the build.\r\n     ",
+                            "firstSentenceCommentText": "Make globally configured files available to the build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.ConfigFilesContext"
                         }
                     ],
-                    "plugin": "config-file-provider"
+                    "plugin": "config-file-provider",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        configFiles {\r\n            file('myCustomConfigFile') {\r\n                variable('CONFIG_FILE')\r\n            }\r\n            mavenSettings('myJenkinsSettingsFile') {\r\n                targetLocation('settings.xml')\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "credentialsBinding",
@@ -26280,10 +26595,13 @@
                             ],
                             "text": "credentialsBinding(Closure closure)",
                             "availableSince": "1.28",
+                            "html": "Binds environment variables to credentials.\r\n     ",
+                            "firstSentenceCommentText": "Binds environment variables to credentials.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.CredentialsBindingContext"
                         }
                     ],
-                    "plugin": "credentials-binding"
+                    "plugin": "credentials-binding",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        credentialsBinding {\r\n            file('KEYSTORE', 'keystore.jks')\r\n            usernamePassword('PASSWORD', 'keystore password')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "customTools",
@@ -26302,10 +26620,13 @@
                             ],
                             "text": "customTools(Iterable<String> tools, Closure closure = null)",
                             "availableSince": "1.30",
+                            "html": "Installs custom tools.\r\n     ",
+                            "firstSentenceCommentText": "Installs custom tools.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.CustomToolsContext"
                         }
                     ],
-                    "plugin": "custom-tools-plugin"
+                    "plugin": "custom-tools-plugin",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        customTools(['NodeJS', 'figlet']) {\r\n            skipMasterInstallation()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "deliveryPipelineVersion",
@@ -26323,10 +26644,13 @@
                                 }
                             ],
                             "text": "deliveryPipelineVersion(String template, boolean setDisplayName = false)",
-                            "availableSince": "1.26"
+                            "availableSince": "1.26",
+                            "html": "Creates a pipeline version based on the template and optionally sets that version as display name for the build.\r\n     ",
+                            "firstSentenceCommentText": "Creates a pipeline version based on the template and optionally sets that version as display name for the build."
                         }
                     ],
-                    "plugin": "delivery-pipeline-plugin"
+                    "plugin": "delivery-pipeline-plugin",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        deliveryPipelineVersion('1.0.${BUILD_NUMBER}', true)\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "environmentVariables",
@@ -26340,10 +26664,13 @@
                             ],
                             "text": "environmentVariables(Closure envClosure)",
                             "availableSince": "1.21",
+                            "html": "Injects environment variables into the build.\r\n     ",
+                            "firstSentenceCommentText": "Injects environment variables into the build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.WrapperEnvironmentVariableContext"
                         }
                     ],
-                    "plugin": "envinject"
+                    "plugin": "envinject",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        environmentVariables {\r\n            env('ONE', '1')\r\n            envs(FOO: 'bar', TEST: '123')\r\n            propertiesFile('env.properties')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "exclusionResources",
@@ -26356,7 +26683,9 @@
                                 }
                             ],
                             "text": "exclusionResources(String... resourceNames)",
-                            "availableSince": "1.24"
+                            "availableSince": "1.24",
+                            "html": "Configures exclusion plugin resources that are required for the\r\n javaposse.jobdsl.dsl.helpers.step.StepContext#criticalBlock(groovy.lang.Closure) step.\r\n     ",
+                            "firstSentenceCommentText": "Configures exclusion plugin resources that are required for the\r\n javaposse.jobdsl.dsl.helpers.step.StepContext#criticalBlock(groovy.lang.Closure) step."
                         },
                         {
                             "parameters": [
@@ -26366,10 +26695,13 @@
                                 }
                             ],
                             "text": "exclusionResources(Iterable<String> resourceNames)",
-                            "availableSince": "1.24"
+                            "availableSince": "1.24",
+                            "html": "Configures exclusion plugin resources that are required for the\r\n javaposse.jobdsl.dsl.helpers.step.StepContext#criticalBlock(groovy.lang.Closure) step.\r\n     ",
+                            "firstSentenceCommentText": "Configures exclusion plugin resources that are required for the\r\n javaposse.jobdsl.dsl.helpers.step.StepContext#criticalBlock(groovy.lang.Closure) step."
                         }
                     ],
-                    "plugin": "Exclusion"
+                    "plugin": "Exclusion",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        exclusionResources('first', 'second')\r\n    }\r\n    steps {\r\n        criticalBlock {\r\n            shell('echo Hello World!')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "golang",
@@ -26382,10 +26714,13 @@
                                 }
                             ],
                             "text": "golang(String version)",
-                            "availableSince": "1.27"
+                            "availableSince": "1.27",
+                            "html": "Sets up a Go environment.\r\n     ",
+                            "firstSentenceCommentText": "Sets up a Go environment."
                         }
                     ],
-                    "plugin": "golang"
+                    "plugin": "golang",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        golang('Go 1.3.3')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "injectPasswords",
@@ -26415,10 +26750,13 @@
                             ],
                             "text": "keychains(Closure keychainsClosure)",
                             "availableSince": "1.24",
+                            "html": "Configures keychains for the build.\r\n     ",
+                            "firstSentenceCommentText": "Configures keychains for the build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.KeychainsContext"
                         }
                     ],
-                    "plugin": "kpp-management-plugin"
+                    "plugin": "kpp-management-plugin",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        keychains {\r\n            keychain('test1', 'test2')\r\n            delete()\r\n            overwrite()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "logSizeChecker",
@@ -26433,12 +26771,13 @@
                             ],
                             "text": "logSizeChecker(Closure closure = null)",
                             "availableSince": "1.23",
-                            "html": "Configures the configuration for the Log File Size Checker build wrapper.\r\n     ",
-                            "firstSentenceCommentText": "Configures the configuration for the Log File Size Checker build wrapper.",
+                            "html": "Monitors the size of the output file of a build and aborts the build if the log file gets too big.\r\n     ",
+                            "firstSentenceCommentText": "Monitors the size of the output file of a build and aborts the build if the log file gets too big.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.LogFileSizeCheckerContext"
                         }
                     ],
-                    "plugin": "logfilesizechecker"
+                    "plugin": "logfilesizechecker",
+                    "examples": "// default configuration using the system wide definition\r\njob('example-1') {\r\n    wrappers {\r\n        logSizeChecker()\r\n    }\r\n}\r\n\r\n// using job specific configuration, setting the max log size to 10 MB and fail the build of the log file is larger.\r\njob('example-2') {\r\n    wrappers {\r\n        logSizeChecker {\r\n            maxSize(10)\r\n            failBuild()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "maskPasswords",
@@ -26448,10 +26787,13 @@
                                 
                             ],
                             "text": "maskPasswords()",
-                            "availableSince": "1.26"
+                            "availableSince": "1.26",
+                            "html": "Masks the passwords that occur in the console output.\r\n     ",
+                            "firstSentenceCommentText": "Masks the passwords that occur in the console output."
                         }
                     ],
-                    "plugin": "mask-passwords"
+                    "plugin": "mask-passwords",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        maskPasswords()\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "mavenRelease",
@@ -26466,11 +26808,12 @@
                             ],
                             "text": "mavenRelease(Closure releaseClosure = null)",
                             "availableSince": "1.25",
-                            "html": "Configures a release using the m2release plugin.\r\n By default the following values are applied. If an instance of a\r\n closure is provided, the values from the closure will take effect.\r\n     ",
-                            "firstSentenceCommentText": "Configures a release using the m2release plugin.\r\n ",
+                            "html": "Allows to perform a release build using the\r\n <a href=\"http://maven.apache.org/maven-release/maven-release-plugin/\">maven-release-plugin</a>.\r\n     ",
+                            "firstSentenceCommentText": "Allows to perform a release build using the\r\n maven-release-plugin.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.MavenReleaseContext"
                         }
-                    ]
+                    ],
+                    "examples": "mavenJob('example') {\r\n    wrappers {\r\n        mavenRelease {\r\n            scmUserEnvVar('MY_USER_ENV')\r\n            scmPasswordEnvVar('MY_PASSWORD_ENV')\r\n            releaseEnvVar('RELEASE_ENV')\r\n            releaseGoals('release:prepare release:perform')\r\n            dryRunGoals('-DdryRun=true release:prepare')\r\n            selectCustomScmCommentPrefix()\r\n            selectAppendJenkinsUsername()\r\n            selectScmCredentials()\r\n            numberOfReleaseBuildsToKeep(10)\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "nodejs",
@@ -26483,10 +26826,13 @@
                                 }
                             ],
                             "text": "nodejs(String installation)",
-                            "availableSince": "1.27"
+                            "availableSince": "1.27",
+                            "html": "Sets up a NodeJS environment.\r\n     ",
+                            "firstSentenceCommentText": "Sets up a NodeJS environment."
                         }
                     ],
-                    "plugin": "nodejs"
+                    "plugin": "nodejs",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        nodejs('NodeJS 0.10.26')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "preBuildCleanup",
@@ -26501,10 +26847,13 @@
                             ],
                             "text": "preBuildCleanup(Closure closure = null)",
                             "availableSince": "1.22",
+                            "html": "Deletes files from the workspace before the build starts.\r\n     ",
+                            "firstSentenceCommentText": "Deletes files from the workspace before the build starts.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.PreBuildCleanupContext"
                         }
                     ],
-                    "plugin": "ws-cleanup"
+                    "plugin": "ws-cleanup",
+                    "examples": "// cleanup all files\r\njob('example-1') {\r\n    wrappers {\r\n        preBuildCleanup()\r\n    }\r\n}\r\n\r\n// cleanup all files and directories in target directories, but only if the CLEANUP build parameter is set to 'true'\r\njob('example-2') {\r\n    wrappers {\r\n        preBuildCleanup {\r\n            includePattern('**/target/**')\r\n            deleteDirectories()\r\n            cleanupParameter('CLEANUP')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "preScmSteps",
@@ -26518,10 +26867,13 @@
                             ],
                             "text": "preScmSteps(Closure closure)",
                             "availableSince": "1.31",
+                            "html": "Allows to run build steps before SCM checkout.\r\n     ",
+                            "firstSentenceCommentText": "Allows to run build steps before SCM checkout.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.PreScmStepsContext"
                         }
                     ],
-                    "plugin": "preSCMbuildstep"
+                    "plugin": "preSCMbuildstep",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        preScmSteps {\r\n            steps {\r\n                shell('echo Hello World')\r\n            }\r\n            failOnError()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "rbenv",
@@ -26540,10 +26892,13 @@
                             ],
                             "text": "rbenv(String rubyVersion, Closure rbenvClosure = null)",
                             "availableSince": "1.27",
+                            "html": "Specifies the rbenv wrapper to be used during job execution.\r\n     ",
+                            "firstSentenceCommentText": "Specifies the rbenv wrapper to be used during job execution.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.RbenvContext"
                         }
                     ],
-                    "plugin": "rbenv"
+                    "plugin": "rbenv",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        rbenv('2.1.2') {\r\n            ignoreLocalVersion()\r\n            gems('bundler', 'rake')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "release",
@@ -26557,12 +26912,13 @@
                             ],
                             "text": "release(Closure releaseClosure)",
                             "availableSince": "1.22",
-                            "html": "Lets you use \"Jenkins Release Plugin\" to perform steps inside a release action.\r\n     ",
-                            "firstSentenceCommentText": "Lets you use \"Jenkins Release Plugin\" to perform steps inside a release action.",
+                            "html": "Wrap the job with pre- and post-build steps which are only executed when a manual release build is triggered.\r\n     ",
+                            "firstSentenceCommentText": "Wrap the job with pre- and post-build steps which are only executed when a manual release build is triggered.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.ReleaseContext"
                         }
                     ],
-                    "plugin": "release"
+                    "plugin": "release",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        release {\r\n            doNotKeepLog()\r\n            overrideBuildParameters()\r\n            parameters {\r\n                booleanParam('param', false, 'some boolean build parameter')\r\n            }\r\n            preBuildSteps {\r\n                shell(\"echo 'hello'\")\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "runOnSameNodeAs",
@@ -26584,7 +26940,8 @@
                             "firstSentenceCommentText": "Build the job on the same node as another job and optionally use the same workspace as the other job."
                         }
                     ],
-                    "plugin": "job-node-stalker"
+                    "plugin": "job-node-stalker",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        runOnSameNodeAs('project-a', true)\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "rvm",
@@ -26597,11 +26954,12 @@
                                 }
                             ],
                             "text": "rvm(String rubySpecification)",
-                            "html": "Support for builds using a rvm environment.\r\n     ",
-                            "firstSentenceCommentText": "Support for builds using a rvm environment."
+                            "html": "Configures the job to prepare a Ruby environment controlled by RVM for the build.\r\n     ",
+                            "firstSentenceCommentText": "Configures the job to prepare a Ruby environment controlled by RVM for the build."
                         }
                     ],
-                    "plugin": "rvm"
+                    "plugin": "rvm",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        rvm('ruby-1.9.3')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "sshAgent",
@@ -26618,7 +26976,8 @@
                             "firstSentenceCommentText": "Provide SSH credentials to builds via a ssh-agent in Jenkins."
                         }
                     ],
-                    "plugin": "ssh-agent"
+                    "plugin": "ssh-agent",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        sshAgent('deployment-key')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "timeout",
@@ -26633,12 +26992,13 @@
                             ],
                             "text": "timeout(Closure timeoutClosure = null)",
                             "availableSince": "1.24",
-                            "html": "Add a timeout to the build job.\r\n     ",
+                            "html": "Add a timeout to the build job.\r\n\r\n Defaults to a absolute timeout with a maximum build time of 3 minutes.\r\n     ",
                             "firstSentenceCommentText": "Add a timeout to the build job.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.TimeoutContext"
                         }
                     ],
-                    "plugin": "build-timeout"
+                    "plugin": "build-timeout",
+                    "examples": "// defines an absolute timeout with a maximum build time of 3 minutes\r\njob('example-1') {\r\n    wrappers {\r\n        timeout()\r\n    }\r\n}\r\n\r\n// defines an absolute timeout with a maximum build time of one hour\r\njob('example-2') {\r\n    wrappers {\r\n        timeout {\r\n            absolute(60)\r\n        }\r\n    }\r\n}\r\n\r\n// the build will timeout when it take 3 times longer than the reference build duration of the last 3 builds\r\n// use a 30 minutes timeout when no successful builds available as reference\r\njob('example-3') {\r\n    wrappers {\r\n        timeout {\r\n            elastic(300, 3, 30)\r\n        }\r\n    }\r\n}\r\n\r\n// abort when the build is likely to be stuck\r\njob('example-4') {\r\n    wrappers {\r\n        timeout {\r\n            likelyStuck()\r\n        }\r\n    }\r\n}\r\n\r\n// timeout if there has been no activity for 180 seconds\r\n// then fail the build and set a build description\r\njob('example-5') {\r\n    wrappers {\r\n        timeout {\r\n            noActivity(180)\r\n            failBuild()\r\n            writeDescription('Build failed due to timeout after {0} minutes')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "timestamps",
@@ -26647,10 +27007,13 @@
                             "parameters": [
                                 
                             ],
-                            "text": "timestamps()"
+                            "text": "timestamps()",
+                            "html": "Adds timestamps to the console log.",
+                            "firstSentenceCommentText": "Adds timestamps to the console log."
                         }
                     ],
-                    "plugin": "timestamper"
+                    "plugin": "timestamper",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        timestamps()\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "toolenv",
@@ -26664,11 +27027,12 @@
                             ],
                             "text": "toolenv(String... tools)",
                             "availableSince": "1.21",
-                            "html": "Lets you use \"tools\" in unusual ways, such as from shell scripts.\r\n\r\n Note that we do not check for validity of tool names.\r\n     ",
-                            "firstSentenceCommentText": "Lets you use \"tools\" in unusual ways, such as from shell scripts."
+                            "html": "Downloads the specified tools, if needed, and puts the path to each of them in the build's environment.\r\n     ",
+                            "firstSentenceCommentText": "Downloads the specified tools, if needed, and puts the path to each of them in the build's environment."
                         }
                     ],
-                    "plugin": "toolenv"
+                    "plugin": "toolenv",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        toolenv('Ant 1.8.2', 'Maven 3.1')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "xvfb",
@@ -26687,10 +27051,13 @@
                             ],
                             "text": "xvfb(String installation, Closure closure = null)",
                             "availableSince": "1.31",
+                            "html": "Controls the Xvfb virtual frame buffer X11 server.\r\n     ",
+                            "firstSentenceCommentText": "Controls the Xvfb virtual frame buffer X11 server.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.XvfbContext"
                         }
                     ],
-                    "plugin": "xvfb"
+                    "plugin": "xvfb",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        xvfb('default') {\r\n            screen('1920x1080x24')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "xvnc",
@@ -26705,12 +27072,13 @@
                             ],
                             "text": "xvnc(Closure xvncClosure = null)",
                             "availableSince": "1.26",
-                            "html": "Runs build under XVNC.\r\n     ",
-                            "firstSentenceCommentText": "Runs build under XVNC.",
+                            "html": "Run a Xvnc session during a build.\r\n     ",
+                            "firstSentenceCommentText": "Run a Xvnc session during a build.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.wrapper.XvncContext"
                         }
                     ],
-                    "plugin": "xvnc"
+                    "plugin": "xvnc",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        xvnc {\r\n            takeScreenshot()\r\n            useXauthority(false)\r\n        }\r\n    }\r\n}\r\n"
                 }
             ]
         },
@@ -28341,10 +28709,13 @@
                             ],
                             "text": "criticalBlock(Closure closure)",
                             "availableSince": "1.24",
+                            "html": "Contains the build steps of the critical zone defined by the\r\n javaposse.jobdsl.dsl.helpers.wrapper.WrapperContext#exclusionResources(java.lang.Iterable) wrapper.\r\n     ",
+                            "firstSentenceCommentText": "Contains the build steps of the critical zone defined by the\r\n javaposse.jobdsl.dsl.helpers.wrapper.WrapperContext#exclusionResources(java.lang.Iterable) wrapper.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.step.StepContext"
                         }
                     ],
-                    "plugin": "Exclusion"
+                    "plugin": "Exclusion",
+                    "examples": "job('example') {\r\n    wrappers {\r\n        exclusionResources('first', 'second')\r\n    }\r\n    steps {\r\n        criticalBlock {\r\n            shell('echo Hello World!')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "debianPackage",
@@ -28703,10 +29074,13 @@
                                 }
                             ],
                             "text": "nodejsCommand(String commandScript, String installation)",
-                            "availableSince": "1.31"
+                            "availableSince": "1.31",
+                            "html": "Executes a NodeJS script. Use javaposse.jobdsl.dsl.DslFactory#readFileFromWorkspace(java.lang.String) to read scripts from a file.\r\n     ",
+                            "firstSentenceCommentText": "Executes a NodeJS script. "
                         }
                     ],
-                    "plugin": "nodejs"
+                    "plugin": "nodejs",
+                    "examples": "job('example') {\r\n    steps {\r\n        nodejsCommand('console.log(\"Hello World!\")', 'Node 0.12.0')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "phase",
@@ -30325,7 +30699,8 @@
                             "availableSince": "1.31",
                             "contextClass": "javaposse.jobdsl.dsl.views.NestedView"
                         }
-                    ]
+                    ],
+                    "plugin": "nested-view"
                 },
                 {
                     "name": "sectionedView",
@@ -31395,6 +31770,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.jobs.BuildFlowJob"
                         }
                     ],
+                    "plugin": "build-flow-plugin",
                     "examples": "// triple-quotes can be used for inline flow DSL definition\r\nbuildFlowJob('example-1') {\r\n    buildFlowJob('''\r\n        build(\"job1\")\r\n    ''')\r\n}\r\n\r\n// the build flow text can also be read from a file\r\nbuildFlowJob('example-2') {\r\n    buildFlowJob(readFileFromWorkspace('my-build-flow-text.groovy'))\r\n}\r\n"
                 },
                 {
@@ -31428,6 +31804,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.views.BuildMonitorView"
                         }
                     ],
+                    "plugin": "build-monitor-plugin",
                     "examples": "buildMonitorView('project-A') {\r\n    description('All jobs for project A')\r\n    jobs {\r\n        name('release-projectA')\r\n        regex(/project-A-.+/)\r\n    }\r\n}\r\n"
                 },
                 {
@@ -31461,6 +31838,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.views.BuildPipelineView"
                         }
                     ],
+                    "plugin": "build-pipeline-plugin",
                     "examples": "buildPipelineView('project-A') {\r\n    filterBuildQueue()\r\n    filterExecutors()\r\n    title('Project A CI Pipeline')\r\n    displayedBuilds(5)\r\n    selectedJob('project-A-compile')\r\n    alwaysAllowManualTrigger()\r\n    showPipelineParameters()\r\n    refreshFrequency(60)\r\n}\r\n"
                 },
                 {
@@ -31494,6 +31872,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.views.CategorizedJobsView"
                         }
                     ],
+                    "plugin": "categorized-view",
                     "examples": "categorizedJobsView('example') {\r\n    jobs {\r\n        regex(/configuration_.*/)\r\n    }\r\n    categorizationCriteria {\r\n        regexGroupingRule(/^configuration_([^_]+).*$/)\r\n    }\r\n    columns {\r\n        status()\r\n        categorizedJob()\r\n        buildButton()\r\n    }\r\n}\r\n"
                 },
                 {
@@ -31525,7 +31904,8 @@
                             "deprecated": true,
                             "contextClass": "javaposse.jobdsl.dsl.ConfigFile"
                         }
-                    ]
+                    ],
+                    "plugin": "config-file-provider"
                 },
                 {
                     "name": "customConfigFile",
@@ -31560,6 +31940,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.ConfigFile"
                         }
                     ],
+                    "plugin": "config-file-provider",
                     "examples": "// creates a custom config file from a file named acme/settings.json in the seed job's workspace\r\ncustomConfigFile('acme-settings') {\r\n    comment('Settings for ACME tools')\r\n    content(readFileFromWorkspace('acme/settings.json'))\r\n}\r\n"
                 },
                 {
@@ -31593,6 +31974,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.views.DeliveryPipelineView"
                         }
                     ],
+                    "plugin": "delivery-pipeline-plugin",
                     "examples": "deliveryPipelineView('project-a') {\r\n    pipelineInstances(5)\r\n    showAggregatedPipeline()\r\n    columns(2)\r\n    sorting(Sorting.TITLE)\r\n    updateInterval(60)\r\n    enableManualTriggers()\r\n    showAvatars()\r\n    showChangeLog()\r\n    pipelines {\r\n        component('Sub System A', 'compile-a')\r\n        component('Sub System B', 'compile-b')\r\n        regex(/compile-subsystem-(.*)/)\r\n    }\r\n}\r\n"
                 },
                 {
@@ -31639,6 +32021,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.Folder"
                         }
                     ],
+                    "plugin": "cloudbees-folder",
                     "examples": "folder('project-a') {\r\n    displayName('Project A')\r\n    description('Folder for project A')\r\n}\r\n\r\nfolder('project-a/testing') {\r\n    description('Folder containing all QA jobs for project A')\r\n}\r\n"
                 },
                 {
@@ -31709,6 +32092,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.jobs.IvyJob"
                         }
                     ],
+                    "plugin": "ivy",
                     "examples": "ivyJob('example') {\r\n    ivyBuilder {\r\n        ant {\r\n            target('clean')\r\n            targets(['test', 'publish'])\r\n            buildFile('build.xml')\r\n            antInstallation('Ant 1.9')\r\n            prop('key', 'value')\r\n            javaOpt('-Xmx=1G')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
@@ -31838,6 +32222,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.jobs.MatrixJob"
                         }
                     ],
+                    "plugin": "matrix-project",
                     "examples": "matrixJob('example') {\r\n    axes {\r\n        jdk('jdk6', 'jdk7')\r\n    }\r\n    scm {\r\n        github('jenkinsci/job-dsl-plugin', 'master')\r\n    }\r\n    triggers {\r\n        githubPush()\r\n    }\r\n    steps {\r\n        gradle('clean build')\r\n    }\r\n    publishers {\r\n        archiveArtifacts('job-dsl-plugin/build/libs/job-dsl.hpi')\r\n    }\r\n}\r\n"
                 },
                 {
@@ -31873,6 +32258,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.jobs.MavenJob"
                         }
                     ],
+                    "plugin": "maven-plugin",
                     "examples": "mavenJob('example') {\r\n    logRotator(-1, 10)\r\n    jdk('Java 7')\r\n    scm {\r\n        github('jenkinsci/jenkins', 'master')\r\n    }\r\n    triggers {\r\n        githubPush()\r\n    }\r\n    goals('clean verify')\r\n}\r\n"
                 },
                 {
@@ -31908,6 +32294,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.ConfigFile"
                         }
                     ],
+                    "plugin": "config-file-provider",
                     "examples": "// creates a Maven settings file from a file named maven/settings.xml in the seed job's workspace\r\ncustomConfigFile('company-settings') {\r\n    comment('Company Maven Settings')\r\n    content(readFileFromWorkspace('maven/settings.xml'))\r\n}\r\n"
                 },
                 {
@@ -31943,6 +32330,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.jobs.MultiJob"
                         }
                     ],
+                    "plugin": "jenkins-multijob-plugin",
                     "examples": "multiJob('example') {\r\n    steps {\r\n        phase() {\r\n            phaseName 'Second'\r\n            job('JobZ') {\r\n                parameters {\r\n                    propertiesFile('my1.properties')\r\n                }\r\n            }\r\n        }\r\n        phase('Third') {\r\n            job('JobA')\r\n            job('JobB')\r\n            job('JobC')\r\n        }\r\n        phase('Fourth') {\r\n            job('JobD', false, true) {\r\n                parameters {\r\n                    booleanParam('cParam', true)\r\n                    propertiesFile('my.properties')\r\n                    sameNode()\r\n                    matrixSubset('it.name==\"hello\"')\r\n                    subversionRevision()\r\n                    gitRevision()\r\n                    predefinedProp('prop1', 'value1')\r\n                    nodeLabel('lParam', 'my_nodes')\r\n                }\r\n                configure { phaseJobConfig ->\r\n                    phaseJobConfig / enableCondition << 'true'\r\n                    phaseJobConfig / condition << '${RUN_JOB} == \"true\"'\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
@@ -31976,6 +32364,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.views.NestedView"
                         }
                     ],
+                    "plugin": "nested-view",
                     "examples": "nestedView('project-a') {\r\n    views {\r\n        listView('overview') {\r\n            jobs {\r\n                regex(/project-A-.*/)\r\n            }\r\n            columns {\r\n                status()\r\n                weather()\r\n                name()\r\n                lastSuccess()\r\n                lastFailure()\r\n            }\r\n        }\r\n        buildPipelineView('pipeline') {\r\n            selectedJob('project-a-compile')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
@@ -32069,6 +32458,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.views.SectionedView"
                         }
                     ],
+                    "plugin": "sectioned-view",
                     "examples": "sectionedView('project-summary') {\r\n    filterBuildQueue()\r\n    filterExecutors()\r\n    sections {\r\n        listView {\r\n            name('Project A')\r\n            jobs {\r\n                regex(/project-A-.*/)\r\n            }\r\n            columns {\r\n                status()\r\n                weather()\r\n                name()\r\n                lastSuccess()\r\n                lastFailure()\r\n            }\r\n        }\r\n        listView {\r\n            name('Project B')\r\n            jobs {\r\n                regex(/project-B-.*/)\r\n            }\r\n            jobFilters {\r\n                regex {\r\n                    matchValue(RegexMatchValue.DESCRIPTION)\r\n                    regex(/.*-project-B-.*/)\r\n                }\r\n            }\r\n            columns {\r\n                status()\r\n                weather()\r\n                name()\r\n                lastSuccess()\r\n                lastFailure()\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
@@ -32174,6 +32564,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.jobs.WorkflowJob"
                         }
                     ],
+                    "plugin": "workflow-aggregator",
                     "examples": "workflowJob('example') {\r\n    definition {\r\n        cps {\r\n            script(readFileFromWorkspace('project-a-workflow.groovy'))\r\n            sandbox()\r\n        }\r\n    }\r\n}\r\n"
                 }
             ]

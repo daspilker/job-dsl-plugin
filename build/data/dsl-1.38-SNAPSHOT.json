@@ -4657,6 +4657,8 @@
                             ],
                             "text": "parameters(Closure closure)",
                             "availableSince": "1.23",
+                            "html": "Adds parameter values for the projects to trigger.\r\n     ",
+                            "firstSentenceCommentText": "Adds parameter values for the projects to trigger.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.common.DownstreamTriggerParameterContext"
                         }
                     ],
@@ -11683,7 +11685,9 @@
                                     "defaultValue": "-1"
                                 }
                             ],
-                            "text": "discardOldBuilds(int daysToKeep = -1, int numToKeep = -1, int artifactDaysToKeep = -1, int artifactNumToKeep = -1)"
+                            "text": "discardOldBuilds(int daysToKeep = -1, int numToKeep = -1, int artifactDaysToKeep = -1, int artifactNumToKeep = -1)",
+                            "html": "Manages how long to keep records of the builds.",
+                            "firstSentenceCommentText": "Manages how long to keep records of the builds."
                         }
                     ]
                 },
@@ -11697,7 +11701,9 @@
                                     "type": "boolean"
                                 }
                             ],
-                            "text": "publishFailed(boolean publishFailed)"
+                            "text": "publishFailed(boolean publishFailed)",
+                            "html": "If set, publishes failed builds. Defaults to <TT>true</TT>.",
+                            "firstSentenceCommentText": "If set, publishes failed builds. "
                         }
                     ]
                 },
@@ -11711,7 +11717,9 @@
                                     "type": "boolean"
                                 }
                             ],
-                            "text": "publishUnstable(boolean publishUnstable)"
+                            "text": "publishUnstable(boolean publishUnstable)",
+                            "html": "If set, publishes unstable builds. Defaults to <TT>true</TT>.",
+                            "firstSentenceCommentText": "If set, publishes unstable builds. "
                         }
                     ]
                 }
@@ -12161,7 +12169,9 @@
                                 }
                             ],
                             "text": "entries(Iterable<String> sources, String destination = '', boolean keepHierarchy = false)",
-                            "availableSince": "1.27"
+                            "availableSince": "1.27",
+                            "html": "Specifies the files to upload. Can be called multiple times to upload more files.\r\n     ",
+                            "firstSentenceCommentText": "Specifies the files to upload. "
                         }
                     ]
                 },
@@ -12185,7 +12195,9 @@
                                     "defaultValue": "false"
                                 }
                             ],
-                            "text": "entry(String source, String destination = '', boolean keepHierarchy = false)"
+                            "text": "entry(String source, String destination = '', boolean keepHierarchy = false)",
+                            "html": "Specifies the files to upload. Can be called multiple times to upload more files.",
+                            "firstSentenceCommentText": "Specifies the files to upload. "
                         }
                     ]
                 }
@@ -13536,12 +13548,13 @@
                             ],
                             "text": "buildPipelineTrigger(String downstreamProjectNames, Closure closure = null)",
                             "availableSince": "1.21",
-                            "html": "Configures a Build Pipeline Trigger.\r\n     ",
-                            "firstSentenceCommentText": "Configures a Build Pipeline Trigger.",
+                            "html": "Adds a manual triggers for jobs that require intervention prior to execution.\r\n     ",
+                            "firstSentenceCommentText": "Adds a manual triggers for jobs that require intervention prior to execution.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.BuildPipelineContext"
                         }
                     ],
-                    "plugin": "build-pipeline-plugin"
+                    "plugin": "build-pipeline-plugin",
+                    "examples": "job('example-1') {\r\n    publishers {\r\n        buildPipelineTrigger('deploy-cluster-1, deploy-cluster-2')\r\n    }\r\n}\r\n\r\njob('example-2') {\r\n    publishers {\r\n        buildPipelineTrigger('deploy-cluster-1, deploy-cluster-2') {\r\n            parameters {\r\n                predefinedProp('GIT_COMMIT', '$GIT_COMMIT')\r\n                predefinedProp('ARTIFACT_BUILD_NUMBER', '$BUILD_NUMBER')\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "ccm",
@@ -14283,12 +14296,13 @@
                             ],
                             "text": "publishBuild(Closure contextClosure = null)",
                             "availableSince": "1.33",
-                            "html": "Configures the Build Publisher plugin to publish builds to a 'public' Jenkins server.\r\n     ",
-                            "firstSentenceCommentText": "Configures the Build Publisher plugin to publish builds to a 'public' Jenkins server.",
+                            "html": "Publishes builds to another Jenkins instance.\r\n     ",
+                            "firstSentenceCommentText": "Publishes builds to another Jenkins instance.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.PublishBuildContext"
                         }
                     ],
-                    "plugin": "build-publisher"
+                    "plugin": "build-publisher",
+                    "examples": "job('example') {\r\n    publishers {\r\n        publishBuild {\r\n            discardOldBuilds(7, 10)\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "publishCloneWorkspace",
@@ -14534,10 +14548,13 @@
                                 }
                             ],
                             "text": "publishScp(String site, Closure scpClosure)",
+                            "html": "Uploads artifacts to the remote sites using the SFTP (SSH) protocol. The site is specified in the global Jenkins\r\n configuration.",
+                            "firstSentenceCommentText": "Uploads artifacts to the remote sites using the SFTP (SSH) protocol. ",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.ScpContext"
                         }
                     ],
-                    "plugin": "scp"
+                    "plugin": "scp",
+                    "examples": "job('example') {\r\n    publishers {\r\n        publishScp('docs.acme.org') {\r\n            entry('build/docs/**', 'project-a', true)\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "retryBuild",
@@ -15188,12 +15205,13 @@
                             ],
                             "text": "buildPipelineTrigger(String downstreamProjectNames, Closure closure = null)",
                             "availableSince": "1.21",
-                            "html": "Configures a Build Pipeline Trigger.\r\n     ",
-                            "firstSentenceCommentText": "Configures a Build Pipeline Trigger.",
+                            "html": "Adds a manual triggers for jobs that require intervention prior to execution.\r\n     ",
+                            "firstSentenceCommentText": "Adds a manual triggers for jobs that require intervention prior to execution.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.BuildPipelineContext"
                         }
                     ],
-                    "plugin": "build-pipeline-plugin"
+                    "plugin": "build-pipeline-plugin",
+                    "examples": "job('example-1') {\r\n    publishers {\r\n        buildPipelineTrigger('deploy-cluster-1, deploy-cluster-2')\r\n    }\r\n}\r\n\r\njob('example-2') {\r\n    publishers {\r\n        buildPipelineTrigger('deploy-cluster-1, deploy-cluster-2') {\r\n            parameters {\r\n                predefinedProp('GIT_COMMIT', '$GIT_COMMIT')\r\n                predefinedProp('ARTIFACT_BUILD_NUMBER', '$BUILD_NUMBER')\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "ccm",
@@ -15919,12 +15937,13 @@
                             ],
                             "text": "publishBuild(Closure contextClosure = null)",
                             "availableSince": "1.33",
-                            "html": "Configures the Build Publisher plugin to publish builds to a 'public' Jenkins server.\r\n     ",
-                            "firstSentenceCommentText": "Configures the Build Publisher plugin to publish builds to a 'public' Jenkins server.",
+                            "html": "Publishes builds to another Jenkins instance.\r\n     ",
+                            "firstSentenceCommentText": "Publishes builds to another Jenkins instance.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.PublishBuildContext"
                         }
                     ],
-                    "plugin": "build-publisher"
+                    "plugin": "build-publisher",
+                    "examples": "job('example') {\r\n    publishers {\r\n        publishBuild {\r\n            discardOldBuilds(7, 10)\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "publishCloneWorkspace",
@@ -16170,10 +16189,13 @@
                                 }
                             ],
                             "text": "publishScp(String site, Closure scpClosure)",
+                            "html": "Uploads artifacts to the remote sites using the SFTP (SSH) protocol. The site is specified in the global Jenkins\r\n configuration.",
+                            "firstSentenceCommentText": "Uploads artifacts to the remote sites using the SFTP (SSH) protocol. ",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.ScpContext"
                         }
                     ],
-                    "plugin": "scp"
+                    "plugin": "scp",
+                    "examples": "job('example') {\r\n    publishers {\r\n        publishScp('docs.acme.org') {\r\n            entry('build/docs/**', 'project-a', true)\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "retryBuild",
@@ -25389,7 +25411,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "evenIfUnstable(boolean evenIfUnstable = true)"
+                            "text": "evenIfUnstable(boolean evenIfUnstable = true)",
+                            "html": "If set, deploys even if the build is unstable. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "If set, deploys even if the build is unstable. "
                         }
                     ]
                 },
@@ -25404,7 +25428,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "uniqueVersion(boolean uniqueVersion = true)"
+                            "text": "uniqueVersion(boolean uniqueVersion = true)",
+                            "html": "If set, assigns timestamp-based unique version number to the deployed artifacts, when their versions end with\r\n <TT>-SNAPSHOT</TT>. Defaults to <TT>true</TT>.",
+                            "firstSentenceCommentText": "If set, assigns timestamp-based unique version number to the deployed artifacts, when their versions end with\r\n -SNAPSHOT. "
                         }
                     ]
                 }
@@ -25684,12 +25710,13 @@
                             ],
                             "text": "buildPipelineTrigger(String downstreamProjectNames, Closure closure = null)",
                             "availableSince": "1.21",
-                            "html": "Configures a Build Pipeline Trigger.\r\n     ",
-                            "firstSentenceCommentText": "Configures a Build Pipeline Trigger.",
+                            "html": "Adds a manual triggers for jobs that require intervention prior to execution.\r\n     ",
+                            "firstSentenceCommentText": "Adds a manual triggers for jobs that require intervention prior to execution.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.BuildPipelineContext"
                         }
                     ],
-                    "plugin": "build-pipeline-plugin"
+                    "plugin": "build-pipeline-plugin",
+                    "examples": "job('example-1') {\r\n    publishers {\r\n        buildPipelineTrigger('deploy-cluster-1, deploy-cluster-2')\r\n    }\r\n}\r\n\r\njob('example-2') {\r\n    publishers {\r\n        buildPipelineTrigger('deploy-cluster-1, deploy-cluster-2') {\r\n            parameters {\r\n                predefinedProp('GIT_COMMIT', '$GIT_COMMIT')\r\n                predefinedProp('ARTIFACT_BUILD_NUMBER', '$BUILD_NUMBER')\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "ccm",
@@ -25838,9 +25865,12 @@
                             ],
                             "text": "deployArtifacts(Closure closure = null)",
                             "availableSince": "1.31",
+                            "html": "Deploys artifacts to a Maven repository.\r\n     ",
+                            "firstSentenceCommentText": "Deploys artifacts to a Maven repository.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.DeployArtifactsContext"
                         }
-                    ]
+                    ],
+                    "examples": "mavenJob('example-1') {\r\n    publishers {\r\n        deployArtifacts()\r\n    }\r\n}\r\n\r\nmavenJob('example-2') {\r\n    publishers {\r\n        deployArtifacts {\r\n            evenIfUnstable()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "downstream",
@@ -26432,12 +26462,13 @@
                             ],
                             "text": "publishBuild(Closure contextClosure = null)",
                             "availableSince": "1.33",
-                            "html": "Configures the Build Publisher plugin to publish builds to a 'public' Jenkins server.\r\n     ",
-                            "firstSentenceCommentText": "Configures the Build Publisher plugin to publish builds to a 'public' Jenkins server.",
+                            "html": "Publishes builds to another Jenkins instance.\r\n     ",
+                            "firstSentenceCommentText": "Publishes builds to another Jenkins instance.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.PublishBuildContext"
                         }
                     ],
-                    "plugin": "build-publisher"
+                    "plugin": "build-publisher",
+                    "examples": "job('example') {\r\n    publishers {\r\n        publishBuild {\r\n            discardOldBuilds(7, 10)\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "publishCloneWorkspace",
@@ -26683,10 +26714,13 @@
                                 }
                             ],
                             "text": "publishScp(String site, Closure scpClosure)",
+                            "html": "Uploads artifacts to the remote sites using the SFTP (SSH) protocol. The site is specified in the global Jenkins\r\n configuration.",
+                            "firstSentenceCommentText": "Uploads artifacts to the remote sites using the SFTP (SSH) protocol. ",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.ScpContext"
                         }
                     ],
-                    "plugin": "scp"
+                    "plugin": "scp",
+                    "examples": "job('example') {\r\n    publishers {\r\n        publishScp('docs.acme.org') {\r\n            entry('build/docs/**', 'project-a', true)\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "retryBuild",

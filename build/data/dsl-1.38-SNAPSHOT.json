@@ -4944,7 +4944,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "commitMessage(String commitMessage)"
+                            "text": "commitMessage(String commitMessage)",
+                            "html": "If set, commits changes made to package back to SCM with the specified commit message.",
+                            "firstSentenceCommentText": "If set, commits changes made to package back to SCM with the specified commit message."
                         }
                     ]
                 }
@@ -11728,7 +11730,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "archiveMethod(String archiveMethod)"
+                            "text": "archiveMethod(String archiveMethod)",
+                            "html": "Sets the archive method. Must be either <TT>'TAR'</TT> (default) or <TT>'ZIP'</TT>.",
+                            "firstSentenceCommentText": "Sets the archive method. "
                         }
                     ]
                 },
@@ -11742,7 +11746,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "criteria(String criteria)"
+                            "text": "criteria(String criteria)",
+                            "html": "Selects the criteria for builds to be archived. Must be one of <TT>'Any'</TT> (default), <TT>'Not Failed'</TT> or\r\n <TT>'Successful'</TT>.",
+                            "firstSentenceCommentText": "Selects the criteria for builds to be archived. "
                         }
                     ]
                 },
@@ -11756,7 +11762,9 @@
                                     "type": "boolean"
                                 }
                             ],
-                            "text": "overrideDefaultExcludes(boolean overrideDefaultExcludes)"
+                            "text": "overrideDefaultExcludes(boolean overrideDefaultExcludes)",
+                            "html": "Overrides default Ant excludes.",
+                            "firstSentenceCommentText": "Overrides default Ant excludes."
                         }
                     ]
                 },
@@ -11770,7 +11778,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "workspaceExcludeGlob(String workspaceExcludeGlob)"
+                            "text": "workspaceExcludeGlob(String workspaceExcludeGlob)",
+                            "html": "Specifies files to exclude from the cloned workspace.",
+                            "firstSentenceCommentText": "Specifies files to exclude from the cloned workspace."
                         }
                     ]
                 }
@@ -12383,7 +12393,9 @@
                                 }
                             ],
                             "text": "flatten(boolean flatten = true)",
-                            "availableSince": "1.38"
+                            "availableSince": "1.38",
+                            "html": "If set, ignores the directory structure of the artifacts in the source project and copies all matching artifacts\r\n directly into the specified bucket.\r\n     ",
+                            "firstSentenceCommentText": "If set, ignores the directory structure of the artifacts in the source project and copies all matching artifacts\r\n directly into the specified bucket."
                         }
                     ],
                     "plugin": "s3"
@@ -12399,7 +12411,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "managedArtifacts(boolean managedArtifacts = true)"
+                            "text": "managedArtifacts(boolean managedArtifacts = true)",
+                            "html": "If set, Jenkins fully manages the artifacts, exactly like it does when the artifacts are published to the master.\r\n Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "If set, Jenkins fully manages the artifacts, exactly like it does when the artifacts are published to the master.\r\n "
                         }
                     ]
                 },
@@ -12414,7 +12428,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "noUploadOnFailure(boolean noUploadOnFailure = true)"
+                            "text": "noUploadOnFailure(boolean noUploadOnFailure = true)",
+                            "html": "Skips upload if the build failed. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Skips upload if the build failed. "
                         }
                     ]
                 },
@@ -12428,7 +12444,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "storageClass(String storageClass)"
+                            "text": "storageClass(String storageClass)",
+                            "html": "Specifies the S3 storage class. Must be either <TT>'STANDARRD'</TT> (default) or <TT>'REDUCED_REDUNDANCY'</TT>.",
+                            "firstSentenceCommentText": "Specifies the S3 storage class. "
                         }
                     ]
                 },
@@ -12443,7 +12461,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "uploadFromSlave(boolean uploadFromSlave = true)"
+                            "text": "uploadFromSlave(boolean uploadFromSlave = true)",
+                            "html": "Upload directly from the slave, instead of proxying the upload to the master. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "Upload directly from the slave, instead of proxying the upload to the master. "
                         }
                     ]
                 },
@@ -12459,7 +12479,9 @@
                                 }
                             ],
                             "text": "useServerSideEncryption(boolean useServerSideEncryption = true)",
-                            "availableSince": "1.38"
+                            "availableSince": "1.38",
+                            "html": "Enables S3 AES-256 server side encryption support. Defaults to <TT>false</TT>.\r\n     ",
+                            "firstSentenceCommentText": "Enables S3 AES-256 server side encryption support. "
                         }
                     ],
                     "plugin": "s3"
@@ -12493,6 +12515,8 @@
                                 }
                             ],
                             "text": "entry(String source, String bucketName, String region, Closure closure = null)",
+                            "html": "Specifies files to upload. Can be called multiple times to add upload more files.",
+                            "firstSentenceCommentText": "Specifies files to upload. ",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.S3EntryContext"
                         }
                     ]
@@ -12511,7 +12535,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "metadata(String key, String value)"
+                            "text": "metadata(String key, String value)",
+                            "html": "Adds metadata for the upload files. Can be called multiple times to add more metadata.",
+                            "firstSentenceCommentText": "Adds metadata for the upload files. "
                         }
                     ]
                 }
@@ -12741,7 +12767,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "skipIfEnvironmentVariable(String environmentVariable)"
+                            "text": "skipIfEnvironmentVariable(String environmentVariable)",
+                            "html": "Skip SonarQube analysis when the value of the given variable is set to <TT>true</TT>.",
+                            "firstSentenceCommentText": "Skip SonarQube analysis when the value of the given variable is set to true."
                         }
                     ]
                 }
@@ -12760,7 +12788,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "branch(String branch)"
+                            "text": "branch(String branch)",
+                            "html": "Sets the <TT>sonar.branch</TT> property.",
+                            "firstSentenceCommentText": "Sets the sonar.branch property."
                         }
                     ]
                 },
@@ -12775,6 +12805,8 @@
                                 }
                             ],
                             "text": "overrideTriggers(Closure sonarTriggersClosure)",
+                            "html": "Overrides the default trigger actions set at SonarQube installation level.",
+                            "firstSentenceCommentText": "Overrides the default trigger actions set at SonarQube installation level.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.SonarTriggersContext"
                         }
                     ]
@@ -12794,7 +12826,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "commitSha1(String commitSha1)"
+                            "text": "commitSha1(String commitSha1)",
+                            "html": "Attaches the notification to a specific commit in Stash.",
+                            "firstSentenceCommentText": "Attaches the notification to a specific commit in Stash."
                         }
                     ]
                 },
@@ -12809,7 +12843,9 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "text": "keepRepeatedBuilds(boolean keepRepeatedBuilds = true)"
+                            "text": "keepRepeatedBuilds(boolean keepRepeatedBuilds = true)",
+                            "html": "If set, results of repeated builds of the same commit will show up in Stash as a list of builds. Defaults to\r\n <TT>false</TT>.",
+                            "firstSentenceCommentText": "If set, results of repeated builds of the same commit will show up in Stash as a list of builds. "
                         }
                     ]
                 }
@@ -12828,7 +12864,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "fauxProjectPath(String fauxProjectPath)"
+                            "text": "fauxProjectPath(String fauxProjectPath)",
+                            "html": "Sets an alternative project directory for the reporting engine.",
+                            "firstSentenceCommentText": "Sets an alternative project directory for the reporting engine."
                         }
                     ]
                 },
@@ -12842,7 +12880,9 @@
                                     "type": "Integer"
                                 }
                             ],
-                            "text": "perFileDisplayLimit(Integer perFileDisplayLimit)"
+                            "text": "perFileDisplayLimit(Integer perFileDisplayLimit)",
+                            "html": "Limits the number of violations displayed per file and violation type.",
+                            "firstSentenceCommentText": "Limits the number of violations displayed per file and violation type."
                         }
                     ]
                 },
@@ -12856,7 +12896,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "sourceEncoding(String sourceEncoding)"
+                            "text": "sourceEncoding(String sourceEncoding)",
+                            "html": "Sets the encoding to use for reading source files.",
+                            "firstSentenceCommentText": "Sets the encoding to use for reading source files."
                         }
                     ]
                 },
@@ -12870,7 +12912,9 @@
                                     "type": "String"
                                 }
                             ],
-                            "text": "sourcePathPattern(String sourcePathPattern)"
+                            "text": "sourcePathPattern(String sourcePathPattern)",
+                            "html": "Resolves class names to source file names.",
+                            "firstSentenceCommentText": "Resolves class names to source file names."
                         }
                     ]
                 }
@@ -13601,10 +13645,13 @@
                             ],
                             "text": "debianPackage(String repoIdArg, Closure closure = null)",
                             "availableSince": "1.36",
+                            "html": "Uploads Debian packages.\r\n     ",
+                            "firstSentenceCommentText": "Uploads Debian packages.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.DebianPackagePublisherContext"
                         }
                     ],
-                    "plugin": "debian-package-builder"
+                    "plugin": "debian-package-builder",
+                    "examples": "job('example') {\r\n    publishers {\r\n        debianPackage('precise-default') {\r\n            commitMessage('automatic commit by Jenkins')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "dependencyCheck",
@@ -14258,8 +14305,8 @@
                                 }
                             ],
                             "text": "publishCloneWorkspace(String workspaceGlob, Closure cloneWorkspaceClosure)",
-                            "html": "Clone Workspace SCM",
-                            "firstSentenceCommentText": "Clone Workspace SCM",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         },
                         {
@@ -14278,6 +14325,8 @@
                                 }
                             ],
                             "text": "publishCloneWorkspace(String workspaceGlob, String workspaceExcludeGlob, Closure cloneWorkspaceClosure)",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         },
                         {
@@ -14304,31 +14353,33 @@
                                 }
                             ],
                             "text": "publishCloneWorkspace(String workspaceGlob, String workspaceExcludeGlob, String criteria, String archiveMethod, Closure cloneWorkspaceClosure)",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         },
                         {
                             "parameters": [
                                 {
-                                    "name": "workspaceGlobArg",
+                                    "name": "workspaceGlob",
                                     "type": "String"
                                 },
                                 {
-                                    "name": "workspaceExcludeGlobArg",
+                                    "name": "workspaceExcludeGlob",
                                     "type": "String",
                                     "defaultValue": "''"
                                 },
                                 {
-                                    "name": "criteriaArg",
+                                    "name": "criteria",
                                     "type": "String",
                                     "defaultValue": "'Any'"
                                 },
                                 {
-                                    "name": "archiveMethodArg",
+                                    "name": "archiveMethod",
                                     "type": "String",
                                     "defaultValue": "'TAR'"
                                 },
                                 {
-                                    "name": "overrideDefaultExcludesArg",
+                                    "name": "overrideDefaultExcludes",
                                     "type": "boolean",
                                     "defaultValue": "false"
                                 },
@@ -14338,11 +14389,14 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "publishCloneWorkspace(String workspaceGlobArg, String workspaceExcludeGlobArg = '', String criteriaArg = 'Any', String archiveMethodArg = 'TAR', boolean overrideDefaultExcludesArg = false, Closure cloneWorkspaceClosure = null)",
+                            "text": "publishCloneWorkspace(String workspaceGlob, String workspaceExcludeGlob = '', String criteria = 'Any', String archiveMethod = 'TAR', boolean overrideDefaultExcludes = false, Closure cloneWorkspaceClosure = null)",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         }
                     ],
-                    "plugin": "clone-workspace-scm"
+                    "plugin": "clone-workspace-scm",
+                    "examples": "job('example') {\r\n    publishers {\r\n        publishCloneWorkspace('build/libs/**')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "publishHtml",
@@ -14544,10 +14598,13 @@
                             ],
                             "text": "s3(String profile, Closure s3PublisherClosure)",
                             "availableSince": "1.26",
+                            "html": "Uploads build artifacts to Amazon S3.\r\n     ",
+                            "firstSentenceCommentText": "Uploads build artifacts to Amazon S3.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.S3BucketPublisherContext"
                         }
                     ],
-                    "plugin": "s3"
+                    "plugin": "s3",
+                    "examples": "job('example') {\r\n    publishers {\r\n        s3('myProfile') {\r\n            entry('foo', 'bar', 'eu-west-1') {\r\n                storageClass('REDUCED_REDUNDANCY')\r\n                noUploadOnFailure()\r\n                uploadFromSlave()\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "slackNotifications",
@@ -14579,10 +14636,13 @@
                             ],
                             "text": "sonar(Closure sonarClosure = null)",
                             "availableSince": "1.31",
+                            "html": "Triggers SonarQube analysis.\r\n     ",
+                            "firstSentenceCommentText": "Triggers SonarQube analysis.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.SonarContext"
                         }
                     ],
-                    "plugin": "sonar"
+                    "plugin": "sonar",
+                    "examples": "// run Sonar analysis for feature-xy branch,\r\n// but skip if SKIP_SONAR environment variable is set to true\r\njob('example') {\r\n    publishers {\r\n        sonar {\r\n            branch('feature-xy')\r\n            overrideTriggers {\r\n                skipIfEnvironmentVariable('SKIP_SONAR')\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "stashNotifier",
@@ -14597,12 +14657,13 @@
                             ],
                             "text": "stashNotifier(Closure stashNotifierClosure = null)",
                             "availableSince": "1.23",
-                            "html": "Configures the StashNotifier plugin.\r\n     ",
-                            "firstSentenceCommentText": "Configures the StashNotifier plugin.",
+                            "html": "Notifies an Atlassian Stash instance of Jenkins builds in progress and of their results.\r\n     ",
+                            "firstSentenceCommentText": "Notifies an Atlassian Stash instance of Jenkins builds in progress and of their results.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.StashNotifierContext"
                         }
                     ],
-                    "plugin": "stashNotifier"
+                    "plugin": "stashNotifier",
+                    "examples": "// notify Stash using the global Jenkins settings\r\njob('example-1') {\r\n    publishers {\r\n        stashNotifier()\r\n    }\r\n}\r\n\r\n// notify Stash using the global Jenkins settings and sets keepRepeatedBuilds to true\r\njob('example-2') {\r\n    publishers {\r\n        stashNotifier {\r\n            keepRepeatedBuilds()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "tasks",
@@ -14704,6 +14765,8 @@
                                 }
                             ],
                             "text": "violations(Closure violationsClosure = null)",
+                            "html": "Generates reports from static code violations detectors.\r\n     ",
+                            "firstSentenceCommentText": "Generates reports from static code violations detectors.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.ViolationsContext"
                         },
                         {
@@ -14719,10 +14782,13 @@
                                 }
                             ],
                             "text": "violations(int perFileDisplayLimit, Closure violationsClosure = null)",
+                            "html": "Generates reports from static code violations detectors.\r\n\r\n For each supported detector type, the closure method with up to four arguments is available. The first argument\r\n specifies the lowest number of violations to generate the sunny weather report, defaults to 10. The second\r\n argument specifies the lowest number of violations to generate the stormy weather report, defaults to 999. If the\r\n number of violations exceeds the third argument, the build is set to unstable, defaults to 999. The last argument\r\n specifies an Ant pattern to find the violation files in the workspace. Supported detector types are\r\n <TT>checkstyle</TT>, <TT>codenarc</TT>, <TT>cpd</TT>, <TT>cpplint</TT>, <TT>csslint</TT>, <TT>findbugs</TT>,\r\n <TT>fxcop</TT>, <TT>gendarme</TT>, <TT>jcreport</TT>, <TT>jslint</TT>, <TT>pep8</TT>, <TT>perlcritic</TT>, <TT>pmd</TT>,\r\n <TT>pylint</TT>, <TT>simian</TT>, <TT>stylecop</TT> and <TT>jshint</TT>.",
+                            "firstSentenceCommentText": "Generates reports from static code violations detectors.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.ViolationsContext"
                         }
                     ],
-                    "plugin": "violations"
+                    "plugin": "violations",
+                    "examples": "job('example') {\r\n    publishers {\r\n        violations(50) {\r\n            sourcePathPattern('source pattern')\r\n            fauxProjectPath('faux path')\r\n            perFileDisplayLimit(51)\r\n            checkstyle(10, 11, 10, 'test-report/*.xml')\r\n            findbugs(12, 13, 12)\r\n            jshint(10, 11, 10, 'test-report/*.xml')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "warnings",
@@ -15231,10 +15297,13 @@
                             ],
                             "text": "debianPackage(String repoIdArg, Closure closure = null)",
                             "availableSince": "1.36",
+                            "html": "Uploads Debian packages.\r\n     ",
+                            "firstSentenceCommentText": "Uploads Debian packages.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.DebianPackagePublisherContext"
                         }
                     ],
-                    "plugin": "debian-package-builder"
+                    "plugin": "debian-package-builder",
+                    "examples": "job('example') {\r\n    publishers {\r\n        debianPackage('precise-default') {\r\n            commitMessage('automatic commit by Jenkins')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "dependencyCheck",
@@ -15872,8 +15941,8 @@
                                 }
                             ],
                             "text": "publishCloneWorkspace(String workspaceGlob, Closure cloneWorkspaceClosure)",
-                            "html": "Clone Workspace SCM",
-                            "firstSentenceCommentText": "Clone Workspace SCM",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         },
                         {
@@ -15892,6 +15961,8 @@
                                 }
                             ],
                             "text": "publishCloneWorkspace(String workspaceGlob, String workspaceExcludeGlob, Closure cloneWorkspaceClosure)",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         },
                         {
@@ -15918,31 +15989,33 @@
                                 }
                             ],
                             "text": "publishCloneWorkspace(String workspaceGlob, String workspaceExcludeGlob, String criteria, String archiveMethod, Closure cloneWorkspaceClosure)",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         },
                         {
                             "parameters": [
                                 {
-                                    "name": "workspaceGlobArg",
+                                    "name": "workspaceGlob",
                                     "type": "String"
                                 },
                                 {
-                                    "name": "workspaceExcludeGlobArg",
+                                    "name": "workspaceExcludeGlob",
                                     "type": "String",
                                     "defaultValue": "''"
                                 },
                                 {
-                                    "name": "criteriaArg",
+                                    "name": "criteria",
                                     "type": "String",
                                     "defaultValue": "'Any'"
                                 },
                                 {
-                                    "name": "archiveMethodArg",
+                                    "name": "archiveMethod",
                                     "type": "String",
                                     "defaultValue": "'TAR'"
                                 },
                                 {
-                                    "name": "overrideDefaultExcludesArg",
+                                    "name": "overrideDefaultExcludes",
                                     "type": "boolean",
                                     "defaultValue": "false"
                                 },
@@ -15952,11 +16025,14 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "publishCloneWorkspace(String workspaceGlobArg, String workspaceExcludeGlobArg = '', String criteriaArg = 'Any', String archiveMethodArg = 'TAR', boolean overrideDefaultExcludesArg = false, Closure cloneWorkspaceClosure = null)",
+                            "text": "publishCloneWorkspace(String workspaceGlob, String workspaceExcludeGlob = '', String criteria = 'Any', String archiveMethod = 'TAR', boolean overrideDefaultExcludes = false, Closure cloneWorkspaceClosure = null)",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         }
                     ],
-                    "plugin": "clone-workspace-scm"
+                    "plugin": "clone-workspace-scm",
+                    "examples": "job('example') {\r\n    publishers {\r\n        publishCloneWorkspace('build/libs/**')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "publishHtml",
@@ -16158,10 +16234,13 @@
                             ],
                             "text": "s3(String profile, Closure s3PublisherClosure)",
                             "availableSince": "1.26",
+                            "html": "Uploads build artifacts to Amazon S3.\r\n     ",
+                            "firstSentenceCommentText": "Uploads build artifacts to Amazon S3.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.S3BucketPublisherContext"
                         }
                     ],
-                    "plugin": "s3"
+                    "plugin": "s3",
+                    "examples": "job('example') {\r\n    publishers {\r\n        s3('myProfile') {\r\n            entry('foo', 'bar', 'eu-west-1') {\r\n                storageClass('REDUCED_REDUNDANCY')\r\n                noUploadOnFailure()\r\n                uploadFromSlave()\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "slackNotifications",
@@ -16193,10 +16272,13 @@
                             ],
                             "text": "sonar(Closure sonarClosure = null)",
                             "availableSince": "1.31",
+                            "html": "Triggers SonarQube analysis.\r\n     ",
+                            "firstSentenceCommentText": "Triggers SonarQube analysis.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.SonarContext"
                         }
                     ],
-                    "plugin": "sonar"
+                    "plugin": "sonar",
+                    "examples": "// run Sonar analysis for feature-xy branch,\r\n// but skip if SKIP_SONAR environment variable is set to true\r\njob('example') {\r\n    publishers {\r\n        sonar {\r\n            branch('feature-xy')\r\n            overrideTriggers {\r\n                skipIfEnvironmentVariable('SKIP_SONAR')\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "stashNotifier",
@@ -16211,12 +16293,13 @@
                             ],
                             "text": "stashNotifier(Closure stashNotifierClosure = null)",
                             "availableSince": "1.23",
-                            "html": "Configures the StashNotifier plugin.\r\n     ",
-                            "firstSentenceCommentText": "Configures the StashNotifier plugin.",
+                            "html": "Notifies an Atlassian Stash instance of Jenkins builds in progress and of their results.\r\n     ",
+                            "firstSentenceCommentText": "Notifies an Atlassian Stash instance of Jenkins builds in progress and of their results.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.StashNotifierContext"
                         }
                     ],
-                    "plugin": "stashNotifier"
+                    "plugin": "stashNotifier",
+                    "examples": "// notify Stash using the global Jenkins settings\r\njob('example-1') {\r\n    publishers {\r\n        stashNotifier()\r\n    }\r\n}\r\n\r\n// notify Stash using the global Jenkins settings and sets keepRepeatedBuilds to true\r\njob('example-2') {\r\n    publishers {\r\n        stashNotifier {\r\n            keepRepeatedBuilds()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "tasks",
@@ -16318,6 +16401,8 @@
                                 }
                             ],
                             "text": "violations(Closure violationsClosure = null)",
+                            "html": "Generates reports from static code violations detectors.\r\n     ",
+                            "firstSentenceCommentText": "Generates reports from static code violations detectors.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.ViolationsContext"
                         },
                         {
@@ -16333,10 +16418,13 @@
                                 }
                             ],
                             "text": "violations(int perFileDisplayLimit, Closure violationsClosure = null)",
+                            "html": "Generates reports from static code violations detectors.\r\n\r\n For each supported detector type, the closure method with up to four arguments is available. The first argument\r\n specifies the lowest number of violations to generate the sunny weather report, defaults to 10. The second\r\n argument specifies the lowest number of violations to generate the stormy weather report, defaults to 999. If the\r\n number of violations exceeds the third argument, the build is set to unstable, defaults to 999. The last argument\r\n specifies an Ant pattern to find the violation files in the workspace. Supported detector types are\r\n <TT>checkstyle</TT>, <TT>codenarc</TT>, <TT>cpd</TT>, <TT>cpplint</TT>, <TT>csslint</TT>, <TT>findbugs</TT>,\r\n <TT>fxcop</TT>, <TT>gendarme</TT>, <TT>jcreport</TT>, <TT>jslint</TT>, <TT>pep8</TT>, <TT>perlcritic</TT>, <TT>pmd</TT>,\r\n <TT>pylint</TT>, <TT>simian</TT>, <TT>stylecop</TT> and <TT>jshint</TT>.",
+                            "firstSentenceCommentText": "Generates reports from static code violations detectors.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.ViolationsContext"
                         }
                     ],
-                    "plugin": "violations"
+                    "plugin": "violations",
+                    "examples": "job('example') {\r\n    publishers {\r\n        violations(50) {\r\n            sourcePathPattern('source pattern')\r\n            fauxProjectPath('faux path')\r\n            perFileDisplayLimit(51)\r\n            checkstyle(10, 11, 10, 'test-report/*.xml')\r\n            findbugs(12, 13, 12)\r\n            jshint(10, 11, 10, 'test-report/*.xml')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "warnings",
@@ -25705,10 +25793,13 @@
                             ],
                             "text": "debianPackage(String repoIdArg, Closure closure = null)",
                             "availableSince": "1.36",
+                            "html": "Uploads Debian packages.\r\n     ",
+                            "firstSentenceCommentText": "Uploads Debian packages.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.DebianPackagePublisherContext"
                         }
                     ],
-                    "plugin": "debian-package-builder"
+                    "plugin": "debian-package-builder",
+                    "examples": "job('example') {\r\n    publishers {\r\n        debianPackage('precise-default') {\r\n            commitMessage('automatic commit by Jenkins')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "dependencyCheck",
@@ -26363,8 +26454,8 @@
                                 }
                             ],
                             "text": "publishCloneWorkspace(String workspaceGlob, Closure cloneWorkspaceClosure)",
-                            "html": "Clone Workspace SCM",
-                            "firstSentenceCommentText": "Clone Workspace SCM",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         },
                         {
@@ -26383,6 +26474,8 @@
                                 }
                             ],
                             "text": "publishCloneWorkspace(String workspaceGlob, String workspaceExcludeGlob, Closure cloneWorkspaceClosure)",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         },
                         {
@@ -26409,31 +26502,33 @@
                                 }
                             ],
                             "text": "publishCloneWorkspace(String workspaceGlob, String workspaceExcludeGlob, String criteria, String archiveMethod, Closure cloneWorkspaceClosure)",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         },
                         {
                             "parameters": [
                                 {
-                                    "name": "workspaceGlobArg",
+                                    "name": "workspaceGlob",
                                     "type": "String"
                                 },
                                 {
-                                    "name": "workspaceExcludeGlobArg",
+                                    "name": "workspaceExcludeGlob",
                                     "type": "String",
                                     "defaultValue": "''"
                                 },
                                 {
-                                    "name": "criteriaArg",
+                                    "name": "criteria",
                                     "type": "String",
                                     "defaultValue": "'Any'"
                                 },
                                 {
-                                    "name": "archiveMethodArg",
+                                    "name": "archiveMethod",
                                     "type": "String",
                                     "defaultValue": "'TAR'"
                                 },
                                 {
-                                    "name": "overrideDefaultExcludesArg",
+                                    "name": "overrideDefaultExcludes",
                                     "type": "boolean",
                                     "defaultValue": "false"
                                 },
@@ -26443,11 +26538,14 @@
                                     "defaultValue": "null"
                                 }
                             ],
-                            "text": "publishCloneWorkspace(String workspaceGlobArg, String workspaceExcludeGlobArg = '', String criteriaArg = 'Any', String archiveMethodArg = 'TAR', boolean overrideDefaultExcludesArg = false, Closure cloneWorkspaceClosure = null)",
+                            "text": "publishCloneWorkspace(String workspaceGlob, String workspaceExcludeGlob = '', String criteria = 'Any', String archiveMethod = 'TAR', boolean overrideDefaultExcludes = false, Closure cloneWorkspaceClosure = null)",
+                            "html": "Archives files for Clone Workspace SCM source.",
+                            "firstSentenceCommentText": "Archives files for Clone Workspace SCM source.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.CloneWorkspaceContext"
                         }
                     ],
-                    "plugin": "clone-workspace-scm"
+                    "plugin": "clone-workspace-scm",
+                    "examples": "job('example') {\r\n    publishers {\r\n        publishCloneWorkspace('build/libs/**')\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "publishHtml",
@@ -26649,10 +26747,13 @@
                             ],
                             "text": "s3(String profile, Closure s3PublisherClosure)",
                             "availableSince": "1.26",
+                            "html": "Uploads build artifacts to Amazon S3.\r\n     ",
+                            "firstSentenceCommentText": "Uploads build artifacts to Amazon S3.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.S3BucketPublisherContext"
                         }
                     ],
-                    "plugin": "s3"
+                    "plugin": "s3",
+                    "examples": "job('example') {\r\n    publishers {\r\n        s3('myProfile') {\r\n            entry('foo', 'bar', 'eu-west-1') {\r\n                storageClass('REDUCED_REDUNDANCY')\r\n                noUploadOnFailure()\r\n                uploadFromSlave()\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "slackNotifications",
@@ -26684,10 +26785,13 @@
                             ],
                             "text": "sonar(Closure sonarClosure = null)",
                             "availableSince": "1.31",
+                            "html": "Triggers SonarQube analysis.\r\n     ",
+                            "firstSentenceCommentText": "Triggers SonarQube analysis.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.SonarContext"
                         }
                     ],
-                    "plugin": "sonar"
+                    "plugin": "sonar",
+                    "examples": "// run Sonar analysis for feature-xy branch,\r\n// but skip if SKIP_SONAR environment variable is set to true\r\njob('example') {\r\n    publishers {\r\n        sonar {\r\n            branch('feature-xy')\r\n            overrideTriggers {\r\n                skipIfEnvironmentVariable('SKIP_SONAR')\r\n            }\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "stashNotifier",
@@ -26702,12 +26806,13 @@
                             ],
                             "text": "stashNotifier(Closure stashNotifierClosure = null)",
                             "availableSince": "1.23",
-                            "html": "Configures the StashNotifier plugin.\r\n     ",
-                            "firstSentenceCommentText": "Configures the StashNotifier plugin.",
+                            "html": "Notifies an Atlassian Stash instance of Jenkins builds in progress and of their results.\r\n     ",
+                            "firstSentenceCommentText": "Notifies an Atlassian Stash instance of Jenkins builds in progress and of their results.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.StashNotifierContext"
                         }
                     ],
-                    "plugin": "stashNotifier"
+                    "plugin": "stashNotifier",
+                    "examples": "// notify Stash using the global Jenkins settings\r\njob('example-1') {\r\n    publishers {\r\n        stashNotifier()\r\n    }\r\n}\r\n\r\n// notify Stash using the global Jenkins settings and sets keepRepeatedBuilds to true\r\njob('example-2') {\r\n    publishers {\r\n        stashNotifier {\r\n            keepRepeatedBuilds()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "tasks",
@@ -26809,6 +26914,8 @@
                                 }
                             ],
                             "text": "violations(Closure violationsClosure = null)",
+                            "html": "Generates reports from static code violations detectors.\r\n     ",
+                            "firstSentenceCommentText": "Generates reports from static code violations detectors.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.ViolationsContext"
                         },
                         {
@@ -26824,10 +26931,13 @@
                                 }
                             ],
                             "text": "violations(int perFileDisplayLimit, Closure violationsClosure = null)",
+                            "html": "Generates reports from static code violations detectors.\r\n\r\n For each supported detector type, the closure method with up to four arguments is available. The first argument\r\n specifies the lowest number of violations to generate the sunny weather report, defaults to 10. The second\r\n argument specifies the lowest number of violations to generate the stormy weather report, defaults to 999. If the\r\n number of violations exceeds the third argument, the build is set to unstable, defaults to 999. The last argument\r\n specifies an Ant pattern to find the violation files in the workspace. Supported detector types are\r\n <TT>checkstyle</TT>, <TT>codenarc</TT>, <TT>cpd</TT>, <TT>cpplint</TT>, <TT>csslint</TT>, <TT>findbugs</TT>,\r\n <TT>fxcop</TT>, <TT>gendarme</TT>, <TT>jcreport</TT>, <TT>jslint</TT>, <TT>pep8</TT>, <TT>perlcritic</TT>, <TT>pmd</TT>,\r\n <TT>pylint</TT>, <TT>simian</TT>, <TT>stylecop</TT> and <TT>jshint</TT>.",
+                            "firstSentenceCommentText": "Generates reports from static code violations detectors.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.ViolationsContext"
                         }
                     ],
-                    "plugin": "violations"
+                    "plugin": "violations",
+                    "examples": "job('example') {\r\n    publishers {\r\n        violations(50) {\r\n            sourcePathPattern('source pattern')\r\n            fauxProjectPath('faux path')\r\n            perFileDisplayLimit(51)\r\n            checkstyle(10, 11, 10, 'test-report/*.xml')\r\n            findbugs(12, 13, 12)\r\n            jshint(10, 11, 10, 'test-report/*.xml')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "warnings",

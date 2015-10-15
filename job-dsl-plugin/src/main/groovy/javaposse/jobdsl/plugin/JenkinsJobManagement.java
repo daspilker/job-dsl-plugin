@@ -50,6 +50,7 @@ import org.jenkinsci.plugins.vSphereCloud;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -82,6 +83,7 @@ public final class JenkinsJobManagement extends AbstractJobManagement {
     private final LookupStrategy lookupStrategy;
     private final Map<javaposse.jobdsl.dsl.Item, DslEnvironment> environments =
             new HashMap<javaposse.jobdsl.dsl.Item, DslEnvironment>();
+    private boolean verbose;
 
     public JenkinsJobManagement(PrintStream outputLogger, EnvVars envVars, AbstractBuild<?, ?> build,
                                 LookupStrategy lookupStrategy) {
@@ -93,6 +95,10 @@ public final class JenkinsJobManagement extends AbstractJobManagement {
 
     public JenkinsJobManagement(PrintStream outputLogger, EnvVars envVars, AbstractBuild<?, ?> build) {
         this(outputLogger, envVars, build, LookupStrategy.JENKINS_ROOT);
+    }
+
+    public void setVerbose(boolean verbose) {
+        this.verbose = verbose;
     }
 
     @Override
@@ -117,7 +123,7 @@ public final class JenkinsJobManagement extends AbstractJobManagement {
 
     @Override
     public boolean createOrUpdateConfig(javaposse.jobdsl.dsl.Item dslItem, boolean ignoreExisting)
-            throws NameNotProvidedException {
+            throws NameNotProvidedException, IOException {
         String path = dslItem.getName();
         String config = dslItem.getXml();
 
@@ -130,11 +136,20 @@ public final class JenkinsJobManagement extends AbstractJobManagement {
         String jobName = FilenameUtils.getName(path);
         Jenkins.checkGoodName(jobName);
 
+        String oldConfig = "";
         if (item == null) {
-            created = createNewItem(path, dslItem);
+            item = (AbstractItem) createNewItem(path, dslItem);
+            created = item != null;
         } else if (!ignoreExisting) {
+            oldConfig = item.getConfigFile().asString();
             created = updateExistingItem(item, dslItem);
         }
+
+        if (created) {
+            String newConfig = item.getConfigFile().asString();
+            printDiff("job: " + path, oldConfig, newConfig);
+        }
+
         return created;
     }
 
@@ -146,19 +161,32 @@ public final class JenkinsJobManagement extends AbstractJobManagement {
         try {
             InputStream inputStream = new ByteArrayInputStream(config.getBytes("UTF-8"));
 
+            String oldConfig = null;
             ItemGroup parent = lookupStrategy.getParent(build.getProject(), path);
             if (parent instanceof ViewGroup) {
                 View view = ((ViewGroup) parent).getView(viewBaseName);
                 if (view == null) {
+                    view = createViewFromXML(viewBaseName, inputStream);
                     if (parent instanceof Jenkins) {
-                        ((Jenkins) parent).addView(createViewFromXML(viewBaseName, inputStream));
+                        ((Jenkins) parent).addView(view);
+                        oldConfig = "";
                     } else if (parent instanceof Folder) {
-                        ((Folder) parent).addView(createViewFromXML(viewBaseName, inputStream));
+                        ((Folder) parent).addView(view);
+                        oldConfig = "";
                     } else {
                         LOGGER.log(Level.WARNING, format("Could not create view within %s", parent.getClass()));
                     }
                 } else if (!ignoreExisting) {
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    view.writeXml(out);
+                    oldConfig = out.toString("UTF-8");
                     view.updateByXml(new StreamSource(inputStream));
+                }
+
+                if (oldConfig != null) {
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    view.writeXml(out);
+                    printDiff("view: " + path, oldConfig, out.toString("UTF-8"));
                 }
             } else if (parent == null) {
                 throw new DslException(format(Messages.CreateView_UnknownParent(), path));
@@ -494,10 +522,9 @@ public final class JenkinsJobManagement extends AbstractJobManagement {
         }
     }
 
-    private boolean createNewItem(String path, javaposse.jobdsl.dsl.Item dslItem) {
+    private Item createNewItem(String path, javaposse.jobdsl.dsl.Item dslItem) {
         String config = dslItem.getXml();
         LOGGER.log(Level.FINE, format("Creating item as %s", config));
-        boolean created = false;
 
         try {
             InputStream is = new ByteArrayInputStream(config.getBytes("UTF-8"));
@@ -507,7 +534,7 @@ public final class JenkinsJobManagement extends AbstractJobManagement {
             if (parent instanceof ModifiableTopLevelItemGroup) {
                 Item project = ((ModifiableTopLevelItemGroup) parent).createProjectFromXML(itemName, is);
                 notifyItemCreated(project, dslItem);
-                created = true;
+                return project;
             } else if (parent == null) {
                 throw new DslException(format(Messages.CreateItem_UnknownParent(), path));
             } else {
@@ -518,7 +545,7 @@ public final class JenkinsJobManagement extends AbstractJobManagement {
         } catch (IOException e) {
             LOGGER.log(Level.WARNING, format("Error writing config for new item %s.", path), e);
         }
-        return created;
+        return null;
     }
 
     private void notifyItemCreated(Item item, javaposse.jobdsl.dsl.Item dslItem) {
@@ -566,6 +593,34 @@ public final class JenkinsJobManagement extends AbstractJobManagement {
             }
         }
         from.renameTo(FilenameUtils.getName(to));
+    }
+
+    private void printDiff(String name, String oldConfig, String newConfig) {
+        if (verbose) {
+            try {
+                if (!newConfig.isEmpty() && !oldConfig.isEmpty()) {
+                    // avoid "No newline at end of file" messages
+                    newConfig += "\n";
+                    oldConfig += "\n";
+                }
+                com.cloudbees.diff.Diff diff = com.cloudbees.diff.Diff.diff(
+                        new StringReader(oldConfig),
+                        new StringReader(newConfig),
+                        true
+                );
+                if (!diff.isEmpty()) {
+                    getOutputStream().println(diff.toUnifiedDiff(
+                            name,
+                            name,
+                            new StringReader(oldConfig),
+                            new StringReader(newConfig),
+                            3
+                    ));
+                }
+            } catch (IOException e) {
+                LOGGER.log(Level.WARNING, "Error while logging diff", e);
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")

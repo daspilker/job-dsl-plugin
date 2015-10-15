@@ -47,7 +47,7 @@ interface JobManagement {
      * @throws ConfigurationMissingException if the config xml is null or blank
      * @since 1.33
      */
-    boolean createOrUpdateConfig(Item item, boolean ignoreExisting) throws NameNotProvidedException
+    boolean createOrUpdateConfig(Item item, boolean ignoreExisting) throws NameNotProvidedException, IOException
 
     /**
      * Creates or updates the view config for the named Jenkins view with the config provided.

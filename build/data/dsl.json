@@ -1,5 +1,5 @@
 {
-    "version": "1.46-SNAPSHOT",
+    "version": "1.47-SNAPSHOT",
     "root": {
         "name": "Jenkins Job DSL API",
         "contextClass": "javaposse.jobdsl.dsl.DslFactory"
@@ -870,6 +870,26 @@
                             },
                             "html": "Specifies a folder containing a repository that will be used by Git as a reference during clone operations.\r\n     ",
                             "firstSentenceCommentText": "Specifies a folder containing a repository that will be used by Git as a reference during clone operations."
+                        }
+                    ]
+                },
+                {
+                    "name": "timeout",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "timeout",
+                                    "type": "Integer"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "plugin": {
+                                "id": "git",
+                                "minimumVersion": "2.2.8"
+                            },
+                            "html": "Specifies a timeout (in minutes) for submodules operations.\r\n     ",
+                            "firstSentenceCommentText": "Specifies a timeout (in minutes) for submodules operations."
                         }
                     ]
                 },
@@ -3965,6 +3985,41 @@
                 }
             ]
         },
+        "javaposse.jobdsl.dsl.helpers.properties.WallDisplayContext": {
+            "type": "javaposse.jobdsl.dsl.helpers.properties.WallDisplayContext",
+            "methods": [
+                {
+                    "name": "backgroundPicture",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "picture",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Background picture to use for wall display.",
+                            "firstSentenceCommentText": "Background picture to use for wall display."
+                        }
+                    ]
+                },
+                {
+                    "name": "name",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "name",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Custom text to use for wall display.",
+                            "firstSentenceCommentText": "Custom text to use for wall display."
+                        }
+                    ]
+                }
+            ]
+        },
         "javaposse.jobdsl.dsl.helpers.properties.PropertiesContext": {
             "type": "javaposse.jobdsl.dsl.helpers.properties.PropertiesContext",
             "methods": [
@@ -4118,6 +4173,28 @@
                         }
                     ],
                     "examples": "userContent('wiki.png', streamFileFromWorkspace('images/wiki.png'))\r\n\r\njob('example') {\r\n    properties {\r\n        sidebarLinks {\r\n            // use built-in image\r\n            link('https://jira.acme.org/', 'JIRA', 'notepad.png')\r\n            // use uploaded image\r\n            link('https://wiki.acme.org/', 'Wiki', '/userContent/wiki.png')\r\n        }\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "wallDisplay",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "wallDisplayClosure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "plugin": {
+                                "id": "jenkinswalldisplay",
+                                "minimumVersion": "0.6.30"
+                            },
+                            "html": "Configures job appearance for wall display.\r\n     ",
+                            "firstSentenceCommentText": "Configures job appearance for wall display.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.properties.WallDisplayContext"
+                        }
+                    ],
+                    "examples": "job('example') {\r\n    properties {\r\n        wallDisplay {\r\n            name('job example')\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "zenTimestamp",
@@ -6350,6 +6427,89 @@
                             ],
                             "html": "Zooms the coverage chart and crop area below the minimum and above the maximum coverage of the past reports.\r\n Defaults to <TT>false</TT>.",
                             "firstSentenceCommentText": "Zooms the coverage chart and crop area below the minimum and above the maximum coverage of the past reports.\r\n "
+                        }
+                    ]
+                }
+            ]
+        },
+        "javaposse.jobdsl.dsl.helpers.publisher.LogParserContext": {
+            "type": "javaposse.jobdsl.dsl.helpers.publisher.LogParserContext",
+            "methods": [
+                {
+                    "name": "failBuildOnError",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "failBuildOnError",
+                                    "type": "boolean",
+                                    "defaultValue": "true"
+                                }
+                            ],
+                            "html": "If set, marks the build as failed if any errors are found. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "If set, marks the build as failed if any errors are found. "
+                        }
+                    ]
+                },
+                {
+                    "name": "globalRules",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "globalRules",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the path to a global rule file.",
+                            "firstSentenceCommentText": "Sets the path to a global rule file."
+                        }
+                    ]
+                },
+                {
+                    "name": "projectRules",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "projectRules",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the path to a rule file in the workspace.",
+                            "firstSentenceCommentText": "Sets the path to a rule file in the workspace."
+                        }
+                    ]
+                },
+                {
+                    "name": "showGraphs",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "showGraphs",
+                                    "type": "boolean",
+                                    "defaultValue": "true"
+                                }
+                            ],
+                            "html": "If set, shows log parser graphs on the project page. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "If set, shows log parser graphs on the project page. "
+                        }
+                    ]
+                },
+                {
+                    "name": "unstableOnWarning",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "unstableOnWarning",
+                                    "type": "boolean",
+                                    "defaultValue": "true"
+                                }
+                            ],
+                            "html": "If set, marks the build as unstable if any warnings are found. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "If set, marks the build as unstable if any warnings are found. "
                         }
                     ]
                 }
@@ -11265,6 +11425,22 @@
                     ]
                 },
                 {
+                    "name": "parameterFilters",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "parameterFilters",
+                                    "type": "String..."
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "html": "Specify parameters to filter the job. Can be called multiple times to add more parameters.\r\n     ",
+                            "firstSentenceCommentText": "Specify parameters to filter the job. "
+                        }
+                    ]
+                },
+                {
                     "name": "targetDirectory",
                     "signatures": [
                         {
@@ -12116,10 +12292,6 @@
                                 }
                             ],
                             "availableSince": "1.40",
-                            "plugin": {
-                                "id": "gradle",
-                                "minimumVersion": "1.23"
-                            },
                             "html": "If set, uses the workspace as <TT>GRADLE_USER_HOME</TT>. Defaults to <TT>false</TT>.\r\n     ",
                             "firstSentenceCommentText": "If set, uses the workspace as GRADLE_USER_HOME. "
                         }
@@ -14847,6 +15019,24 @@
                     "examples": "job('example') {\r\n    steps {\r\n        exportRuntimeParameters()\r\n    }\r\n}\r\n"
                 },
                 {
+                    "name": "extractJiraEnvironmentVariables",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                
+                            ],
+                            "availableSince": "1.46",
+                            "plugin": {
+                                "id": "jira",
+                                "minimumVersion": "2.2"
+                            },
+                            "html": "Extracts JIRA information for the build to environment variables.\r\n    ",
+                            "firstSentenceCommentText": "Extracts JIRA information for the build to environment variables."
+                        }
+                    ],
+                    "examples": "job('example') {\r\n    steps {\r\n        extractJiraEnvironmentVariables()\r\n    }\r\n}\r\n"
+                },
+                {
                     "name": "gradle",
                     "signatures": [
                         {
@@ -14858,7 +15048,8 @@
                             ],
                             "availableSince": "1.27",
                             "plugin": {
-                                "id": "gradle"
+                                "id": "gradle",
+                                "minimumVersion": "1.23"
                             },
                             "html": "Invokes a Gradle build script.\r\n     ",
                             "firstSentenceCommentText": "Invokes a Gradle build script.",
@@ -16097,10 +16288,6 @@
                                     "defaultValue": "true"
                                 }
                             ],
-                            "plugin": {
-                                "id": "htmlpublisher",
-                                "minimumVersion": "1.3"
-                            },
                             "html": "If set, allows report to be missing. Defaults to <TT>false</TT>.",
                             "firstSentenceCommentText": "If set, allows report to be missing. "
                         }
@@ -16118,10 +16305,6 @@
                                 }
                             ],
                             "availableSince": "1.35",
-                            "plugin": {
-                                "id": "htmlpublisher",
-                                "minimumVersion": "1.4"
-                            },
                             "html": "Publishes the link on project level even if build failed.\r\n     ",
                             "firstSentenceCommentText": "Publishes the link on project level even if build failed."
                         }
@@ -19165,6 +19348,28 @@
                     "examples": "job('example') {\r\n    publishers {\r\n        cobertura('**/target/site/cobertura/coverage.xml') {\r\n            failNoReports(true)\r\n            sourceEncoding('ASCII')\r\n\r\n            // the following targets are added by default to check the method, line and conditional level coverage\r\n            methodTarget(80, 0, 0)\r\n            lineTarget(80, 0, 0)\r\n            conditionalTarget(70, 0, 0)\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
+                    "name": "consoleParsing",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "plugin": {
+                                "id": "log-parser",
+                                "minimumVersion": "2.0"
+                            },
+                            "html": "Parses the console output and highlights error/warning/info lines.\r\n     ",
+                            "firstSentenceCommentText": "Parses the console output and highlights error/warning/info lines.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.LogParserContext"
+                        }
+                    ],
+                    "examples": "job('example-1') {\r\n    publishers {\r\n        consoleParsing {\r\n            globalRules('/var/lib/jenkins/userContent/logparser/unitybuilder.parser')\r\n            unstableOnWarning()\r\n            failBuildOnError()\r\n        }\r\n    }\r\n}\r\n\r\njob('example-2') {\r\n    publishers {\r\n        consoleParsing {\r\n            projectRules('unitybuilder.parser')\r\n            unstableOnWarning()\r\n            failBuildOnError()\r\n        }\r\n    }\r\n}\r\n"
+                },
+                {
                     "name": "createJiraIssue",
                     "signatures": [
                         {
@@ -20322,7 +20527,8 @@
                                 }
                             ],
                             "plugin": {
-                                "id": "htmlpublisher"
+                                "id": "htmlpublisher",
+                                "minimumVersion": "1.5"
                             },
                             "html": "Publishes HTML reports.",
                             "firstSentenceCommentText": "Publishes HTML reports.",
@@ -21582,6 +21788,28 @@
                     "examples": "job('example') {\r\n    publishers {\r\n        cobertura('**/target/site/cobertura/coverage.xml') {\r\n            failNoReports(true)\r\n            sourceEncoding('ASCII')\r\n\r\n            // the following targets are added by default to check the method, line and conditional level coverage\r\n            methodTarget(80, 0, 0)\r\n            lineTarget(80, 0, 0)\r\n            conditionalTarget(70, 0, 0)\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
+                    "name": "consoleParsing",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "plugin": {
+                                "id": "log-parser",
+                                "minimumVersion": "2.0"
+                            },
+                            "html": "Parses the console output and highlights error/warning/info lines.\r\n     ",
+                            "firstSentenceCommentText": "Parses the console output and highlights error/warning/info lines.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.LogParserContext"
+                        }
+                    ],
+                    "examples": "job('example-1') {\r\n    publishers {\r\n        consoleParsing {\r\n            globalRules('/var/lib/jenkins/userContent/logparser/unitybuilder.parser')\r\n            unstableOnWarning()\r\n            failBuildOnError()\r\n        }\r\n    }\r\n}\r\n\r\njob('example-2') {\r\n    publishers {\r\n        consoleParsing {\r\n            projectRules('unitybuilder.parser')\r\n            unstableOnWarning()\r\n            failBuildOnError()\r\n        }\r\n    }\r\n}\r\n"
+                },
+                {
                     "name": "createJiraIssue",
                     "signatures": [
                         {
@@ -22719,7 +22947,8 @@
                                 }
                             ],
                             "plugin": {
-                                "id": "htmlpublisher"
+                                "id": "htmlpublisher",
+                                "minimumVersion": "1.5"
                             },
                             "html": "Publishes HTML reports.",
                             "firstSentenceCommentText": "Publishes HTML reports.",
@@ -23691,8 +23920,8 @@
                                     "type": "List<String>"
                                 }
                             ],
-                            "html": "Specifies on which Gerrit projects to trigger a build on.",
-                            "firstSentenceCommentText": "Specifies on which Gerrit projects to trigger a build on."
+                            "html": "Specifies on which Gerrit projects to trigger a build on. Use a <TT>'<type>:<pattern>'</TT> notation to specify\r\n a project or branch name pattern. Supported types are <TT>plain</TT> (default), <TT>ant</TT> (called \"Path\" in the\r\n UI) and <TT>reg_exp</TT>.",
+                            "firstSentenceCommentText": "Specifies on which Gerrit projects to trigger a build on. "
                         },
                         {
                             "parameters": [
@@ -23705,8 +23934,8 @@
                                     "type": "String"
                                 }
                             ],
-                            "html": "Specifies on which Gerrit projects to trigger a build on.",
-                            "firstSentenceCommentText": "Specifies on which Gerrit projects to trigger a build on."
+                            "html": "Specifies on which Gerrit projects to trigger a build on. Use a <TT>'<type>:<pattern>'</TT> notation to specify\r\n a project or branch name pattern. Supported types are <TT>plain</TT> (default), <TT>ant</TT> (called \"Path\" in the\r\n UI) and <TT>reg_exp</TT>.",
+                            "firstSentenceCommentText": "Specifies on which Gerrit projects to trigger a build on. "
                         }
                     ]
                 }
@@ -29577,6 +29806,111 @@
                 }
             ]
         },
+        "javaposse.jobdsl.dsl.views.portlets.BuildStatisticsContext": {
+            "type": "javaposse.jobdsl.dsl.views.portlets.BuildStatisticsContext",
+            "methods": [
+                {
+                    "name": "displayName",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "displayName",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the display name for the portlet. Defaults to <TT>'Build statistics'</TT>.",
+                            "firstSentenceCommentText": "Sets the display name for the portlet. "
+                        }
+                    ]
+                }
+            ]
+        },
+        "javaposse.jobdsl.dsl.views.portlets.IFrameContext": {
+            "type": "javaposse.jobdsl.dsl.views.portlets.IFrameContext",
+            "methods": [
+                {
+                    "name": "displayName",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "displayName",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the display name for the portlet. Defaults to <TT>'Iframe Portlet'</TT>.",
+                            "firstSentenceCommentText": "Sets the display name for the portlet. "
+                        }
+                    ]
+                },
+                {
+                    "name": "divStyle",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "divStyle",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the style for the surrounding div element. Defaults to <TT>'width:100%;height:1000px;'</TT>.",
+                            "firstSentenceCommentText": "Sets the style for the surrounding div element. "
+                        }
+                    ]
+                },
+                {
+                    "name": "effectiveUrl",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "effectiveUrl",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the effective iframe source URL.",
+                            "firstSentenceCommentText": "Sets the effective iframe source URL."
+                        }
+                    ]
+                },
+                {
+                    "name": "iframeSource",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "iframeSource",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the iframe source URL.",
+                            "firstSentenceCommentText": "Sets the iframe source URL."
+                        }
+                    ]
+                }
+            ]
+        },
+        "javaposse.jobdsl.dsl.views.portlets.JenkinsJobsListContext": {
+            "type": "javaposse.jobdsl.dsl.views.portlets.JenkinsJobsListContext",
+            "methods": [
+                {
+                    "name": "displayName",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "displayName",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the display name for the portlet. Defaults to <TT>'Jenkins jobs list'</TT>.",
+                            "firstSentenceCommentText": "Sets the display name for the portlet. "
+                        }
+                    ]
+                }
+            ]
+        },
         "javaposse.jobdsl.dsl.views.portlets.TestStatisticsChartContext": {
             "type": "javaposse.jobdsl.dsl.views.portlets.TestStatisticsChartContext",
             "methods": [
@@ -29678,9 +30012,164 @@
                 }
             ]
         },
+        "javaposse.jobdsl.dsl.views.portlets.TestTrendChartContext": {
+            "type": "javaposse.jobdsl.dsl.views.portlets.TestTrendChartContext",
+            "methods": [
+                {
+                    "name": "dateRange",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "dateRange",
+                                    "type": "int"
+                                }
+                            ],
+                            "html": "Sets the number of days to display. Defaults to <TT>'0'</TT>",
+                            "firstSentenceCommentText": "Sets the number of days to display. "
+                        }
+                    ]
+                },
+                {
+                    "name": "dateShift",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "dateShift",
+                                    "type": "int"
+                                }
+                            ],
+                            "html": "Sets the number of minutes the date is shifted. Defaults to <TT>'0'</TT>",
+                            "firstSentenceCommentText": "Sets the number of minutes the date is shifted. "
+                        }
+                    ]
+                },
+                {
+                    "name": "displayName",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "displayName",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the display name for the portlet. Defaults to <TT>'Test Trend Chart'</TT>.",
+                            "firstSentenceCommentText": "Sets the display name for the portlet. "
+                        }
+                    ]
+                },
+                {
+                    "name": "displayStatus",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "displayStatus",
+                                    "type": "javaposse.jobdsl.dsl.views.portlets.TestTrendChartContext.DisplayStatus",
+                                    "enumConstants": [
+                                        "ALL",
+                                        "SUCCESS",
+                                        "FAILED",
+                                        "SKIPPED"
+                                    ]
+                                }
+                            ],
+                            "html": "Sets the display status for this portlet. Defaults to <TT>DisplayStatus.ALL</TT>.",
+                            "firstSentenceCommentText": "Sets the display status for this portlet. "
+                        }
+                    ]
+                },
+                {
+                    "name": "graphHeight",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "graphHeight",
+                                    "type": "int"
+                                }
+                            ],
+                            "html": "Sets the graph height. Defaults to <TT>'220'</TT>",
+                            "firstSentenceCommentText": "Sets the graph height. "
+                        }
+                    ]
+                },
+                {
+                    "name": "graphWidth",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "graphWidth",
+                                    "type": "int"
+                                }
+                            ],
+                            "html": "Sets the graph width. Defaults to <TT>'300'</TT>.",
+                            "firstSentenceCommentText": "Sets the graph width. "
+                        }
+                    ]
+                }
+            ]
+        },
         "javaposse.jobdsl.dsl.views.portlets.DashboardPortletContext": {
             "type": "javaposse.jobdsl.dsl.views.portlets.DashboardPortletContext",
             "methods": [
+                {
+                    "name": "buildStatistics",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure",
+                                    "defaultValue": "null"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "html": "Adds a build statistics portlet.\r\n     ",
+                            "firstSentenceCommentText": "Adds a build statistics portlet.",
+                            "contextClass": "javaposse.jobdsl.dsl.views.portlets.BuildStatisticsContext"
+                        }
+                    ]
+                },
+                {
+                    "name": "iframe",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure",
+                                    "defaultValue": "null"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "html": "Adds an IFrame portlet.\r\n     ",
+                            "firstSentenceCommentText": "Adds an IFrame portlet.",
+                            "contextClass": "javaposse.jobdsl.dsl.views.portlets.IFrameContext"
+                        }
+                    ]
+                },
+                {
+                    "name": "jenkinsJobsList",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure",
+                                    "defaultValue": "null"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "html": "Add a jenkins jobs list.\r\n     ",
+                            "firstSentenceCommentText": "Add a jenkins jobs list.",
+                            "contextClass": "javaposse.jobdsl.dsl.views.portlets.JenkinsJobsListContext"
+                        }
+                    ]
+                },
                 {
                     "name": "testStatisticsChart",
                     "signatures": [
@@ -29716,6 +30205,24 @@
                         }
                     ],
                     "examples": "dashboardView('example') {\r\n    rightPortlets {\r\n        testStatisticsGrid {\r\n            displayName('Project A Test Stats')\r\n            skippedColor('7F7F7F')\r\n            failureColor('FF0000')\r\n            successColor('00FF00')\r\n        }\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "testTrendChart",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure",
+                                    "defaultValue": "null"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "html": "Adds a test trend chart.\r\n     ",
+                            "firstSentenceCommentText": "Adds a test trend chart.",
+                            "contextClass": "javaposse.jobdsl.dsl.views.portlets.TestTrendChartContext"
+                        }
+                    ]
                 }
             ]
         },
@@ -33345,6 +33852,292 @@
                 }
             ]
         },
+        "javaposse.jobdsl.dsl.helpers.properties.MavenInfoContext": {
+            "type": "javaposse.jobdsl.dsl.helpers.properties.MavenInfoContext",
+            "methods": [
+                {
+                    "name": "assignDescription",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "description",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the description from main module <TT>pom.xml</TT> (from tag <TT><description></TT>).",
+                            "firstSentenceCommentText": "Sets the description from main module pom.xml (from tag )."
+                        }
+                    ]
+                },
+                {
+                    "name": "assignName",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "name",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the name from main module <TT>pom.xml</TT> (from tag <TT><name></TT>).",
+                            "firstSentenceCommentText": "Sets the name from main module pom.xml (from tag )."
+                        }
+                    ]
+                },
+                {
+                    "name": "interestingDependenciesPattern",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "interestingDependenciesPattern",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the pattern to find interesting dependencies.",
+                            "firstSentenceCommentText": "Sets the pattern to find interesting dependencies."
+                        }
+                    ]
+                },
+                {
+                    "name": "modulePattern",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "modulePattern",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the regex pattern to find the module from which to extract version, name and description.",
+                            "firstSentenceCommentText": "Sets the regex pattern to find the module from which to extract version, name and description."
+                        }
+                    ]
+                }
+            ]
+        },
+        "javaposse.jobdsl.dsl.helpers.properties.MavenPropertiesContext": {
+            "type": "javaposse.jobdsl.dsl.helpers.properties.MavenPropertiesContext",
+            "methods": [
+                {
+                    "name": "buildFailureAnalyzer",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "scan",
+                                    "type": "boolean",
+                                    "defaultValue": "true"
+                                }
+                            ],
+                            "availableSince": "1.41",
+                            "plugin": {
+                                "id": "build-failure-analyzer",
+                                "minimumVersion": "1.13.2"
+                            },
+                            "html": "Analyzes the causes of failed builds and presents the causes on the build page.\r\n     ",
+                            "firstSentenceCommentText": "Analyzes the causes of failed builds and presents the causes on the build page."
+                        }
+                    ],
+                    "examples": "job('example-1') {\r\n    properties {\r\n        buildFailureAnalyzer()\r\n    }\r\n}\r\n\r\njob('example-2') {\r\n    properties {\r\n        buildFailureAnalyzer(false)\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "customIcon",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "iconFileName",
+                                    "type": "String"
+                                }
+                            ],
+                            "availableSince": "1.33",
+                            "plugin": {
+                                "id": "custom-job-icon",
+                                "minimumVersion": "0.2"
+                            },
+                            "html": "Allows to configure a custom icon for each job.\r\n\r\n The argument must point to a custom icon placed in the <TT>JENKINS_HOME/userContent/customIcon</TT> directory.\r\n User content can be uploaded by using\r\n javaposse.jobdsl.dsl.DslFactory#userContent(java.lang.String, java.io.InputStream).\r\n     ",
+                            "firstSentenceCommentText": "Allows to configure a custom icon for each job."
+                        }
+                    ],
+                    "examples": "userContent('customIcon/job.png', streamFileFromWorkspace('icons/job.png'))\r\n\r\njob('example') {\r\n    properties {\r\n        customIcon('job.png')\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "githubProjectUrl",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "projectUrl",
+                                    "type": "String"
+                                }
+                            ],
+                            "availableSince": "1.40",
+                            "plugin": {
+                                "id": "github",
+                                "minimumVersion": "1.12.0"
+                            },
+                            "html": "Configures the GitHub project URL.\r\n\r\n The URL will be set automatically when using the\r\n javaposse.jobdsl.dsl.helpers.ScmContext#github(java.lang.String) or\r\n javaposse.jobdsl.dsl.helpers.scm.RemoteContext#github(java.lang.String) methods.\r\n     ",
+                            "firstSentenceCommentText": "Configures the GitHub project URL."
+                        }
+                    ],
+                    "examples": "job('example') {\r\n    properties {\r\n        githubProjectUrl('https://github.com/jenkinsci/job-dsl-plugin')\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "mavenInfo",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "plugin": {
+                                "id": "maven-info",
+                                "minimumVersion": "0.2.0"
+                            },
+                            "html": "Extracts information from Maven POMs.\r\n     ",
+                            "firstSentenceCommentText": "Extracts information from Maven POMs.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.properties.MavenInfoContext"
+                        }
+                    ],
+                    "examples": "mavenJob('example-1') {\r\n    properties {\r\n        mavenInfo {\r\n            modulePattern(':my-artifact')\r\n            interestingDependenciesPattern('org.springframework.*:*')\r\n            assignName('name template')\r\n        }\r\n    }\r\n}\r\n\r\nmavenJob('example-2') {\r\n    properties {\r\n        mavenInfo {\r\n            modulePattern(':my-artifact')\r\n            interestingDependenciesPattern('org.springframework.*:*')\r\n            assignDescription('some text')\r\n        }\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "ownership",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "ownershipClosure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.41",
+                            "plugin": {
+                                "id": "ownership",
+                                "minimumVersion": "0.8"
+                            },
+                            "html": "Allows to configure job ownership.\r\n     ",
+                            "firstSentenceCommentText": "Allows to configure job ownership.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.properties.OwnershipContext"
+                        }
+                    ],
+                    "examples": "job('example') {\r\n    properties {\r\n        ownership {\r\n            primaryOwnerId('User_ID')\r\n            coOwnerIds('User1', 'User2')\r\n            coOwnerIds('User3')\r\n            coOwnerIds('User4')\r\n        }\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "priority",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "value",
+                                    "type": "int"
+                                }
+                            ],
+                            "availableSince": "1.45",
+                            "plugin": {
+                                "id": "PrioritySorter",
+                                "minimumVersion": "3.4"
+                            },
+                            "html": "Sets the priority of the job.\r\n     ",
+                            "firstSentenceCommentText": "Sets the priority of the job."
+                        }
+                    ],
+                    "examples": "job('example') {\r\n    properties {\r\n        priority(5)\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "rebuild",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "rebuildClosure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.39",
+                            "plugin": {
+                                "id": "rebuild",
+                                "minimumVersion": "1.25"
+                            },
+                            "html": "Allows to configure job rebuild behaviour.\r\n     ",
+                            "firstSentenceCommentText": "Allows to configure job rebuild behaviour.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.properties.RebuildContext"
+                        }
+                    ],
+                    "examples": "job('example') {\r\n    properties {\r\n        rebuild {\r\n            autoRebuild()\r\n        }\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "sidebarLinks",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "sidebarLinkClosure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.33",
+                            "plugin": {
+                                "id": "sidebar-link",
+                                "minimumVersion": "1.7"
+                            },
+                            "html": "Adds links in the sidebar of the project page.\r\n\r\n The icon may be a plain filename of an image in Jenkins' <TT>images/24x24</TT> directory (such as\r\n <TT>help.gif</TT>, <TT>document.gif</TT> or <TT>refresh.gif</TT>), or <TT>/userContent/filename.ext</TT> for a custom\r\n icon placed in the <TT>JENKINS_HOME/userContent</TT> directory. User content can also be uploaded by using\r\n javaposse.jobdsl.dsl.DslFactory#userContent(java.lang.String, java.io.InputStream).\r\n     ",
+                            "firstSentenceCommentText": "Adds links in the sidebar of the project page.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.properties.SidebarLinkContext"
+                        }
+                    ],
+                    "examples": "userContent('wiki.png', streamFileFromWorkspace('images/wiki.png'))\r\n\r\njob('example') {\r\n    properties {\r\n        sidebarLinks {\r\n            // use built-in image\r\n            link('https://jira.acme.org/', 'JIRA', 'notepad.png')\r\n            // use uploaded image\r\n            link('https://wiki.acme.org/', 'Wiki', '/userContent/wiki.png')\r\n        }\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "wallDisplay",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "wallDisplayClosure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "plugin": {
+                                "id": "jenkinswalldisplay",
+                                "minimumVersion": "0.6.30"
+                            },
+                            "html": "Configures job appearance for wall display.\r\n     ",
+                            "firstSentenceCommentText": "Configures job appearance for wall display.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.properties.WallDisplayContext"
+                        }
+                    ],
+                    "examples": "job('example') {\r\n    properties {\r\n        wallDisplay {\r\n            name('job example')\r\n        }\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "zenTimestamp",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "pattern",
+                                    "type": "String"
+                                }
+                            ],
+                            "availableSince": "1.39",
+                            "plugin": {
+                                "id": "zentimestamp",
+                                "minimumVersion": "3.3"
+                            },
+                            "html": "Changes the date pattern for the BUILD_ID or BUILD_TIMESTAMP variable.\r\n     ",
+                            "firstSentenceCommentText": "Changes the date pattern for the BUILD_ID or BUILD_TIMESTAMP variable."
+                        }
+                    ],
+                    "examples": "job('example') {\r\n    properties {\r\n        zenTimestamp('yyyy-MM-dd-HH-mm')\r\n    }\r\n}\r\n"
+                }
+            ]
+        },
         "javaposse.jobdsl.dsl.helpers.publisher.DeployArtifactsContext": {
             "type": "javaposse.jobdsl.dsl.helpers.publisher.DeployArtifactsContext",
             "methods": [
@@ -33887,6 +34680,28 @@
                         }
                     ],
                     "examples": "job('example') {\r\n    publishers {\r\n        cobertura('**/target/site/cobertura/coverage.xml') {\r\n            failNoReports(true)\r\n            sourceEncoding('ASCII')\r\n\r\n            // the following targets are added by default to check the method, line and conditional level coverage\r\n            methodTarget(80, 0, 0)\r\n            lineTarget(80, 0, 0)\r\n            conditionalTarget(70, 0, 0)\r\n        }\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "consoleParsing",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "plugin": {
+                                "id": "log-parser",
+                                "minimumVersion": "2.0"
+                            },
+                            "html": "Parses the console output and highlights error/warning/info lines.\r\n     ",
+                            "firstSentenceCommentText": "Parses the console output and highlights error/warning/info lines.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.LogParserContext"
+                        }
+                    ],
+                    "examples": "job('example-1') {\r\n    publishers {\r\n        consoleParsing {\r\n            globalRules('/var/lib/jenkins/userContent/logparser/unitybuilder.parser')\r\n            unstableOnWarning()\r\n            failBuildOnError()\r\n        }\r\n    }\r\n}\r\n\r\njob('example-2') {\r\n    publishers {\r\n        consoleParsing {\r\n            projectRules('unitybuilder.parser')\r\n            unstableOnWarning()\r\n            failBuildOnError()\r\n        }\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "createJiraIssue",
@@ -35045,7 +35860,8 @@
                                 }
                             ],
                             "plugin": {
-                                "id": "htmlpublisher"
+                                "id": "htmlpublisher",
+                                "minimumVersion": "1.5"
                             },
                             "html": "Publishes HTML reports.",
                             "firstSentenceCommentText": "Publishes HTML reports.",
@@ -37639,9 +38455,8 @@
                                     "type": "Closure"
                                 }
                             ],
-                            "html": "Adds custom properties to the job.",
-                            "firstSentenceCommentText": "Adds custom properties to the job.",
-                            "contextClass": "javaposse.jobdsl.dsl.helpers.properties.PropertiesContext"
+                            "availableSince": "1.46",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.properties.MavenPropertiesContext"
                         }
                     ],
                     "examples": "job('example') {\r\n    properties {\r\n        customIcon('job.png')\r\n        sidebarLinks {\r\n            link('https://jira.acme.org/', 'JIRA', 'notepad.png')\r\n        }\r\n        rebuild {\r\n            autoRebuild()\r\n        }\r\n    }\r\n}\r\n"
@@ -37920,27 +38735,6 @@
                     ]
                 },
                 {
-                    "name": "boolParam",
-                    "signatures": [
-                        {
-                            "parameters": [
-                                {
-                                    "name": "paramName",
-                                    "type": "String"
-                                },
-                                {
-                                    "name": "defaultValue",
-                                    "type": "boolean",
-                                    "defaultValue": "false"
-                                }
-                            ],
-                            "deprecated": true,
-                            "html": "Adds a boolean parameter. Can be called multiple times to add more parameters.",
-                            "firstSentenceCommentText": "Adds a boolean parameter. "
-                        }
-                    ]
-                },
-                {
                     "name": "configure",
                     "signatures": [
                         {
@@ -38006,44 +38800,6 @@
                     ]
                 },
                 {
-                    "name": "fileParam",
-                    "signatures": [
-                        {
-                            "parameters": [
-                                {
-                                    "name": "propertyFile",
-                                    "type": "String"
-                                },
-                                {
-                                    "name": "failTriggerOnMissing",
-                                    "type": "boolean",
-                                    "defaultValue": "false"
-                                }
-                            ],
-                            "deprecated": true,
-                            "html": "Reads parameters from a properties file.",
-                            "firstSentenceCommentText": "Reads parameters from a properties file."
-                        }
-                    ]
-                },
-                {
-                    "name": "gitRevision",
-                    "signatures": [
-                        {
-                            "parameters": [
-                                {
-                                    "name": "combineQueuedCommits",
-                                    "type": "boolean",
-                                    "defaultValue": "false"
-                                }
-                            ],
-                            "deprecated": true,
-                            "html": "Passes the Git commit that was used in this build to the downstream builds.",
-                            "firstSentenceCommentText": "Passes the Git commit that was used in this build to the downstream builds."
-                        }
-                    ]
-                },
-                {
                     "name": "killPhaseCondition",
                     "signatures": [
                         {
@@ -38056,43 +38812,6 @@
                             "availableSince": "1.25",
                             "html": "Kills the phase when a condition is met.\r\n\r\n Must be one of <TT>'FAILURE'</TT> (default), <TT>'NEVER'</TT> or [",
                             "firstSentenceCommentText": "Kills the phase when a condition is met."
-                        }
-                    ]
-                },
-                {
-                    "name": "matrixParam",
-                    "signatures": [
-                        {
-                            "parameters": [
-                                {
-                                    "name": "filter",
-                                    "type": "String"
-                                }
-                            ],
-                            "deprecated": true,
-                            "html": "Specifies a Groovy filter expression that restricts the subset of combinations that the downstream project will\r\n run.",
-                            "firstSentenceCommentText": "Specifies a Groovy filter expression that restricts the subset of combinations that the downstream project will\r\n run."
-                        }
-                    ]
-                },
-                {
-                    "name": "nodeLabel",
-                    "signatures": [
-                        {
-                            "parameters": [
-                                {
-                                    "name": "paramName",
-                                    "type": "String"
-                                },
-                                {
-                                    "name": "nodeLabel",
-                                    "type": "String"
-                                }
-                            ],
-                            "deprecated": true,
-                            "availableSince": "1.26",
-                            "html": "Defines where the target job should be executed, the value must match either a label or a node name.\r\n     ",
-                            "firstSentenceCommentText": "Defines where the target job should be executed, the value must match either a label or a node name."
                         }
                     ]
                 },
@@ -38114,76 +38833,6 @@
                             "html": "Adds parameter values for the job.\r\n     ",
                             "firstSentenceCommentText": "Adds parameter values for the job.",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.common.DownstreamTriggerParameterContext"
-                        }
-                    ]
-                },
-                {
-                    "name": "prop",
-                    "signatures": [
-                        {
-                            "parameters": [
-                                {
-                                    "name": "key",
-                                    "type": "Object"
-                                },
-                                {
-                                    "name": "value",
-                                    "type": "Object"
-                                }
-                            ],
-                            "deprecated": true,
-                            "html": "Adds a parameter. Can be called multiple times to add more parameters.",
-                            "firstSentenceCommentText": "Adds a parameter. "
-                        }
-                    ]
-                },
-                {
-                    "name": "props",
-                    "signatures": [
-                        {
-                            "parameters": [
-                                {
-                                    "name": "map",
-                                    "type": "Map<String, String>"
-                                }
-                            ],
-                            "deprecated": true,
-                            "html": "Adds parameters. Can be called multiple times to add more parameters.",
-                            "firstSentenceCommentText": "Adds parameters. "
-                        }
-                    ]
-                },
-                {
-                    "name": "sameNode",
-                    "signatures": [
-                        {
-                            "parameters": [
-                                {
-                                    "name": "nodeParam",
-                                    "type": "boolean",
-                                    "defaultValue": "true"
-                                }
-                            ],
-                            "deprecated": true,
-                            "html": "Uses the same node for the triggered builds that was used for this build.",
-                            "firstSentenceCommentText": "Uses the same node for the triggered builds that was used for this build."
-                        }
-                    ]
-                },
-                {
-                    "name": "subversionRevision",
-                    "signatures": [
-                        {
-                            "parameters": [
-                                {
-                                    "name": "includeUpstreamParameters",
-                                    "type": "boolean",
-                                    "defaultValue": "false"
-                                }
-                            ],
-                            "deprecated": true,
-                            "html": "Passes the Subversion revisions that were used in this build to the downstream builds.",
-                            "firstSentenceCommentText": "Passes the Subversion revisions that were used in this build to the downstream builds."
                         }
                     ]
                 }
@@ -38687,6 +39336,24 @@
                     "examples": "job('example') {\r\n    steps {\r\n        exportRuntimeParameters()\r\n    }\r\n}\r\n"
                 },
                 {
+                    "name": "extractJiraEnvironmentVariables",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                
+                            ],
+                            "availableSince": "1.46",
+                            "plugin": {
+                                "id": "jira",
+                                "minimumVersion": "2.2"
+                            },
+                            "html": "Extracts JIRA information for the build to environment variables.\r\n    ",
+                            "firstSentenceCommentText": "Extracts JIRA information for the build to environment variables."
+                        }
+                    ],
+                    "examples": "job('example') {\r\n    steps {\r\n        extractJiraEnvironmentVariables()\r\n    }\r\n}\r\n"
+                },
+                {
                     "name": "gradle",
                     "signatures": [
                         {
@@ -38698,7 +39365,8 @@
                             ],
                             "availableSince": "1.27",
                             "plugin": {
-                                "id": "gradle"
+                                "id": "gradle",
+                                "minimumVersion": "1.23"
                             },
                             "html": "Invokes a Gradle build script.\r\n     ",
                             "firstSentenceCommentText": "Invokes a Gradle build script.",
@@ -40581,6 +41249,132 @@
                 }
             ]
         },
+        "javaposse.jobdsl.dsl.helpers.workflow.GitHubBranchSourceContext": {
+            "type": "javaposse.jobdsl.dsl.helpers.workflow.GitHubBranchSourceContext",
+            "methods": [
+                {
+                    "name": "apiUri",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "apiUri",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the GitHub API URI. Defaults to <TT>'https://api.github.com'</TT>.",
+                            "firstSentenceCommentText": "Sets the GitHub API URI. "
+                        }
+                    ]
+                },
+                {
+                    "name": "checkoutCredentialsId",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "checkoutCredentialsId",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets checkout credentials for authentication with GitHub. Defaults to the scan credentials.",
+                            "firstSentenceCommentText": "Sets checkout credentials for authentication with GitHub. "
+                        }
+                    ]
+                },
+                {
+                    "name": "excludes",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "excludes",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets a pattern for branches to exclude.",
+                            "firstSentenceCommentText": "Sets a pattern for branches to exclude."
+                        }
+                    ]
+                },
+                {
+                    "name": "ignoreOnPushNotifications",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "ignoreOnPushNotifications",
+                                    "type": "boolean",
+                                    "defaultValue": "true"
+                                }
+                            ],
+                            "html": "If set, ignores push notifications. Defaults to <TT>false</TT>.",
+                            "firstSentenceCommentText": "If set, ignores push notifications. "
+                        }
+                    ]
+                },
+                {
+                    "name": "includes",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "includes",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets a pattern for branches to include.",
+                            "firstSentenceCommentText": "Sets a pattern for branches to include."
+                        }
+                    ]
+                },
+                {
+                    "name": "repoOwner",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "repoOwner",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the name of the GitHub Organization or GitHub User Account.",
+                            "firstSentenceCommentText": "Sets the name of the GitHub Organization or GitHub User Account."
+                        }
+                    ]
+                },
+                {
+                    "name": "repository",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "repository",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets the name of the GitHub repository.",
+                            "firstSentenceCommentText": "Sets the name of the GitHub repository."
+                        }
+                    ]
+                },
+                {
+                    "name": "scanCredentialsId",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "scanCredentialsId",
+                                    "type": "String"
+                                }
+                            ],
+                            "html": "Sets scan credentials for authentication with GitHub.",
+                            "firstSentenceCommentText": "Sets scan credentials for authentication with GitHub."
+                        }
+                    ]
+                }
+            ]
+        },
         "javaposse.jobdsl.dsl.helpers.workflow.BranchSourcesContext": {
             "type": "javaposse.jobdsl.dsl.helpers.workflow.BranchSourcesContext",
             "methods": [
@@ -40594,12 +41388,38 @@
                                     "type": "Closure"
                                 }
                             ],
+                            "plugin": {
+                                "id": "git",
+                                "minimumVersion": "2.2.6"
+                            },
                             "html": "Adds a Git branch source. Can be called multiple times to add more branch sources.",
                             "firstSentenceCommentText": "Adds a Git branch source. ",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.workflow.GitBranchSourceContext"
                         }
                     ],
                     "examples": "multibranchWorkflowJob('example') {\r\n    branchSources {\r\n        git {\r\n            remote('https://github.com/jenkinsci/job-dsl-plugin.git')\r\n            credentialsId('github-ci')\r\n            includes('JENKINS-*')\r\n        }\r\n    }\r\n}\r\n"
+                },
+                {
+                    "name": "github",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "branchSourceClosure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.46",
+                            "plugin": {
+                                "id": "github-branch-source",
+                                "minimumVersion": "1.6"
+                            },
+                            "html": "Adds a GitHub branch source. Can be called multiple times to add more branch sources.\r\n     ",
+                            "firstSentenceCommentText": "Adds a GitHub branch source. ",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.workflow.GitHubBranchSourceContext"
+                        }
+                    ],
+                    "examples": "multibranchWorkflowJob('example') {\r\n    branchSources {\r\n        github {\r\n            scanCredentialsId('github-ci')\r\n            repoOwner('OwnerName')\r\n            repository('job-dsl-plugin')\r\n        }\r\n    }\r\n}\r\n"
                 }
             ]
         },
@@ -42556,7 +43376,7 @@
                             "contextClass": "javaposse.jobdsl.dsl.views.DashboardView"
                         }
                     ],
-                    "examples": "dashboardView('example') {\r\n    jobs {\r\n        regex(/acme-.*/)\r\n    }\r\n    columns {\r\n        status()\r\n        weather()\r\n        buildButton()\r\n    }\r\n    topPortlets {\r\n        testStatisticsChart()\r\n    }\r\n    bottomPortlets {\r\n        testStatisticsGrid()\r\n    }\r\n}\r\n"
+                    "examples": "dashboardView('example') {\r\n    jobs {\r\n        regex(/acme-.*/)\r\n    }\r\n    columns {\r\n        status()\r\n        weather()\r\n        buildButton()\r\n    }\r\n    topPortlets {\r\n        jenkinsJobsList {\r\n            displayName('acme jobs')\r\n        }\r\n    }\r\n    leftPortlets {\r\n        testStatisticsChart()\r\n    }\r\n    rightPortlets {\r\n        testTrendChart()\r\n    }\r\n    bottomPortlets {\r\n        iframe {\r\n            effectiveUrl('http://example.com')\r\n        }\r\n        testStatisticsGrid()\r\n        buildStatistics()\r\n    }\r\n}\r\n"
                 },
                 {
                     "name": "deliveryPipelineView",

@@ -19,6 +19,7 @@ import javaposse.jobdsl.plugin.actions.GeneratedViewsBuildAction;
 import jenkins.YesNoMaybe;
 import jenkins.model.Jenkins;
 
+import javax.annotation.Nonnull;
 import java.util.Map;
 
 @Extension(dynamicLoadable = YesNoMaybe.YES)
@@ -31,6 +32,7 @@ public class DescriptorImpl extends BuildStepDescriptor<Builder> {
         load();
     }
 
+    @Nonnull
     public String getDisplayName() {
         return "Process Job DSLs";
     }

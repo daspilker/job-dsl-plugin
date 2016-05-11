@@ -24,7 +24,7 @@ public class GeneratedJobsBuildAction extends GeneratedObjectsBuildRunAction<Gen
     }
 
     public Set<Item> getItems() {
-        Set<Item> result = new LinkedHashSet<Item>();
+        Set<Item> result = new LinkedHashSet<>();
         for (GeneratedJob job : getModifiedObjects()) {
             Item item = getLookupStrategy().getItem(owner.getProject(), job.getJobName(), Item.class);
             if (item != null) {

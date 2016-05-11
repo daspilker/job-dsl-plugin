@@ -35,15 +35,15 @@ public abstract class GeneratedObjectsAction<T, B extends GeneratedObjectsBuildA
         for (AbstractBuild<?, ?> b = project.getLastBuild(); b != null; b = b.getPreviousBuild()) {
             B action = b.getAction(buildActionClass);
             if (action != null && action.getModifiedObjects() != null) {
-                return new LinkedHashSet<T>(action.getModifiedObjects());
+                return new LinkedHashSet<>(action.getModifiedObjects());
             }
         }
-        return new LinkedHashSet<T>();
+        return new LinkedHashSet<>();
     }
 
     @SuppressWarnings("unused") // used by some Jelly views
     public Set<T> findAllGeneratedObjects() {
-        Set<T> result = new LinkedHashSet<T>();
+        Set<T> result = new LinkedHashSet<>();
         for (AbstractBuild build : project.getBuilds()) {
             B action = build.getAction(buildActionClass);
             if (action != null && action.getModifiedObjects() != null) {

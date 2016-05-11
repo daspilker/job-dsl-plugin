@@ -43,9 +43,7 @@ class DslScriptLoader {
         try {
             runScriptsWithClassLoader(scriptRequests, groovyClassLoader, config)
         } finally {
-            if (groovyClassLoader instanceof Closeable) {
-                ((Closeable) groovyClassLoader).close()
-            }
+            groovyClassLoader.close()
         }
     }
 
@@ -94,9 +92,7 @@ class DslScriptLoader {
             }
         } finally {
             engineCache.values().each { GroovyScriptEngine engine ->
-                if (engine?.groovyClassLoader instanceof Closeable) {
-                    ((Closeable) engine.groovyClassLoader).close()
-                }
+                engine.groovyClassLoader.close()
             }
         }
 

@@ -14,7 +14,7 @@ public class GeneratedViewsAction extends GeneratedObjectsAction<GeneratedView, 
     }
 
     public Set<View> getViews() {
-        Set<View> result = new LinkedHashSet<View>();
+        Set<View> result = new LinkedHashSet<>();
         for (AbstractBuild build : project.getBuilds()) {
             GeneratedViewsBuildAction action = build.getAction(GeneratedViewsBuildAction.class);
             if (action != null) {

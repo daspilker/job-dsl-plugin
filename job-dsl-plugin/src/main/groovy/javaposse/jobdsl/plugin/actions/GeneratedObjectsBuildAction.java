@@ -10,7 +10,7 @@ public abstract class GeneratedObjectsBuildAction<T> implements Action {
     private final Set<T> modifiedObjects;
 
     GeneratedObjectsBuildAction(Collection<T> modifiedObjects) {
-        this.modifiedObjects = new LinkedHashSet<T>(modifiedObjects);
+        this.modifiedObjects = new LinkedHashSet<>(modifiedObjects);
     }
 
     @Override

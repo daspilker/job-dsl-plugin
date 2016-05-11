@@ -42,6 +42,7 @@ import jenkins.model.Jenkins;
 import org.apache.commons.io.FilenameUtils;
 import org.kohsuke.stapler.DataBoundConstructor;
 
+import javax.annotation.Nonnull;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
@@ -179,9 +180,10 @@ public class ExecuteDslScripts extends Builder {
         return additionalClasspath;
     }
 
+    @Nonnull
     @Override
     public Collection<? extends Action> getProjectActions(AbstractProject<?, ?> project) {
-        return Arrays.<Action>asList(
+        return Arrays.asList(
                 new GeneratedJobsAction(project),
                 new GeneratedViewsAction(project),
                 new GeneratedConfigFilesAction(project),
@@ -205,8 +207,7 @@ public class ExecuteDslScripts extends Builder {
                     new JenkinsJobManagement(listener.getLogger(), env, build, getLookupStrategy())
             );
 
-            ScriptRequestGenerator generator = new ScriptRequestGenerator(build, env);
-            try {
+            try (ScriptRequestGenerator generator = new ScriptRequestGenerator(build, env)) {
                 Set<ScriptRequest> scriptRequests = generator.getScriptRequests(
                         targets, usingScriptText, scriptText, ignoreExisting, additionalClasspath
                 );
@@ -231,8 +232,6 @@ public class ExecuteDslScripts extends Builder {
                 build.addAction(new GeneratedUserContentsBuildAction(freshUserContents));
 
                 return true;
-            } finally {
-                generator.close();
             }
         } catch (RuntimeException e) {
             if (!(e instanceof DslException)) {
@@ -314,8 +313,8 @@ public class ExecuteDslScripts extends Builder {
         Set<GeneratedJob> added = Sets.difference(freshJobs, generatedJobs);
         Set<GeneratedJob> existing = Sets.intersection(generatedJobs, freshJobs);
         Set<GeneratedJob> unreferenced = Sets.difference(generatedJobs, freshJobs);
-        Set<GeneratedJob> removed = new HashSet<GeneratedJob>();
-        Set<GeneratedJob> disabled = new HashSet<GeneratedJob>();
+        Set<GeneratedJob> removed = new HashSet<>();
+        Set<GeneratedJob> disabled = new HashSet<>();
 
         logItems(listener, "Added items", added);
         logItems(listener, "Existing items", existing);
@@ -389,7 +388,7 @@ public class ExecuteDslScripts extends Builder {
         Set<GeneratedView> added = Sets.difference(freshViews, generatedViews);
         Set<GeneratedView> existing = Sets.intersection(generatedViews, freshViews);
         Set<GeneratedView> unreferenced = Sets.difference(generatedViews, freshViews);
-        Set<GeneratedView> removed = new HashSet<GeneratedView>();
+        Set<GeneratedView> removed = new HashSet<>();
 
         logItems(listener, "Added views", added);
         logItems(listener, "Existing views", existing);
@@ -457,7 +456,7 @@ public class ExecuteDslScripts extends Builder {
                 return input.getTemplateName();
             }
         });
-        return new LinkedHashSet<String>(Collections2.filter(templateNames, Predicates.notNull()));
+        return new LinkedHashSet<>(Collections2.filter(templateNames, Predicates.notNull()));
     }
 
     private static class SeedNamePredicate implements Predicate<SeedReference> {

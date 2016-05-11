@@ -80,8 +80,7 @@ public class JenkinsJobManagement extends AbstractJobManagement {
     private final FilePath workspace;
     private final Item project;
     private final LookupStrategy lookupStrategy;
-    private final Map<javaposse.jobdsl.dsl.Item, DslEnvironment> environments =
-            new HashMap<javaposse.jobdsl.dsl.Item, DslEnvironment>();
+    private final Map<javaposse.jobdsl.dsl.Item, DslEnvironment> environments = new HashMap<>();
 
     public JenkinsJobManagement(PrintStream outputLogger, Map<String, String> envVars, AbstractBuild<?, ?> build,
                                 LookupStrategy lookupStrategy) {

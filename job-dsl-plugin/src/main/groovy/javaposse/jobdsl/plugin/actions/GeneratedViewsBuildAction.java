@@ -27,7 +27,7 @@ public class GeneratedViewsBuildAction extends GeneratedObjectsBuildRunAction<Ge
     }
 
     public Set<View> getViews() {
-        Set<View> allGeneratedViews = new LinkedHashSet<View>();
+        Set<View> allGeneratedViews = new LinkedHashSet<>();
         for (GeneratedView generatedView : getModifiedObjects()) {
             ItemGroup itemGroup = getLookupStrategy().getParent(owner.getProject(), generatedView.getName());
             if (itemGroup instanceof ViewGroup) {

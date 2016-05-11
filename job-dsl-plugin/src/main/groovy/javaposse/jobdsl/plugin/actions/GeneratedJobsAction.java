@@ -14,7 +14,7 @@ public class GeneratedJobsAction extends GeneratedObjectsAction<GeneratedJob, Ge
     }
 
     public Set<Item> getItems() {
-        Set<Item> result = new LinkedHashSet<Item>();
+        Set<Item> result = new LinkedHashSet<>();
         for (AbstractBuild build : project.getBuilds()) {
             GeneratedJobsBuildAction action = build.getAction(GeneratedJobsBuildAction.class);
             if (action != null) {

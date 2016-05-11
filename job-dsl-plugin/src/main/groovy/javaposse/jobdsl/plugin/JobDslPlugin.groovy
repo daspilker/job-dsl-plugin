@@ -16,6 +16,11 @@ import static hudson.model.UpdateCenter.ID_DEFAULT
 class JobDslPlugin extends Plugin {
     private volatile String cachedApi
 
+    @SuppressWarnings(['deprecation', 'UnnecessaryConstructor'])
+    JobDslPlugin() {
+        super()
+    }
+
     @Override
     void postInitialize() throws Exception {
         ExtensionList.lookup(Descriptor).addListener(new ExtensionListListener() {

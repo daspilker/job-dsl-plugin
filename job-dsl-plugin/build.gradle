@@ -43,11 +43,6 @@ clean {
     delete generatedSourcesDir
 }
 
-configurations {
-    // workaround for JENKINS-32978
-    compile.exclude group: 'org.kohsuke', module: 'windows-package-checker'
-}
-
 jpi {
     into('api-viewer') {
         from(project(':job-dsl-api-viewer').projectDir) {
@@ -67,4 +62,5 @@ dependencies {
     optionalJenkinsPlugins 'org.jenkins-ci.plugins:config-file-provider:2.8.1@jar'
     optionalJenkinsPlugins 'org.jenkinsci.plugins:managed-scripts:1.2.1@jar'
     jenkinsTest 'org.jenkins-ci.main:jenkins-test-harness:2.7@jar'
+    jenkinsTest 'org.eclipse.sisu:org.eclipse.sisu.plexus:0.3.0' // workaround for JENKINS-32978
 }

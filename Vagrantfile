@@ -10,6 +10,7 @@ $script = <<SCRIPT
 sudo apt-get install -y daemon
 wget -N -P /var/cache/wget --progress=dot:giga http://pkg.jenkins-ci.org/debian/binary/jenkins_${VERSION}_all.deb
 sudo dpkg -i /var/cache/wget/jenkins_${VERSION}_all.deb
+echo admin password is $(cat /var/lib/jenkins/secrets/initialAdminPassword)
 SCRIPT
 
 jenkins_version = IO.read("gradle.properties")[/jenkinsVersion=(.*)/,1]

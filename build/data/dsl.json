@@ -20029,6 +20029,7 @@
                                     "defaultValue": "null"
                                 }
                             ],
+                            "deprecated": true,
                             "availableSince": "1.33",
                             "plugin": {
                                 "id": "hipchat",
@@ -20861,6 +20862,7 @@
                                     "type": "Closure"
                                 }
                             ],
+                            "deprecated": true,
                             "availableSince": "1.36",
                             "plugin": {
                                 "id": "slack",
@@ -22449,6 +22451,7 @@
                                     "defaultValue": "null"
                                 }
                             ],
+                            "deprecated": true,
                             "availableSince": "1.33",
                             "plugin": {
                                 "id": "hipchat",
@@ -23281,6 +23284,7 @@
                                     "type": "Closure"
                                 }
                             ],
+                            "deprecated": true,
                             "availableSince": "1.36",
                             "plugin": {
                                 "id": "slack",
@@ -30827,6 +30831,12 @@
                 }
             ]
         },
+        "javaposse.jobdsl.dsl.helpers.properties.FolderPropertiesContext": {
+            "type": "javaposse.jobdsl.dsl.helpers.properties.FolderPropertiesContext",
+            "methods": [
+                
+            ]
+        },
         "javaposse.jobdsl.dsl.Folder": {
             "type": "javaposse.jobdsl.dsl.Folder",
             "methods": [
@@ -30909,6 +30919,23 @@
                             "availableSince": "1.36",
                             "html": "Changes the initial view to show when the folder contains multiple views. Defaults to the <TT>'All'</TT> view.\r\n     ",
                             "firstSentenceCommentText": "Changes the initial view to show when the folder contains multiple views. "
+                        }
+                    ]
+                },
+                {
+                    "name": "properties",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.47",
+                            "html": "Adds custom properties to the folder.\r\n     ",
+                            "firstSentenceCommentText": "Adds custom properties to the folder.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.properties.FolderPropertiesContext"
                         }
                     ]
                 }
@@ -35362,6 +35389,7 @@
                                     "defaultValue": "null"
                                 }
                             ],
+                            "deprecated": true,
                             "availableSince": "1.33",
                             "plugin": {
                                 "id": "hipchat",
@@ -36194,6 +36222,7 @@
                                     "type": "Closure"
                                 }
                             ],
+                            "deprecated": true,
                             "availableSince": "1.36",
                             "plugin": {
                                 "id": "slack",
@@ -41711,6 +41740,23 @@
                             "availableSince": "1.36",
                             "html": "Changes the initial view to show when the folder contains multiple views. Defaults to the <TT>'All'</TT> view.\r\n     ",
                             "firstSentenceCommentText": "Changes the initial view to show when the folder contains multiple views. "
+                        }
+                    ]
+                },
+                {
+                    "name": "properties",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "availableSince": "1.47",
+                            "html": "Adds custom properties to the folder.\r\n     ",
+                            "firstSentenceCommentText": "Adds custom properties to the folder.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.properties.FolderPropertiesContext"
                         }
                     ]
                 },

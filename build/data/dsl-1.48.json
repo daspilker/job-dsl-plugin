@@ -1,5 +1,5 @@
 {
-    "version": "1.49-SNAPSHOT",
+    "version": "1.48",
     "root": {
         "name": "Jenkins Job DSL API",
         "contextClass": "javaposse.jobdsl.dsl.DslFactory"
@@ -16108,6 +16108,10 @@
                                 }
                             ],
                             "availableSince": "1.42",
+                            "plugin": {
+                                "id": "postbuildscript",
+                                "minimumVersion": "0.17"
+                            },
                             "html": "If set, marks build as unstable instead of failed on script error. Defaults to <TT>false</TT>.\r\n     ",
                             "firstSentenceCommentText": "If set, marks build as unstable instead of failed on script error. "
                         }
@@ -16125,6 +16129,10 @@
                                 }
                             ],
                             "availableSince": "1.42",
+                            "plugin": {
+                                "id": "postbuildscript",
+                                "minimumVersion": "0.17"
+                            },
                             "html": "If set, runs the build steps only if the build failed. Defaults to <TT>false</TT>.\r\n     ",
                             "firstSentenceCommentText": "If set, runs the build steps only if the build failed. "
                         }
@@ -17891,6 +17899,10 @@
                                 }
                             ],
                             "availableSince": "1.42",
+                            "plugin": {
+                                "id": "tasks",
+                                "minimumVersion": "4.41"
+                            },
                             "html": "If set, treats the tag identifiers as regular expression.\r\n     ",
                             "firstSentenceCommentText": "If set, treats the tag identifiers as regular expression."
                         }
@@ -20400,8 +20412,7 @@
                             ],
                             "availableSince": "1.31",
                             "plugin": {
-                                "id": "postbuildscript",
-                                "minimumVersion": "0.17"
+                                "id": "postbuildscript"
                             },
                             "html": "Execute a set of scripts at the end of the build.\r\n     ",
                             "firstSentenceCommentText": "Execute a set of scripts at the end of the build.",
@@ -21058,8 +21069,7 @@
                             ],
                             "availableSince": "1.17",
                             "plugin": {
-                                "id": "tasks",
-                                "minimumVersion": "4.41"
+                                "id": "tasks"
                             },
                             "html": "Scans the workspace for open tasks.\r\n     ",
                             "firstSentenceCommentText": "Scans the workspace for open tasks.",
@@ -21312,6 +21322,23 @@
             "type": "javaposse.jobdsl.dsl.helpers.publisher.FlexiblePublisherContext",
             "methods": [
                 {
+                    "name": "condition",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "deprecated": true,
+                            "html": "Specifies the condition to evaluate before executing publishers or build steps.",
+                            "firstSentenceCommentText": "Specifies the condition to evaluate before executing publishers or build steps.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.step.RunConditionContext"
+                        }
+                    ]
+                },
+                {
                     "name": "conditionalAction",
                     "signatures": [
                         {
@@ -21325,6 +21352,43 @@
                             "html": "Adds a conditional action. Can be called multiple times to add more actions.\r\n     ",
                             "firstSentenceCommentText": "Adds a conditional action. ",
                             "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.ConditionalActionsContext"
+                        }
+                    ]
+                },
+                {
+                    "name": "publisher",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "deprecated": true,
+                            "html": "Adds one or more post-build actions which will be executed conditionally.",
+                            "firstSentenceCommentText": "Adds one or more post-build actions which will be executed conditionally.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.publisher.PublisherContext"
+                        }
+                    ]
+                },
+                {
+                    "name": "step",
+                    "signatures": [
+                        {
+                            "parameters": [
+                                {
+                                    "name": "closure",
+                                    "type": "Closure"
+                                }
+                            ],
+                            "deprecated": true,
+                            "plugin": {
+                                "id": "any-buildstep"
+                            },
+                            "html": "Adds one or more build steps which will be executed conditionally.",
+                            "firstSentenceCommentText": "Adds one or more build steps which will be executed conditionally.",
+                            "contextClass": "javaposse.jobdsl.dsl.helpers.step.StepContext"
                         }
                     ]
                 }
@@ -22804,8 +22868,7 @@
                             ],
                             "availableSince": "1.31",
                             "plugin": {
-                                "id": "postbuildscript",
-                                "minimumVersion": "0.17"
+                                "id": "postbuildscript"
                             },
                             "html": "Execute a set of scripts at the end of the build.\r\n     ",
                             "firstSentenceCommentText": "Execute a set of scripts at the end of the build.",
@@ -23462,8 +23525,7 @@
                             ],
                             "availableSince": "1.17",
                             "plugin": {
-                                "id": "tasks",
-                                "minimumVersion": "4.41"
+                                "id": "tasks"
                             },
                             "html": "Scans the workspace for open tasks.\r\n     ",
                             "firstSentenceCommentText": "Scans the workspace for open tasks.",
@@ -26402,26 +26464,6 @@
                             ],
                             "html": "Specifies the browsers to test with Appium. Can be called multiple times to add more browsers.",
                             "firstSentenceCommentText": "Specifies the browsers to test with Appium. "
-                        }
-                    ]
-                },
-                {
-                    "name": "credentials",
-                    "signatures": [
-                        {
-                            "parameters": [
-                                {
-                                    "name": "credentialsId",
-                                    "type": "String"
-                                }
-                            ],
-                            "availableSince": "1.49",
-                            "plugin": {
-                                "id": "sauce-ondemand",
-                                "minimumVersion": "1.148"
-                            },
-                            "html": "Sets the credentials a build should use.\r\n     ",
-                            "firstSentenceCommentText": "Sets the credentials a build should use."
                         }
                     ]
                 },
@@ -35985,8 +36027,7 @@
                             ],
                             "availableSince": "1.31",
                             "plugin": {
-                                "id": "postbuildscript",
-                                "minimumVersion": "0.17"
+                                "id": "postbuildscript"
                             },
                             "html": "Execute a set of scripts at the end of the build.\r\n     ",
                             "firstSentenceCommentText": "Execute a set of scripts at the end of the build.",
@@ -36643,8 +36684,7 @@
                             ],
                             "availableSince": "1.17",
                             "plugin": {
-                                "id": "tasks",
-                                "minimumVersion": "4.41"
+                                "id": "tasks"
                             },
                             "html": "Scans the workspace for open tasks.\r\n     ",
                             "firstSentenceCommentText": "Scans the workspace for open tasks.",

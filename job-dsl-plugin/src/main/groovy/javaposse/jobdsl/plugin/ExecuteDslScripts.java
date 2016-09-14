@@ -133,6 +133,8 @@ public class ExecuteDslScripts extends Builder implements SimpleBuildStep {
 
     private boolean ignoreMissingFiles;
 
+    private boolean continueOnError;
+
     private RemovedJobAction removedJobAction = RemovedJobAction.IGNORE;
 
     private RemovedViewAction removedViewAction = RemovedViewAction.IGNORE;
@@ -249,6 +251,15 @@ public class ExecuteDslScripts extends Builder implements SimpleBuildStep {
         return removedJobAction;
     }
 
+    public boolean isContinueOnError() {
+        return continueOnError;
+    }
+
+    @DataBoundSetter
+    public void setContinueOnError(boolean continueOnError) {
+        this.continueOnError = continueOnError;
+    }
+
     @DataBoundSetter
     public void setRemovedJobAction(RemovedJobAction removedJobAction) {
         this.removedJobAction = removedJobAction;
@@ -324,7 +335,7 @@ public class ExecuteDslScripts extends Builder implements SimpleBuildStep {
                 );
 
                 DslScriptLoader dslScriptLoader = new DslScriptLoader(jm);
-                GeneratedItems generatedItems = dslScriptLoader.runScripts(scriptRequests);
+                GeneratedItems generatedItems = dslScriptLoader.runScripts(scriptRequests, continueOnError);
                 Set<GeneratedJob> freshJobs = generatedItems.getJobs();
                 Set<GeneratedView> freshViews = generatedItems.getViews();
                 Set<GeneratedConfigFile> freshConfigFiles = generatedItems.getConfigFiles();

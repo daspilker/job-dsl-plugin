@@ -34,6 +34,11 @@
             <f:select default="JENKINS_ROOT"/>
         </f:entry>
 
+        <f:entry title="Continue on error:" field="continueOnError">
+            <f:checkbox name="continueOnError" title="Continue on error" checked="${instance.continueOnError}"
+                        description="Continue with the next DSL script if an error occurs?"/>
+        </f:entry>
+
         <f:entry title="Additional classpath" field="additionalClasspath">
             <f:expandableTextbox/>
         </f:entry>

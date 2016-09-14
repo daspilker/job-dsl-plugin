@@ -34,6 +34,15 @@ class DslScriptLoader {
      * @since 1.45
      */
     GeneratedItems runScripts(Collection<ScriptRequest> scriptRequests) throws IOException {
+        runScripts(scriptRequests, false)
+    }
+
+    /**
+     * Executes the script requests and returns the generated items.
+     *
+     * @since 1.52
+     */
+    GeneratedItems runScripts(Collection<ScriptRequest> scriptRequests, boolean continueOnError) throws IOException {
         ClassLoader parentClassLoader = DslScriptLoader.classLoader
         CompilerConfiguration config = createCompilerConfiguration()
 
@@ -41,7 +50,7 @@ class DslScriptLoader {
         GroovyClassLoader groovyClassLoader = new GroovyClassLoader(parentClassLoader, config)
 
         try {
-            runScriptsWithClassLoader(scriptRequests, groovyClassLoader, config)
+            runScriptsWithClassLoader(scriptRequests, groovyClassLoader, config, continueOnError)
         } finally {
             if (groovyClassLoader instanceof Closeable) {
                 ((Closeable) groovyClassLoader).close()
@@ -60,7 +69,7 @@ class DslScriptLoader {
 
     private GeneratedItems runScriptsWithClassLoader(Collection<ScriptRequest> scriptRequests,
                                                      GroovyClassLoader groovyClassLoader,
-                                                     CompilerConfiguration config) {
+                                                     CompilerConfiguration config, boolean continueOnError) {
         GeneratedItems generatedItems = new GeneratedItems()
         Map<String, GroovyScriptEngine> engineCache = [:]
 
@@ -75,22 +84,28 @@ class DslScriptLoader {
                     engineCache[key] = engine
                 }
 
-                JobParent jobParent = runScriptEngine(scriptRequest, engine)
+                try {
+                    JobParent jobParent = runScriptEngine(scriptRequest, engine)
 
-                generatedItems.configFiles.addAll(
-                        extractGeneratedConfigFiles(jobParent.referencedConfigFiles, scriptRequest.ignoreExisting)
-                )
-                generatedItems.jobs.addAll(
-                        extractGeneratedJobs(jobParent.referencedJobs, scriptRequest.ignoreExisting)
-                )
-                generatedItems.views.addAll(
-                        extractGeneratedViews(jobParent.referencedViews, scriptRequest.ignoreExisting)
-                )
-                generatedItems.userContents.addAll(
-                        extractGeneratedUserContents(jobParent.referencedUserContents, scriptRequest.ignoreExisting)
-                )
+                    generatedItems.configFiles.addAll(
+                            extractGeneratedConfigFiles(jobParent.referencedConfigFiles, scriptRequest.ignoreExisting)
+                    )
+                    generatedItems.jobs.addAll(
+                            extractGeneratedJobs(jobParent.referencedJobs, scriptRequest.ignoreExisting)
+                    )
+                    generatedItems.views.addAll(
+                            extractGeneratedViews(jobParent.referencedViews, scriptRequest.ignoreExisting)
+                    )
+                    generatedItems.userContents.addAll(
+                            extractGeneratedUserContents(jobParent.referencedUserContents, scriptRequest.ignoreExisting)
+                    )
 
-                scheduleJobsToRun(jobParent.queueToBuild)
+                    scheduleJobsToRun(jobParent.queueToBuild)
+                } catch (any) {
+                    if (!continueOnError) {
+                        throw any
+                    }
+                }
             }
         } finally {
             engineCache.values().each { GroovyScriptEngine engine ->

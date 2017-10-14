@@ -2879,6 +2879,7 @@ class StepContextSpec extends Specification {
         (1.._) * jobManagement.requirePlugin('rake')
     }
 
+    @SuppressWarnings('UnnecessarySetter')
     def 'call setBuildResult'() {
         when:
         context.setBuildResult(result)
@@ -2895,6 +2896,7 @@ class StepContextSpec extends Specification {
         result << ['SUCCESS', 'UNSTABLE', 'FAILURE', 'ABORTED', 'CYCLE']
     }
 
+    @SuppressWarnings('UnnecessarySetter')
     def 'call setBuildResult with invalid result'() {
         when:
         context.setBuildResult('FOO')

@@ -38,6 +38,7 @@ class DescribableListContext implements Context {
         this.jobManagement = jobManagement
     }
 
+    @SuppressWarnings('NoDef')
     Object methodMissing(String name, args) {
         Object[] argsArray = (Object[]) args
         if (isOptionalClosureArgument(argsArray)) {

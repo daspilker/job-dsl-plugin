@@ -11,6 +11,7 @@ abstract class AbstractExtensibleContext extends AbstractContext implements Exte
         this.item = item
     }
 
+    @SuppressWarnings('NoDef')
     Object methodMissing(String name, args) {
         Object[] argsArray = (Object[]) args
         Class<? extends ExtensibleContext> contextType = this.class as Class<? extends ExtensibleContext>

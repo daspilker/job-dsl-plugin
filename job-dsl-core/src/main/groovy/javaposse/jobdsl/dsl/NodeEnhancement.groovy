@@ -32,7 +32,7 @@ class NodeEnhancement {
 
             // Copy over value and attribute from orphan if it has one.
             if (clonedOrphan.value() != null) {
-                found.setValue(clonedOrphan.value())
+                found.value = clonedOrphan.value()
             }
             clonedOrphan.attributes().each { k, v ->
                 found.attributes().put(k, v)
@@ -48,7 +48,7 @@ class NodeEnhancement {
         List children = this.children().findAll { child ->
             child instanceof Node && child.name() == childName
         }
-        if (children.size() == 0) {
+        if (children.empty) {
             LOGGER.fine("Creating node for ${childName}")
             // Create node using just name
             return this.appendNode(childName)
@@ -59,7 +59,7 @@ class NodeEnhancement {
         }
     }
 
-    private static List<Node> buildChildren(c) {
+    private static List<Node> buildChildren(Closure c) {
         NodeBuilder b = new NodeBuilder()
         Node newNode = (Node) b.invokeMethod('dummyNode', c)
         newNode.children()
@@ -71,7 +71,7 @@ class NodeEnhancement {
 
     Node leftShift(String appendChildName) {
         LOGGER.fine("Setting value of ${appendChildName} for ${this.name()}")
-        this.setValue(appendChildName)
+        this.value = appendChildName
         this
     }
 

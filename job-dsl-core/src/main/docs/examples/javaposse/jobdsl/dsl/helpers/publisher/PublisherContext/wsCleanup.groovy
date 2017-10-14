@@ -21,7 +21,7 @@ job('example-3') {
         wsCleanup {
             includePattern('output/**')
             deleteDirectories(true)
-            setFailBuild(false)
+            failBuildWhenCleanupFails(false)
         }
     }
 }

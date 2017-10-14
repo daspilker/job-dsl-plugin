@@ -2,13 +2,13 @@ package javaposse.jobdsl.dsl.views
 
 import javaposse.jobdsl.dsl.DslScriptException
 import javaposse.jobdsl.dsl.JobManagement
+import org.custommonkey.xmlunit.XMLUnit
 import spock.lang.Specification
 
 import static javaposse.jobdsl.dsl.views.BuildPipelineView.OutputStyle.Lightbox
 import static javaposse.jobdsl.dsl.views.BuildPipelineView.OutputStyle.NewWindow
 import static javaposse.jobdsl.dsl.views.BuildPipelineView.OutputStyle.ThisWindow
 import static org.custommonkey.xmlunit.XMLUnit.compareXML
-import static org.custommonkey.xmlunit.XMLUnit.setIgnoreWhitespace
 
 class BuildPipelineViewSpec extends Specification {
     JobManagement jobManagement = Mock(JobManagement)
@@ -17,9 +17,9 @@ class BuildPipelineViewSpec extends Specification {
     def 'defaults'() {
         when:
         String xml = view.xml
+        XMLUnit.ignoreWhitespace = true
 
         then:
-        setIgnoreWhitespace(true)
         compareXML(defaultXml, xml).similar()
     }
 

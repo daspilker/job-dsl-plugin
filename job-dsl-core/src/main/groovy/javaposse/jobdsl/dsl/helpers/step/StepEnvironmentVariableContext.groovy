@@ -36,13 +36,15 @@ class StepEnvironmentVariableContext extends AbstractContext {
     }
 
     @NoDoc
+    @SuppressWarnings('NoDef')
     void addInfoToBuilder(builder) {
         builder.info {
             addInfoContentToBuilder(builder)
         }
     }
 
-    protected addInfoContentToBuilder(builder) {
+    @SuppressWarnings('NoDef')
+    protected void addInfoContentToBuilder(builder) {
         if (propertiesFilePath) {
             builder.propertiesFilePath(propertiesFilePath)
         }

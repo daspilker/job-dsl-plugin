@@ -14,7 +14,7 @@ class JobSpec extends Specification {
     private Job job = new TestJob(jobManagement)
 
     def setup() {
-        XMLUnit.setIgnoreWhitespace(true)
+        XMLUnit.ignoreWhitespace = true
     }
 
     def 'load an empty template from a manually constructed job and generate xml from it'() {

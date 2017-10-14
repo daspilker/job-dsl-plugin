@@ -2,17 +2,17 @@ package javaposse.jobdsl.dsl.views
 
 import javaposse.jobdsl.dsl.JobManagement
 import javaposse.jobdsl.dsl.View
+import org.custommonkey.xmlunit.XMLUnit
 import spock.lang.Specification
 
 import static org.custommonkey.xmlunit.XMLUnit.compareXML
-import static org.custommonkey.xmlunit.XMLUnit.setIgnoreWhitespace
 
 class NestedViewSpec extends Specification {
     JobManagement jobManagement = Mock(JobManagement)
     NestedView view = new NestedView(jobManagement, 'test')
 
     def setup() {
-        setIgnoreWhitespace(true)
+        XMLUnit.ignoreWhitespace = true
     }
 
     def 'defaults'() {

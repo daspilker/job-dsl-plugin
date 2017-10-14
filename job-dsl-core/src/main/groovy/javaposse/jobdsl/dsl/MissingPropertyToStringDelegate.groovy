@@ -26,6 +26,7 @@ class MissingPropertyToStringDelegate {
         writer.toString()
     }
 
+    @SuppressWarnings('NoDef')
     Node methodMissing(String methodName, args) {
         LOGGER.fine("Method missing for ${methodName} ${args}")
 

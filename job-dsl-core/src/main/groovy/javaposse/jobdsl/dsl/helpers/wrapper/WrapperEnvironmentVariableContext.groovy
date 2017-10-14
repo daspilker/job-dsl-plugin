@@ -37,7 +37,8 @@ class WrapperEnvironmentVariableContext extends StepEnvironmentVariableContext {
     }
 
     @Override
-    protected addInfoContentToBuilder(builder) {
+    @SuppressWarnings('NoDef')
+    protected void addInfoContentToBuilder(builder) {
         super.addInfoContentToBuilder(builder)
         if (scriptFilePath) {
             builder.scriptFilePath(scriptFilePath)

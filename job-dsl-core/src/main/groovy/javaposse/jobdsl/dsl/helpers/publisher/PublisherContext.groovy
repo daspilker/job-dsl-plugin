@@ -689,6 +689,7 @@ class PublisherContext extends AbstractExtensibleContext {
      * @since 1.17
      */
     @RequiresPlugin(id = 'description-setter')
+    @SuppressWarnings('UnnecessarySetter')
     void buildDescription(String regularExpression, String description = '', String regularExpressionForFailed = '',
                           String descriptionForFailed = '', boolean multiConfigurationBuild = false) {
         publisherNodes << new NodeBuilder().'hudson.plugins.descriptionsetter.DescriptionSetterPublisher' {
@@ -711,7 +712,7 @@ class PublisherContext extends AbstractExtensibleContext {
      */
     @RequiresPlugin(id = 'text-finder')
     void textFinder(String regularExpression, String fileSet = '', boolean alsoCheckConsoleOutput = false,
-                    boolean succeedIfFound = false, unstableIfFound = false) {
+                    boolean succeedIfFound = false, boolean unstableIfFound = false) {
         publisherNodes << new NodeBuilder().'hudson.plugins.textfinder.TextFinderPublisher' {
             if (fileSet) {
                 delegate.fileSet(fileSet)
@@ -1165,7 +1166,7 @@ class PublisherContext extends AbstractExtensibleContext {
      * @since 1.17
      */
     @RequiresPlugin(id = 'dry')
-    void dry(String pattern, highThreshold = 50, normalThreshold = 25,
+    void dry(String pattern, int highThreshold = 50, int normalThreshold = 25,
              @DslContext(StaticAnalysisContext) Closure staticAnalysisClosure = null) {
         StaticAnalysisContext staticAnalysisContext = new StaticAnalysisContext()
         ContextHelper.executeInContext(staticAnalysisClosure, staticAnalysisContext)
@@ -1183,8 +1184,8 @@ class PublisherContext extends AbstractExtensibleContext {
      * @since 1.17
      */
     @RequiresPlugin(id = 'tasks', minimumVersion = '4.41')
-    void tasks(String pattern, excludePattern = '', high = '', normal = '', low = '', ignoreCase = false,
-               @DslContext(TaskScannerContext) Closure closure = null) {
+    void tasks(String pattern, String excludePattern = '', String high = '', String normal = '', String low = '',
+               boolean ignoreCase = false, @DslContext(TaskScannerContext) Closure closure = null) {
         TaskScannerContext context = new TaskScannerContext(jobManagement)
         ContextHelper.executeInContext(closure, context)
 

@@ -1,9 +1,7 @@
 package javaposse.jobdsl.dsl.doc
 
-import org.codehaus.groovy.groovydoc.GroovyAnnotationRef
 import org.codehaus.groovy.groovydoc.GroovyClassDoc
 import org.codehaus.groovy.groovydoc.GroovyMethodDoc
-import org.codehaus.groovy.groovydoc.GroovyProgramElementDoc
 import org.codehaus.groovy.groovydoc.GroovyRootDoc
 import org.codehaus.groovy.tools.groovydoc.ArrayClassDocWrapper
 import org.codehaus.groovy.tools.groovydoc.GroovyDocTool
@@ -18,7 +16,7 @@ class GroovyDocHelper {
         rootDoc = createRootDoc(sourcePath)
     }
 
-    private static createRootDoc(String sourcePath) {
+    private static GroovyRootDoc createRootDoc(String sourcePath) {
         List filePaths = []
         File root = new File(sourcePath)
         root.eachFileRecurse { File file ->
@@ -35,11 +33,6 @@ class GroovyDocHelper {
     GroovyClassDoc getGroovyClassDoc(Class clazz) {
         String name = '/' + clazz.name.replaceAll('\\.', '/')
         rootDoc.classes().find { it.fullPathName == name }
-    }
-
-    static boolean hasAnnotation(GroovyProgramElementDoc doc, Class annotationClass) {
-        GroovyAnnotationRef[] annotations = doc.annotations()
-        annotations.any { it.name() == annotationClass.name.replaceAll('\\.', '/') }
     }
 
     static Method getMethodFromGroovyMethodDoc(GroovyMethodDoc methodDoc, Class clazz) {

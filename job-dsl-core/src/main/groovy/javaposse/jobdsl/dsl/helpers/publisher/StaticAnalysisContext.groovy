@@ -31,7 +31,7 @@ class StaticAnalysisContext implements Context {
     /**
      * If set, also runs when the build has failed. Defaults to {@code false}.
      */
-    void canRunOnFailed(canRunOnFailed = true) {
+    void canRunOnFailed(boolean canRunOnFailed = true) {
         this.canRunOnFailed = canRunOnFailed
     }
 
@@ -81,7 +81,7 @@ class StaticAnalysisContext implements Context {
      * If set, computes new warnings based on the last successful build.
      * This is set automatically if the {@code unstableNew} or {@code failedNew} thresholds are used.
      */
-    void computeNew(computeNew) {
+    void computeNew(boolean computeNew) {
         this.dontComputeNew = !computeNew
     }
 

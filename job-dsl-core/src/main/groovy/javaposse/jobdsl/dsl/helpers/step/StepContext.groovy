@@ -348,7 +348,7 @@ class StepContext extends AbstractExtensibleContext {
         groovy(fileName, false, groovyName, groovyClosure)
     }
 
-    protected groovyScriptSource(String commandOrFileName, boolean isCommand) {
+    protected Node groovyScriptSource(String commandOrFileName, boolean isCommand) {
         new NodeBuilder().scriptSource(class: "hudson.plugins.groovy.${isCommand ? 'String' : 'File'}ScriptSource") {
             if (isCommand) {
                 command commandOrFileName
@@ -358,7 +358,8 @@ class StepContext extends AbstractExtensibleContext {
         }
     }
 
-    protected groovy(String commandOrFileName, boolean isCommand, String groovyInstallation, Closure groovyClosure) {
+    protected void groovy(String commandOrFileName, boolean isCommand, String groovyInstallation,
+                          Closure groovyClosure) {
         GroovyContext groovyContext = new GroovyContext()
         ContextHelper.executeInContext(groovyClosure, groovyContext)
 
@@ -391,7 +392,7 @@ class StepContext extends AbstractExtensibleContext {
         systemGroovy(fileName, false, systemGroovyClosure)
     }
 
-    protected systemGroovy(String commandOrFileName, boolean isCommand, Closure systemGroovyClosure) {
+    protected void systemGroovy(String commandOrFileName, boolean isCommand, Closure systemGroovyClosure) {
         SystemGroovyContext systemGroovyContext = new SystemGroovyContext()
         ContextHelper.executeInContext(systemGroovyClosure, systemGroovyContext)
 
@@ -839,7 +840,7 @@ class StepContext extends AbstractExtensibleContext {
         }
     }
 
-    private vSphereBuildStep(String server, String builder, Closure configuration) {
+    private void vSphereBuildStep(String server, String builder, Closure configuration) {
         Integer hash = jobManagement.getVSphereCloudHash(server)
         Preconditions.checkNotNull(hash, "vSphere server ${server} does not exist")
 

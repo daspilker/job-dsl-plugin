@@ -236,7 +236,7 @@ class RunConditionContext extends AbstractExtensibleContext {
         }
     }
 
-    private createLogic(String name, Closure... conditionClosures) {
+    private void createLogic(String name, Closure... conditionClosures) {
         List<Node> conditions = conditionClosures.collect {
             RunConditionContext context = new RunConditionContext(jobManagement, item)
             ContextHelper.executeInContext(it, context)

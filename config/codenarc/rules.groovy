@@ -10,6 +10,8 @@ ruleset {
         exclude 'IfStatementCouldBeTernary'
         // we don't care
         exclude 'TrailingComma'
+        // we don't care
+        exclude 'CouldBeSwitchStatement'
     }
 
     ruleset('rulesets/design.xml') {

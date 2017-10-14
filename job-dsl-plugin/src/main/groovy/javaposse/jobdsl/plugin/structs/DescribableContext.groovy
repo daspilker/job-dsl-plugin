@@ -50,6 +50,7 @@ class DescribableContext implements Context {
         describableModel.instantiate(values)
     }
 
+    @SuppressWarnings('NoDef')
     Object methodMissing(String name, args) {
         Object[] argsArray = (Object[]) args
         if (argsArray.length == 1) {

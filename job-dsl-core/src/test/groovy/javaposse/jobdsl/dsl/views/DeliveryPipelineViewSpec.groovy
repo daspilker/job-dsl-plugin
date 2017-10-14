@@ -3,17 +3,17 @@ package javaposse.jobdsl.dsl.views
 import groovy.text.SimpleTemplateEngine
 import javaposse.jobdsl.dsl.JobManagement
 import javaposse.jobdsl.dsl.views.DeliveryPipelineView.Sorting
+import org.custommonkey.xmlunit.XMLUnit
 import spock.lang.Specification
 
 import static org.custommonkey.xmlunit.XMLUnit.compareXML
-import static org.custommonkey.xmlunit.XMLUnit.setIgnoreWhitespace
 
 class DeliveryPipelineViewSpec extends Specification {
     JobManagement jobManagement = Mock(JobManagement)
     DeliveryPipelineView view = new DeliveryPipelineView(jobManagement, 'test')
 
     def setup() {
-        setIgnoreWhitespace(true)
+        XMLUnit.ignoreWhitespace = true
     }
 
     def 'defaults'() {

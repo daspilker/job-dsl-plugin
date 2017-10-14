@@ -7,6 +7,7 @@ import javaposse.jobdsl.dsl.views.jobfilter.BuildCountType
 import javaposse.jobdsl.dsl.views.jobfilter.BuildStatusType
 import javaposse.jobdsl.dsl.views.jobfilter.RegexMatchValue
 import javaposse.jobdsl.dsl.views.jobfilter.Status
+import org.custommonkey.xmlunit.XMLUnit
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -18,7 +19,6 @@ import static javaposse.jobdsl.dsl.views.jobfilter.MatchType.EXCLUDE_UNMATCHED
 import static javaposse.jobdsl.dsl.views.jobfilter.MatchType.INCLUDE_MATCHED
 import static javaposse.jobdsl.dsl.views.jobfilter.MatchType.INCLUDE_UNMATCHED
 import static org.custommonkey.xmlunit.XMLUnit.compareXML
-import static org.custommonkey.xmlunit.XMLUnit.setIgnoreWhitespace
 
 class ListViewSpec<T extends ListView> extends Specification {
     JobManagement jobManagement = Mock(JobManagement)
@@ -27,9 +27,9 @@ class ListViewSpec<T extends ListView> extends Specification {
     def 'defaults'() {
         when:
         String xml = view.xml
+        XMLUnit.ignoreWhitespace = true
 
         then:
-        setIgnoreWhitespace(true)
         compareXML(defaultXml, xml).similar()
     }
 

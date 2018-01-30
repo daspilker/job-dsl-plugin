@@ -1,9 +1,8 @@
 package javaposse.jobdsl.plugin.actions
 
-import hudson.Util
 import hudson.model.Action
 import hudson.model.Item
-import hudson.model.Items
+import javaposse.jobdsl.plugin.DigestHelper
 import javaposse.jobdsl.plugin.SeedReference
 import jenkins.model.Jenkins
 
@@ -35,7 +34,7 @@ class SeedJobAction implements Action {
 
     boolean isConfigChanged() {
         try {
-            String fileDigest = Util.getDigestOf(Items.getConfigFile(item).file)
+            String fileDigest = DigestHelper.digest(item)
             fileDigest != seedReference.digest
         } catch (IOException ignore) {
             false

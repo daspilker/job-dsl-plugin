@@ -465,7 +465,7 @@ public class ExecuteDslScripts extends Builder implements SimpleBuildStep {
                         newSeedReference.setTemplateJobName(template.getFullName());
                     }
                 }
-                newSeedReference.setDigest(Util.getDigestOf(Items.getConfigFile(item).getFile()));
+                newSeedReference.setDigest(DigestHelper.digest(item));
 
                 SeedReference oldSeedReference = generatedJobMap.get(item.getFullName());
                 if (!newSeedReference.equals(oldSeedReference)) {

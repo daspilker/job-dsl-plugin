@@ -57,6 +57,13 @@ class DummyTrigger extends Trigger<Job> {
     static class DescriptorImpl extends TriggerDescriptor {
         final String displayName = null
 
+        DescriptorImpl(Class<? extends Trigger<?>> clazz) {
+            super(clazz)
+        }
+
+        DescriptorImpl() {
+        }
+
         @Override
         boolean isApplicable(Item item) {
             false

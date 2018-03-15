@@ -1,5 +1,6 @@
 package javaposse.jobdsl.plugin.structs
 
+import com.google.inject.Injector
 import groovy.transform.EqualsAndHashCode
 import hudson.ExtensionList
 import hudson.ExtensionListListener
@@ -51,10 +52,18 @@ class DescribableHelper {
      *
      * @see #uncapitalize(java.lang.Class)
      */
+    @SuppressWarnings('CatchRuntimeException')
     static Collection<DescribableModel> findDescribableModels(Collection<DescribableModel> models, String name) {
+        SymbolLookup symbolLookup = SymbolLookup.get()
+        Injector injector = Jenkins.instance.injector
+
         Collection<DescribableModel> result = models.findAll {
-            Class type = getTypeForLookup(it)
-            type == null ? null : SymbolLookup.get().find(type, name)
+            try {
+                Class type = getTypeForLookup(it)
+                type == null ? false : symbolLookup.find(type, name) == injector.getInstance(type)
+            } catch (RuntimeException ignore) {
+                false
+            }
         }
         result ?: models.findAll { uncapitalize(it.type) == name }
     }
@@ -72,7 +81,7 @@ class DescribableHelper {
         Collection<DescribableModel> result = CACHE.get(cacheKey)
         if (result == null) {
             Collection<Descriptor> descriptors = getDescriptors(contextClass)
-            Collection<Descriptor> symbols = descriptors.findAll { SymbolLookup.get().find(it.class, name) }
+            Collection<Descriptor> symbols = descriptors.findAll { SymbolLookup.get().find(it.class, name) == it }
             result = getDescribableModels(symbols ?: descriptors.findAll { uncapitalize(it.clazz) == name })
             result = unmodifiableCollection(result)
             CACHE.put(cacheKey, result)

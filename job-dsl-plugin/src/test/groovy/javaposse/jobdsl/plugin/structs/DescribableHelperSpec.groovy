@@ -22,6 +22,7 @@ import javaposse.jobdsl.plugin.fixtures.IntegerTrigger
 import javaposse.jobdsl.plugin.fixtures.InvalidContext
 import javaposse.jobdsl.plugin.fixtures.InvalidTrigger
 import javaposse.jobdsl.plugin.fixtures.SomeTrigger
+import javaposse.jobdsl.plugin.fixtures.StrangeTrigger
 import jenkins.triggers.ReverseBuildTrigger
 import org.jenkinsci.plugins.structs.describable.DescribableModel
 import org.junit.ClassRule
@@ -251,7 +252,7 @@ class DescribableHelperSpec extends Specification {
         Map<String, DescribableModel> models = DescribableHelper.findDescribableModels(TriggerContext)
 
         then:
-        models.size() == 10
+        models.size() == 11
         models['dummy'].type == DummyTrigger
         models['foo'].type == FooTrigger
         models['bar'].type == FooTrigger
@@ -262,5 +263,6 @@ class DescribableHelperSpec extends Specification {
         models['periodicFolderTrigger'].type == PeriodicFolderTrigger
         models['old'].type == DeprecatedTrigger
         models['upstream'].type == ReverseBuildTrigger
+        models['strangeTrigger'].type == StrangeTrigger
     }
 }

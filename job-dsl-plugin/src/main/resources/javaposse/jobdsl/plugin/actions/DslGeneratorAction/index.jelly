@@ -4,6 +4,11 @@
     <st:include it="${it.target}" page="sidepanel.jelly" />
     <l:main-panel>
       <h1>Generated Job DSL Script For ${it.target.fullName}</h1>
+      <p>
+        This feature is still under development. The script may not replicate the existing
+        configuration exactly. If you encounter any problems, please add a comment to
+        <a href="https://issues.jenkins-ci.org/browse/JENKINS-16360">JENKINS-16360</a>.
+      </p>
       <pre>
         <j:whitespace>${it.script}</j:whitespace>
       </pre>

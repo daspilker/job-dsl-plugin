@@ -4,6 +4,7 @@ import hudson.Extension
 import hudson.model.Action
 import hudson.model.FreeStyleProject
 import jenkins.model.TransientActionFactory
+import org.jenkinsci.plugins.structs.describable.DescribableModel
 
 import javax.annotation.Nonnull
 
@@ -17,6 +18,11 @@ class DslGeneratorTransientActionFactory extends TransientActionFactory<FreeStyl
     @Nonnull
     @Override
     Collection<? extends Action> createFor(@Nonnull FreeStyleProject target) {
-        [new DslGeneratorAction(target)]
+        try {
+            DescribableModel.of(FreeStyleProject.class)
+            [new DslGeneratorAction(target)]
+        } catch (IllegalArgumentException ignore) {
+            []
+        }
     }
 }

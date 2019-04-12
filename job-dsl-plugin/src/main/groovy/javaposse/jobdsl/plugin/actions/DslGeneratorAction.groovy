@@ -12,6 +12,23 @@ import org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable
 import static javaposse.jobdsl.plugin.structs.DescribableHelper.uncapitalize
 
 class DslGeneratorAction implements Action {
+    private static final Set<String> IGNORED_ARGUMENTS = ['name', 'parent']
+    private static final Map<String, String> RENAMED_ARGUMENTS = [
+            blockBuildWhenDownstreamBuilding: 'blockOnDownstreamProjects',
+            blockBuildWhenUpstreamBuilding: 'blockOnUpstreamProjects',
+            triggersList: 'triggers',
+            allProperties: 'properties',
+            assignedNode: 'label',
+            scmCheckoutRetryCount: 'checkoutRetryCount',
+            buildWrappersList: 'wrappers',
+            buildersList: 'steps',
+            publishersList: 'publishers',
+    ]
+    private static final Set<String> OTHER_ARGUMENTS = [
+            'jdk', 'customWorkspace', 'scm', 'disabled', 'quietPeriod', 'keepDependencies', 'concurrentBuild',
+            'description', 'displayName'
+    ]
+
     final String iconFileName = '/plugin/job-dsl/images/48x48/print.png'
     final String displayName = 'Generate Job DSL'
     final String urlName = 'generate-job-dsl'
@@ -30,9 +47,30 @@ class DslGeneratorAction implements Action {
 
         StringBuilder builder = new StringBuilder()
         builder << "freeStyleJob('${target.fullName}') {\n"
-        generateContext(builder, describable.model, arguments, 2)
+        generateContext(builder, describable.model, adjustFreeStyleProjectArguments(arguments, builder), 2)
         builder << '}\n'
         builder
+    }
+
+    private static Map<String, Object> adjustFreeStyleProjectArguments(Map<String, ?> arguments, StringBuilder builder) {
+        Map<String, Object> result = [:]
+        for (Map.Entry<String, ?> argument : arguments.entrySet()) {
+            if (IGNORED_ARGUMENTS.contains(argument.key)) {
+                continue
+            }
+            if (RENAMED_ARGUMENTS.containsKey(argument.key)) {
+                result[RENAMED_ARGUMENTS[argument.key]] = argument.value
+                continue
+            }
+            if (OTHER_ARGUMENTS.contains(argument.key)) {
+                result[argument.key] = argument.value
+                continue
+            }
+            builder << '  // ERROR: do not know how to handle '
+            builder << argument.key
+            builder << '\n'
+        }
+        result
     }
 
     private static void generateContext(StringBuilder builder, UninstantiatedDescribable describable, int indent) {
@@ -48,12 +86,15 @@ class DslGeneratorAction implements Action {
                                         int indent) {
         for (Map.Entry<String, ?> argument : arguments.entrySet()) {
             DescribableParameter parameter = model.getParameter(argument.key)
+            builder << ' ' * indent
             if (parameter) {
-                builder << ' ' * indent
                 builder << argument.key
                 generateValue(builder, parameter, argument.value, indent)
-                builder << '\n'
+            } else {
+                builder << 'ERROR: do not know how to handle '
+                builder << argument.key
             }
+            builder << '\n'
         }
     }
 

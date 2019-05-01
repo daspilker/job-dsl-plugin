@@ -251,16 +251,10 @@ public class ExecuteDslScripts extends Builder implements SimpleBuildStep {
         this.removedViewAction = removedViewAction;
     }
 
-    /**
-     * @since 1.62
-     */
     public RemovedConfigFilesAction getRemovedConfigFilesAction() {
         return removedConfigFilesAction;
     }
 
-    /**
-     * @since 1.62
-     */
     @DataBoundSetter
     public void setRemovedConfigFilesAction(RemovedConfigFilesAction removedConfigFilesAction) {
         this.removedConfigFilesAction = removedConfigFilesAction;

@@ -5,7 +5,6 @@ import io.jenkins.plugins.casc.ConfiguratorException;
 import io.jenkins.plugins.casc.model.CNode;
 
 public abstract class ConfigurableScriptSource extends ScriptSource implements Configurable {
-
     @Override
     public void configure(CNode node) throws ConfiguratorException {
         configure(node.asScalar().getValue());
@@ -19,8 +18,7 @@ public abstract class ConfigurableScriptSource extends ScriptSource implements C
     }
 
     @Override
-    public CNode describe() throws Exception {
+    public CNode describe() {
         return null; // Not relevant here
     }
-
 }

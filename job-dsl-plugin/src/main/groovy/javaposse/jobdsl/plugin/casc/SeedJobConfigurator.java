@@ -30,7 +30,6 @@ import static io.vavr.API.unchecked;
 @Extension(optional = true, ordinal = -50) // Ordinal -50 Ensure it is loaded after GlobalJobDslSecurityConfiguration
 @Restricted(NoExternalUse.class)
 public class SeedJobConfigurator implements RootElementConfigurator<GeneratedItems[]> {
-
     @Nonnull
     @Override
     public String getName() {
@@ -38,16 +37,14 @@ public class SeedJobConfigurator implements RootElementConfigurator<GeneratedIte
     }
 
     @Override
-    @SuppressWarnings("unchecked")
-    public Class getTarget() {
+    public Class<GeneratedItems[]> getTarget() {
         return GeneratedItems[].class;
     }
 
     @Nonnull
     @Override
-    @SuppressWarnings("unchecked")
     public Set<Attribute<GeneratedItems[], ?>> describe() {
-        return Collections.singleton(new MultivaluedAttribute("", ScriptSource.class));
+        return Collections.singleton(new MultivaluedAttribute<>("", ScriptSource.class));
     }
 
     @Override
@@ -57,7 +54,6 @@ public class SeedJobConfigurator implements RootElementConfigurator<GeneratedIte
 
     @Nonnull
     @Override
-    @SuppressWarnings("unchecked")
     public GeneratedItems[] configure(CNode config, ConfigurationContext context) throws ConfiguratorException {
         JenkinsJobManagement management = new JenkinsJobManagement(System.out, System.getenv(), null, null, LookupStrategy.JENKINS_ROOT);
         Configurator<ScriptSource> configurator = context.lookupOrFail(ScriptSource.class);
@@ -69,7 +65,7 @@ public class SeedJobConfigurator implements RootElementConfigurator<GeneratedIte
     }
 
     @Override
-    public GeneratedItems[] check(CNode config, ConfigurationContext context) throws ConfiguratorException {
+    public GeneratedItems[] check(CNode config, ConfigurationContext context) {
         return new GeneratedItems[0];
     }
 
@@ -81,7 +77,7 @@ public class SeedJobConfigurator implements RootElementConfigurator<GeneratedIte
 
     @CheckForNull
     @Override
-    public CNode describe(GeneratedItems[] instance, ConfigurationContext context) throws Exception {
+    public CNode describe(GeneratedItems[] instance, ConfigurationContext context) {
         return null;
     }
 

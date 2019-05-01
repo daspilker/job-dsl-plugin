@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.net.URI;
 
 public class FromUrlScriptSource extends ConfigurableScriptSource implements Configurable {
-
     public String url;
 
     @Override
@@ -26,6 +25,5 @@ public class FromUrlScriptSource extends ConfigurableScriptSource implements Con
     @Extension(optional = true)
     @Symbol("url")
     public static class DescriptorImpl extends Descriptor<ScriptSource> {
-
     }
 }

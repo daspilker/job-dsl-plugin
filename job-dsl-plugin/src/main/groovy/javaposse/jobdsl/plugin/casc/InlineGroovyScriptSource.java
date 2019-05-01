@@ -5,10 +5,7 @@ import hudson.model.Descriptor;
 import io.jenkins.plugins.casc.Configurable;
 import org.jenkinsci.Symbol;
 
-import java.io.IOException;
-
 public class InlineGroovyScriptSource extends ConfigurableScriptSource implements Configurable {
-
     public String script;
 
     @Override
@@ -17,13 +14,12 @@ public class InlineGroovyScriptSource extends ConfigurableScriptSource implement
     }
 
     @Override
-    public String getScript() throws IOException {
+    public String getScript() {
         return script;
     }
 
     @Extension(optional = true)
     @Symbol("script")
     public static class DescriptorImpl extends Descriptor<ScriptSource> {
-
     }
 }

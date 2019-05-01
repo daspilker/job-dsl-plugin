@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class FromFileScriptSource extends ConfigurableScriptSource {
-
     public String path;
 
     @Override
@@ -26,6 +25,5 @@ public class FromFileScriptSource extends ConfigurableScriptSource {
     @Extension(optional = true)
     @Symbol("file")
     public static class DescriptorImpl extends Descriptor<ScriptSource> {
-
     }
 }

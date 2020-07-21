@@ -9,6 +9,7 @@ import javaposse.jobdsl.dsl.jobs.MultiJob
 import javaposse.jobdsl.dsl.jobs.OrganizationFolderJob
 import javaposse.jobdsl.dsl.jobs.WorkflowJob
 import javaposse.jobdsl.dsl.jobs.MultibranchWorkflowJob
+import javaposse.jobdsl.dsl.views.NestedViewsContext
 
 interface DslFactory extends ViewFactory {
     /**
@@ -183,6 +184,13 @@ interface DslFactory extends ViewFactory {
     Folder folder(String name, @DslContext(Folder) Closure closure)
 
     /**
+     * Adds views.
+     *
+     * @since 1.78
+     */
+    void views(@DslContext(NestedViewsContext) Closure closure)
+
+        /**
      * Creates managed config files.
      *
      * @since 1.58

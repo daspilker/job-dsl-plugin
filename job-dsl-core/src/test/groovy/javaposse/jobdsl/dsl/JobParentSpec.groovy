@@ -224,6 +224,19 @@ class JobParentSpec extends Specification {
         1 * jobManagement.requireMinimumPluginVersion('dashboard-view', '2.9.7', true)
     }
 
+    def 'views'() {
+        when:
+        parent.views {
+            listView('test') {
+                description('foo')
+            }
+        }
+
+        then:
+        parent.referencedViews.size() == 1
+        parent.referencedViews[0].node.description[0].text() == 'foo'
+    }
+
     def 'folder'() {
         when:
         Folder folder = parent.folder('test') {

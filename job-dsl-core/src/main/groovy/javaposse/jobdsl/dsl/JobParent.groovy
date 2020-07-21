@@ -17,6 +17,7 @@ import javaposse.jobdsl.dsl.views.DashboardView
 import javaposse.jobdsl.dsl.views.DeliveryPipelineView
 import javaposse.jobdsl.dsl.views.ListView
 import javaposse.jobdsl.dsl.views.NestedView
+import javaposse.jobdsl.dsl.views.NestedViewsContext
 import javaposse.jobdsl.dsl.views.SectionedView
 
 import static javaposse.jobdsl.dsl.Preconditions.checkNotNull
@@ -164,6 +165,16 @@ abstract class JobParent extends Script implements DslFactory {
     @Override
     DashboardView dashboardView(String name, @DslContext(DashboardView) Closure closure = null) {
         processView(name, DashboardView, closure)
+    }
+
+    /**
+     * @since 1.78
+     */
+    void views(@DslContext(NestedViewsContext) Closure closure) {
+        NestedViewsContext context = new NestedViewsContext(jm)
+        ContextHelper.executeInContext(closure, context)
+
+        referencedViews += context.views
     }
 
     /**
